@@ -60,8 +60,8 @@ all: main-build
 main-build: spi_IIS3DWB.elf secondary-outputs
 
 # Tool invocations
-spi_IIS3DWB.elf spi_IIS3DWB.map: $(OBJS) $(USER_OBJS) C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\spi_IIS3DWB\STM32U585AIIXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "spi_IIS3DWB.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\spi_IIS3DWB\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="spi_IIS3DWB.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+spi_IIS3DWB.elf spi_IIS3DWB.map: $(OBJS) $(USER_OBJS) C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\spi_IIS3DWB\STM32U585AIIXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "spi_IIS3DWB.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\spi_IIS3DWB\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="spi_IIS3DWB.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
