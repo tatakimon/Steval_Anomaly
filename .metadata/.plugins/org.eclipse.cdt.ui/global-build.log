@@ -2014,3 +2014,253 @@ arm-none-eabi-size  spi_IIS3DWB.elf
   51912	    120	   3120	  55152	   d770	spi_IIS3DWB.elf
 Finished building: default.size.stdout
  
+19:03:36 **** Incremental Build of configuration Debug for project spi_IIS3DWB ****
+make -j8 all 
+arm-none-eabi-size  spi_IIS3DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  51912	    120	   3120	  55152	   d770	spi_IIS3DWB.elf
+Finished building: default.size.stdout
+ 
+14:54:13 **** Incremental Build of configuration Debug for project spi_IIS3DWB ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:1689:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1689 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1641:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1641 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1545:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1545 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1496:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1496 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1439:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1439 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1325:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1325 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1294:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+ 1294 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1210:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1210 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1162:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+ 1162 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:1130:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+ 1130 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:1082:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+ 1082 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:986:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  986 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:948:13: warning: 'MX_GPDMA1_Init' defined but not used [-Wunused-function]
+  948 | static void MX_GPDMA1_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:893:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  893 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:839:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  839 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:776:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  776 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:732:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  732 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:715:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  715 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:263:26: warning: 'stts22h_read_n' defined but not used [-Wunused-function]
+  263 | static HAL_StatusTypeDef stts22h_read_n(uint8_t reg, uint8_t *buf, uint16_t len)
+      |                          ^~~~~~~~~~~~~~
+../Core/Src/main.c:258:26: warning: 'stts22h_write_u8' defined but not used [-Wunused-function]
+  258 | static HAL_StatusTypeDef stts22h_write_u8(uint8_t reg, uint8_t val)
+      |                          ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "spi_IIS3DWB.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\spi_IIS3DWB\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="spi_IIS3DWB.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: spi_IIS3DWB.elf
+ 
+arm-none-eabi-size  spi_IIS3DWB.elf 
+arm-none-eabi-objdump -h -S spi_IIS3DWB.elf  > "spi_IIS3DWB.list"
+   text	   data	    bss	    dec	    hex	filename
+  51868	    120	   3120	  55108	   d744	spi_IIS3DWB.elf
+Finished building: default.size.stdout
+ 
+Finished building: spi_IIS3DWB.list
+ 
+14:56:35 **** Incremental Build of configuration Debug for project spi_IIS3DWB ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:1689:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1689 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1641:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1641 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1545:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1545 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1496:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1496 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1439:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1439 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1325:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1325 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1294:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+ 1294 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1210:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1210 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1162:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+ 1162 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:1130:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+ 1130 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:1082:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+ 1082 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:986:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  986 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:948:13: warning: 'MX_GPDMA1_Init' defined but not used [-Wunused-function]
+  948 | static void MX_GPDMA1_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:893:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  893 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:839:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  839 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:776:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  776 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:732:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  732 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:715:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  715 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:263:26: warning: 'stts22h_read_n' defined but not used [-Wunused-function]
+  263 | static HAL_StatusTypeDef stts22h_read_n(uint8_t reg, uint8_t *buf, uint16_t len)
+      |                          ^~~~~~~~~~~~~~
+../Core/Src/main.c:258:26: warning: 'stts22h_write_u8' defined but not used [-Wunused-function]
+  258 | static HAL_StatusTypeDef stts22h_write_u8(uint8_t reg, uint8_t val)
+      |                          ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "spi_IIS3DWB.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\spi_IIS3DWB\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="spi_IIS3DWB.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: spi_IIS3DWB.elf
+ 
+arm-none-eabi-size  spi_IIS3DWB.elf 
+arm-none-eabi-objdump -h -S spi_IIS3DWB.elf  > "spi_IIS3DWB.list"
+   text	   data	    bss	    dec	    hex	filename
+  51856	    120	   3120	  55096	   d738	spi_IIS3DWB.elf
+Finished building: default.size.stdout
+ 
+Finished building: spi_IIS3DWB.list
+ 
+14:59:45 **** Incremental Build of configuration Debug for project spi_IIS3DWB ****
+make -j8 all 
+arm-none-eabi-size  spi_IIS3DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  51856	    120	   3120	  55096	   d738	spi_IIS3DWB.elf
+Finished building: default.size.stdout
+ 
+15:28:13 **** Incremental Build of configuration Debug for project spi_IIS3DWB ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:1702:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1702 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1654:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1654 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1558:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1558 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1509:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1509 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1452:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1452 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1338:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1338 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1307:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+ 1307 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1223:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1223 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1175:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+ 1175 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:1143:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+ 1143 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:1095:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+ 1095 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:999:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  999 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:961:13: warning: 'MX_GPDMA1_Init' defined but not used [-Wunused-function]
+  961 | static void MX_GPDMA1_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:906:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  906 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:852:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  852 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:789:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  789 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:745:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  745 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:728:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  728 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:263:26: warning: 'stts22h_read_n' defined but not used [-Wunused-function]
+  263 | static HAL_StatusTypeDef stts22h_read_n(uint8_t reg, uint8_t *buf, uint16_t len)
+      |                          ^~~~~~~~~~~~~~
+../Core/Src/main.c:258:26: warning: 'stts22h_write_u8' defined but not used [-Wunused-function]
+  258 | static HAL_StatusTypeDef stts22h_write_u8(uint8_t reg, uint8_t val)
+      |                          ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "spi_IIS3DWB.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\spi_IIS3DWB\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="spi_IIS3DWB.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: spi_IIS3DWB.elf
+ 
+arm-none-eabi-size  spi_IIS3DWB.elf 
+arm-none-eabi-objdump -h -S spi_IIS3DWB.elf  > "spi_IIS3DWB.list"
+   text	   data	    bss	    dec	    hex	filename
+  52336	    120	   3120	  55576	   d918	spi_IIS3DWB.elf
+Finished building: default.size.stdout
+ 
+Finished building: spi_IIS3DWB.list
+ 
+15:28:32 **** Incremental Build of configuration Debug for project spi_IIS3DWB ****
+make -j8 all 
+arm-none-eabi-size  spi_IIS3DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  52336	    120	   3120	  55576	   d918	spi_IIS3DWB.elf
+Finished building: default.size.stdout
+ 
+15:29:39 **** Incremental Build of configuration Debug for project spi_IIS3DWB ****
+make -j8 all 
+arm-none-eabi-size  spi_IIS3DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  52336	    120	   3120	  55576	   d918	spi_IIS3DWB.elf
+Finished building: default.size.stdout
+ 
