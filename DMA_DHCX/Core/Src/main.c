@@ -262,7 +262,7 @@ int main(void)
   //MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
 
-  cycles_init();  // enable cycle counter
+  //cycles_init();  // enable cycle counter
 
 
 
@@ -294,7 +294,6 @@ int main(void)
 	  if (dhcx_both_ready()) {
 	      dhcx_raw_t r;
 	      if (HAL_OK == dhcx_read_gyro_accel_dma(&r)) {
-	          // ---- scale (integers only) ----
 	          int32_t gx_mdps = (int32_t)r.gx * 70;
 	          int32_t gy_mdps = (int32_t)r.gy * 70;
 	          int32_t gz_mdps = (int32_t)r.gz * 70;
@@ -303,57 +302,20 @@ int main(void)
 	          int32_t ay_mg = ((int32_t)r.ay * 61 + (r.ay >= 0 ? 500 : -500)) / 1000;
 	          int32_t az_mg = ((int32_t)r.az * 61 + (r.az >= 0 ? 500 : -500)) / 1000;
 
-	          // ---- timings from DWT stamps ----
-	          uint32_t setup_us = cycles_to_us(t_spi2_callret - t_spi2_start);
-	          uint32_t dma_us   = cycles_to_us(t_spi2_cb      - t_spi2_callret);
-	          uint32_t post_us  = cycles_to_us(t_spi2_done    - t_spi2_cb);
-	          uint32_t total_us = cycles_to_us(t_spi2_done    - t_spi2_start);
+	          char line[128];  // 96 would also work
+	          int n = snprintf(line, sizeof(line),
+	                           "G[mdps]=%ld %ld %ld | A[mg]=%ld %ld %ld\r\n",
+	                           (long)gx_mdps, (long)gy_mdps, (long)gz_mdps,
+	                           (long)ax_mg,   (long)ay_mg,   (long)az_mg);
 
-	          // ---- accumulate for 100-cycle report ----
-	          sum_setup += setup_us;
-	          sum_dma   += dma_us;
-	          sum_post  += post_us;
-	          sum_total += total_us;
-	          if (total_us < min_total) min_total = total_us;
-	          if (total_us > max_total) max_total = total_us;
-
-	          // keep the latest data sample to show with the report
-	          last_gx_mdps = gx_mdps; last_gy_mdps = gy_mdps; last_gz_mdps = gz_mdps;
-	          last_ax_mg   = ax_mg;   last_ay_mg   = ay_mg;   last_az_mg   = az_mg;
-
-	          // ---- print once every 100 reads ----
-	          if (++cnt == 100) {
-	              uint32_t avg_setup = (uint32_t)(sum_setup / 100u);
-	              uint32_t avg_dma   = (uint32_t)(sum_dma   / 100u);
-	              uint32_t avg_post  = (uint32_t)(sum_post  / 100u);
-	              uint32_t avg_total = (uint32_t)(sum_total / 100u);
-
-	              // theoretical SPI wire time for 13 bytes at SPI2_SCK_HZ
-	              const uint32_t Nbytes = 13u;
-	              uint32_t spi_wire_us = (uint32_t)((uint64_t)Nbytes * 8ull * 1000000ull / SPI2_SCK_HZ);
-
-	              char tbuf[160];
-	              int tn = snprintf(tbuf, sizeof(tbuf),
-	                  "SPI2 avg: setup=%luus dma=%luus post=%luus total=%luus | min=%luus max=%luus | wire~%luus (N=100)\r\n",
-	                  (unsigned long)avg_setup, (unsigned long)avg_dma, (unsigned long)avg_post,
-	                  (unsigned long)avg_total, (unsigned long)min_total, (unsigned long)max_total,
-	                  (unsigned long)spi_wire_us);
-	              HAL_UART_Transmit(&huart2, (uint8_t*)tbuf, tn, HAL_MAX_DELAY);
-
-	              char line[160];
-	              int n = snprintf(line, sizeof(line),
-	                  "LAST G[mdps]=%ld %ld %ld | A[mg]=%ld %ld %ld\r\n",
-	                  (long)last_gx_mdps, (long)last_gy_mdps, (long)last_gz_mdps,
-	                  (long)last_ax_mg,   (long)last_ay_mg,   (long)last_az_mg);
+	          if (n > 0 && n < (int)sizeof(line)) {
 	              HAL_UART_Transmit(&huart2, (uint8_t*)line, n, HAL_MAX_DELAY);
 
-	              // reset for next batch
-	              cnt = 0;
-	              sum_setup = sum_dma = sum_post = sum_total = 0;
-	              min_total = 0xFFFFFFFFu; max_total = 0;
 	          }
 	      }
 	  }
+
+
 
 
 

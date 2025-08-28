@@ -1,281 +1,1311 @@
-19:38:31 **** Incremental Build of configuration Debug for project DMA_DHCX ****
+15:19:57 **** Clean-only build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 clean 
+rm -rf ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.su
+rm -rf ./Core/Startup/startup_stm32u585aiixq.d ./Core/Startup/startup_stm32u585aiixq.o
+rm -rf ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32u5xx_hal_msp.cyclo ./Core/Src/stm32u5xx_hal_msp.d ./Core/Src/stm32u5xx_hal_msp.o ./Core/Src/stm32u5xx_hal_msp.su ./Core/Src/stm32u5xx_it.cyclo ./Core/Src/stm32u5xx_it.d ./Core/Src/stm32u5xx_it.o ./Core/Src/stm32u5xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32u5xx.cyclo ./Core/Src/system_stm32u5xx.d ./Core/Src/system_stm32u5xx.o ./Core/Src/system_stm32u5xx.su
+rm -rf ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.su ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.cyclo ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.d ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.o ./Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.su
+rm -rf Olmuyorr_DMA_DWB.elf Olmuyorr_DMA_DWB.list Olmuyorr_DMA_DWB.map default.size.stdout
+ 
+15:20:20 **** Build of configuration Debug for project Olmuyorr_DMA_DWB ****
 make -j8 all 
-arm-none-eabi-gcc -o "DMA_DHCX.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\DMA_DHCX\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_DHCX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
-C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/DMA_DHCX/Debug/../Core/Src/main.c:277:(.text.main+0x38): undefined reference to `dhcx_init'
-C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/DMA_DHCX/Debug/../Core/Src/main.c:295:(.text.main+0x7e): undefined reference to `dhcx_both_ready'
-C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/DMA_DHCX/Debug/../Core/Src/main.c:297:(.text.main+0x8e): undefined reference to `dhcx_read_gyro_accel_dma'
-C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `dhcx_read_dma':
-C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/DMA_DHCX/Debug/../Core/Src/main.c:1710:(.text.dhcx_read_dma+0x3a): undefined reference to `cs_low'
-C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/DMA_DHCX/Debug/../Core/Src/main.c:1717:(.text.dhcx_read_dma+0x6c): undefined reference to `cs_high'
-C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/DMA_DHCX/Debug/../Core/Src/main.c:1723:(.text.dhcx_read_dma+0x80): undefined reference to `cs_high'
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:67: DMA_DHCX.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-19:39:15 **** Incremental Build of configuration Debug for project DMA_DHCX ****
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.o"
+arm-none-eabi-gcc -mcpu=cortex-m33 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32u585aiixq.d" -MT"Core/Startup/startup_stm32u585aiixq.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32u585aiixq.o" "../Core/Startup/startup_stm32u585aiixq.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32u5xx_hal_msp.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32u5xx_hal_msp.d" -MT"Core/Src/stm32u5xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32u5xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32u5xx_it.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32u5xx_it.d" -MT"Core/Src/stm32u5xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32u5xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32u5xx.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32u5xx.d" -MT"Core/Src/system_stm32u5xx.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32u5xx.o"
+../Core/Src/main.c:1365:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1365 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1317:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1317 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1221:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1221 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1172:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1172 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1115:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1115 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1001:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1001 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:970:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+  970 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:886:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+  886 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:838:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+  838 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:806:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+  806 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:758:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  758 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:710:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  710 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:662:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  662 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:569:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  569 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:515:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  515 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:452:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  452 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:408:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  408 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:391:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  391 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Olmuyorr_DMA_DWB.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\Olmuyorr_DMA_DWB\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Olmuyorr_DMA_DWB.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Olmuyorr_DMA_DWB.elf
+ 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+arm-none-eabi-objdump -h -S Olmuyorr_DMA_DWB.elf  > "Olmuyorr_DMA_DWB.list"
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+Finished building: Olmuyorr_DMA_DWB.list
+ 
+15:20:31 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
 make -j8 all 
-arm-none-eabi-gcc -o "DMA_DHCX.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\DMA_DHCX\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_DHCX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
-C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/DMA_DHCX/Debug/../Core/Src/main.c:277:(.text.main+0x38): undefined reference to `dhcx_init'
-C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/DMA_DHCX/Debug/../Core/Src/main.c:295:(.text.main+0x7e): undefined reference to `dhcx_both_ready'
-C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/DMA_DHCX/Debug/../Core/Src/main.c:297:(.text.main+0x8e): undefined reference to `dhcx_read_gyro_accel_dma'
-C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `dhcx_read_dma':
-C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/DMA_DHCX/Debug/../Core/Src/main.c:1710:(.text.dhcx_read_dma+0x3a): undefined reference to `cs_low'
-C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/DMA_DHCX/Debug/../Core/Src/main.c:1717:(.text.dhcx_read_dma+0x6c): undefined reference to `cs_high'
-C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/DMA_DHCX/Debug/../Core/Src/main.c:1723:(.text.dhcx_read_dma+0x80): undefined reference to `cs_high'
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:67: DMA_DHCX.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-19:47:54 **** Incremental Build of configuration Debug for project DMA_DHCX ****
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+15:21:12 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+15:23:18 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:1686:25: error: redefinition of 'spi2_dma_done'
- 1686 | static volatile uint8_t spi2_dma_done = 0;   // define ONCE in this file
-      |                         ^~~~~~~~~~~~~
-../Core/Src/main.c:132:25: note: previous definition of 'spi2_dma_done' with type 'uint8_t' {aka 'volatile unsigned char'}
-  132 | static volatile uint8_t spi2_dma_done = 0;
-      |                         ^~~~~~~~~~~~~
-../Core/Src/main.c:1445:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
- 1445 | static void MX_USB_OTG_FS_PCD_Init(void)
+../Core/Src/main.c:1362:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1362 | static void MX_USB_OTG_FS_PCD_Init(void)
       |             ^~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1397:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
- 1397 | static void MX_USART3_UART_Init(void)
+../Core/Src/main.c:1314:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1314 | static void MX_USART3_UART_Init(void)
       |             ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1301:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
- 1301 | static void MX_TIM3_Init(void)
+../Core/Src/main.c:1218:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1218 | static void MX_TIM3_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:1252:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
- 1252 | static void MX_TAMP_RTC_Init(void)
+../Core/Src/main.c:1169:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1169 | static void MX_TAMP_RTC_Init(void)
       |             ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:1195:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
- 1195 | static void MX_SPI3_Init(void)
+../Core/Src/main.c:1112:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1112 | static void MX_SPI3_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:1081:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
- 1081 | static void MX_SPI1_Init(void)
+../Core/Src/main.c:998:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+  998 | static void MX_SPI1_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:1050:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
- 1050 | static void MX_SDMMC1_SD_Init(void)
+../Core/Src/main.c:967:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+  967 | static void MX_SDMMC1_SD_Init(void)
       |             ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:966:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
-  966 | static void MX_SAI1_Init(void)
+../Core/Src/main.c:883:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+  883 | static void MX_SAI1_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:918:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
-  918 | static void MX_RTC_Init(void)
+../Core/Src/main.c:835:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+  835 | static void MX_RTC_Init(void)
       |             ^~~~~~~~~~~
-../Core/Src/main.c:886:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
-  886 | static void MX_ICACHE_Init(void)
+../Core/Src/main.c:803:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+  803 | static void MX_ICACHE_Init(void)
       |             ^~~~~~~~~~~~~~
-../Core/Src/main.c:838:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
-  838 | static void MX_I2C3_Init(void)
+../Core/Src/main.c:755:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  755 | static void MX_I2C3_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:790:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
-  790 | static void MX_I2C2_Init(void)
+../Core/Src/main.c:707:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  707 | static void MX_I2C2_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:742:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
-  742 | static void MX_I2C1_Init(void)
+../Core/Src/main.c:659:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  659 | static void MX_I2C1_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:649:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
-  649 | static void MX_DAC1_Init(void)
+../Core/Src/main.c:566:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  566 | static void MX_DAC1_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:595:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
-  595 | static void MX_MDF1_Init(void)
+../Core/Src/main.c:512:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  512 | static void MX_MDF1_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:532:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
-  532 | static void MX_ADF1_Init(void)
+../Core/Src/main.c:449:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  449 | static void MX_ADF1_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:488:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
-  488 | static void MX_ADC1_Init(void)
+../Core/Src/main.c:405:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  405 | static void MX_ADC1_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:471:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
-  471 | static void SystemPower_Config(void)
+../Core/Src/main.c:388:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  388 | static void SystemPower_Config(void)
       |             ^~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:131:17: warning: 'spi_rx' defined but not used [-Wunused-variable]
-  131 | static uint8_t  spi_rx[32];
-      |                 ^~~~~~
-../Core/Src/main.c:130:17: warning: 'spi_tx' defined but not used [-Wunused-variable]
-  130 | static uint8_t  spi_tx[32];
-      |                 ^~~~~~
+arm-none-eabi-gcc -o "Olmuyorr_DMA_DWB.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\Olmuyorr_DMA_DWB\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Olmuyorr_DMA_DWB.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Olmuyorr_DMA_DWB.elf
+ 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+arm-none-eabi-objdump -h -S Olmuyorr_DMA_DWB.elf  > "Olmuyorr_DMA_DWB.list"
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+Finished building: Olmuyorr_DMA_DWB.list
+ 
+15:23:40 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+15:52:05 **** Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+15:52:08 **** Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.o"
+arm-none-eabi-gcc -mcpu=cortex-m33 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32u585aiixq.d" -MT"Core/Startup/startup_stm32u585aiixq.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32u585aiixq.o" "../Core/Startup/startup_stm32u585aiixq.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32u5xx_hal_msp.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32u5xx_hal_msp.d" -MT"Core/Src/stm32u5xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32u5xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32u5xx_it.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32u5xx_it.d" -MT"Core/Src/stm32u5xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32u5xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32u5xx.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32u5xx.d" -MT"Core/Src/system_stm32u5xx.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32u5xx.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:367:13: error: invalid storage class for function 'SystemPower_Config'
+  367 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:384:13: error: invalid storage class for function 'MX_ADC1_Init'
+  384 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:428:13: error: invalid storage class for function 'MX_ADF1_Init'
+  428 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:491:13: error: invalid storage class for function 'MX_MDF1_Init'
+  491 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:545:13: error: invalid storage class for function 'MX_DAC1_Init'
+  545 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:600:13: error: invalid storage class for function 'MX_GPDMA1_Init'
+  600 | static void MX_GPDMA1_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:638:13: error: invalid storage class for function 'MX_I2C1_Init'
+  638 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:686:13: error: invalid storage class for function 'MX_I2C2_Init'
+  686 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:734:13: error: invalid storage class for function 'MX_I2C3_Init'
+  734 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:782:13: error: invalid storage class for function 'MX_ICACHE_Init'
+  782 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:814:13: error: invalid storage class for function 'MX_RTC_Init'
+  814 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:862:13: error: invalid storage class for function 'MX_SAI1_Init'
+  862 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:946:13: error: invalid storage class for function 'MX_SDMMC1_SD_Init'
+  946 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:977:13: error: invalid storage class for function 'MX_SPI1_Init'
+  977 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1034:13: error: invalid storage class for function 'MX_SPI2_Init'
+ 1034 | static void MX_SPI2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1091:13: error: invalid storage class for function 'MX_SPI3_Init'
+ 1091 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1148:13: error: invalid storage class for function 'MX_TAMP_RTC_Init'
+ 1148 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1197:13: error: invalid storage class for function 'MX_TIM3_Init'
+ 1197 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1245:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+ 1245 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1293:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+ 1293 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1341:13: error: invalid storage class for function 'MX_USB_OTG_FS_PCD_Init'
+ 1341 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1377:13: error: invalid storage class for function 'MX_GPIO_Init'
+ 1377 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c: In function 'start_sensor_read_chain':
+../Core/Src/main.c:1591:23: error: 'IIS3DWB_CS_GPIO_Port' undeclared (first use in this function); did you mean 'WIFI_CS_GPIO_Port'?
+ 1591 |     HAL_GPIO_WritePin(IIS3DWB_CS_GPIO_Port, IIS3DWB_CS_Pin, GPIO_PIN_RESET);
+      |                       ^~~~~~~~~~~~~~~~~~~~
+      |                       WIFI_CS_GPIO_Port
+../Core/Src/main.c:1591:23: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:1591:45: error: 'IIS3DWB_CS_Pin' undeclared (first use in this function)
+ 1591 |     HAL_GPIO_WritePin(IIS3DWB_CS_GPIO_Port, IIS3DWB_CS_Pin, GPIO_PIN_RESET);
+      |                                             ^~~~~~~~~~~~~~
+../Core/Src/main.c:1599:23: error: 'ISM330DHCX_CS_GPIO_Port' undeclared (first use in this function); did you mean 'INT2_DHCX_GPIO_Port'?
+ 1599 |     HAL_GPIO_WritePin(ISM330DHCX_CS_GPIO_Port, ISM330DHCX_CS_Pin, GPIO_PIN_RESET);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~
+      |                       INT2_DHCX_GPIO_Port
+../Core/Src/main.c:1599:48: error: 'ISM330DHCX_CS_Pin' undeclared (first use in this function)
+ 1599 |     HAL_GPIO_WritePin(ISM330DHCX_CS_GPIO_Port, ISM330DHCX_CS_Pin, GPIO_PIN_RESET);
+      |                                                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_SPI_TxRxCpltCallback':
+../Core/Src/main.c:1630:31: error: 'IIS3DWB_CS_GPIO_Port' undeclared (first use in this function); did you mean 'WIFI_CS_GPIO_Port'?
+ 1630 |             HAL_GPIO_WritePin(IIS3DWB_CS_GPIO_Port, IIS3DWB_CS_Pin, GPIO_PIN_SET);
+      |                               ^~~~~~~~~~~~~~~~~~~~
+      |                               WIFI_CS_GPIO_Port
+../Core/Src/main.c:1630:53: error: 'IIS3DWB_CS_Pin' undeclared (first use in this function)
+ 1630 |             HAL_GPIO_WritePin(IIS3DWB_CS_GPIO_Port, IIS3DWB_CS_Pin, GPIO_PIN_SET);
+      |                                                     ^~~~~~~~~~~~~~
+../Core/Src/main.c:1633:31: error: 'ISM330DHCX_CS_GPIO_Port' undeclared (first use in this function); did you mean 'INT2_DHCX_GPIO_Port'?
+ 1633 |             HAL_GPIO_WritePin(ISM330DHCX_CS_GPIO_Port, ISM330DHCX_CS_Pin, GPIO_PIN_RESET);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~
+      |                               INT2_DHCX_GPIO_Port
+../Core/Src/main.c:1633:56: error: 'ISM330DHCX_CS_Pin' undeclared (first use in this function)
+ 1633 |             HAL_GPIO_WritePin(ISM330DHCX_CS_GPIO_Port, ISM330DHCX_CS_Pin, GPIO_PIN_RESET);
+      |                                                        ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:1676:1: error: expected declaration or statement at end of input
+ 1676 | }
+      | ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:117:13: warning: 'SystemPower_Config' declared 'static' but never defined [-Wunused-function]
+  117 | static void SystemPower_Config(void);
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:118:13: warning: 'MX_GPIO_Init' used but never defined
+  118 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:119:13: warning: 'MX_GPDMA1_Init' used but never defined
+  119 | static void MX_GPDMA1_Init(void);
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:120:13: warning: 'MX_ADC1_Init' declared 'static' but never defined [-Wunused-function]
+  120 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:121:13: warning: 'MX_ADF1_Init' declared 'static' but never defined [-Wunused-function]
+  121 | static void MX_ADF1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:122:13: warning: 'MX_MDF1_Init' declared 'static' but never defined [-Wunused-function]
+  122 | static void MX_MDF1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:123:13: warning: 'MX_DAC1_Init' declared 'static' but never defined [-Wunused-function]
+  123 | static void MX_DAC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:124:13: warning: 'MX_I2C1_Init' declared 'static' but never defined [-Wunused-function]
+  124 | static void MX_I2C1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:125:13: warning: 'MX_I2C2_Init' declared 'static' but never defined [-Wunused-function]
+  125 | static void MX_I2C2_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:126:13: warning: 'MX_I2C3_Init' declared 'static' but never defined [-Wunused-function]
+  126 | static void MX_I2C3_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:127:13: warning: 'MX_ICACHE_Init' declared 'static' but never defined [-Wunused-function]
+  127 | static void MX_ICACHE_Init(void);
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:128:13: warning: 'MX_RTC_Init' declared 'static' but never defined [-Wunused-function]
+  128 | static void MX_RTC_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:129:13: warning: 'MX_SAI1_Init' declared 'static' but never defined [-Wunused-function]
+  129 | static void MX_SAI1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:130:13: warning: 'MX_SDMMC1_SD_Init' declared 'static' but never defined [-Wunused-function]
+  130 | static void MX_SDMMC1_SD_Init(void);
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:131:13: warning: 'MX_SPI1_Init' declared 'static' but never defined [-Wunused-function]
+  131 | static void MX_SPI1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:132:13: warning: 'MX_SPI2_Init' used but never defined
+  132 | static void MX_SPI2_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:133:13: warning: 'MX_SPI3_Init' declared 'static' but never defined [-Wunused-function]
+  133 | static void MX_SPI3_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:134:13: warning: 'MX_TAMP_RTC_Init' declared 'static' but never defined [-Wunused-function]
+  134 | static void MX_TAMP_RTC_Init(void);
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:135:13: warning: 'MX_TIM3_Init' declared 'static' but never defined [-Wunused-function]
+  135 | static void MX_TIM3_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:136:13: warning: 'MX_USART2_UART_Init' used but never defined
+  136 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:137:13: warning: 'MX_USART3_UART_Init' declared 'static' but never defined [-Wunused-function]
+  137 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:138:13: warning: 'MX_USB_OTG_FS_PCD_Init' declared 'static' but never defined [-Wunused-function]
+  138 | static void MX_USB_OTG_FS_PCD_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1667:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+ 1667 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:1621:6: warning: 'HAL_SPI_TxRxCpltCallback' defined but not used [-Wunused-function]
+ 1621 | void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1584:6: warning: 'start_sensor_read_chain' defined but not used [-Wunused-function]
+ 1584 | void start_sensor_read_chain(void) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1377:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+ 1377 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1341:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1341 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1293:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1293 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1245:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+ 1245 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1197:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1197 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1148:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1148 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1091:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1091 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1034:13: warning: 'MX_SPI2_Init' defined but not used [-Wunused-function]
+ 1034 | static void MX_SPI2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:977:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+  977 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:946:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+  946 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:862:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+  862 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:814:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+  814 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:782:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+  782 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:734:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  734 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:686:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  686 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:638:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  638 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:600:13: warning: 'MX_GPDMA1_Init' defined but not used [-Wunused-function]
+  600 | static void MX_GPDMA1_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:545:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  545 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:491:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  491 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:428:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  428 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:384:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  384 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:367:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  367 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:328:6: warning: 'PeriphCommonClock_Config' defined but not used [-Wunused-function]
+  328 | void PeriphCommonClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:270:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  270 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
 make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
 "make -j8 all" terminated with exit code 2. Build might be incomplete.
-19:49:34 **** Incremental Build of configuration Debug for project DMA_DHCX ****
+15:59:27 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+15:59:28 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:1444:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
- 1444 | static void MX_USB_OTG_FS_PCD_Init(void)
-      |             ^~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1396:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
- 1396 | static void MX_USART3_UART_Init(void)
-      |             ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1300:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
- 1300 | static void MX_TIM3_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:1251:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
- 1251 | static void MX_TAMP_RTC_Init(void)
-      |             ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:1194:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
- 1194 | static void MX_SPI3_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:1080:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
- 1080 | static void MX_SPI1_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:1049:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
- 1049 | static void MX_SDMMC1_SD_Init(void)
-      |             ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:965:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
-  965 | static void MX_SAI1_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:917:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
-  917 | static void MX_RTC_Init(void)
-      |             ^~~~~~~~~~~
-../Core/Src/main.c:885:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
-  885 | static void MX_ICACHE_Init(void)
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:274:13: error: invalid storage class for function 'MX_GPDMA1_Init'
+  274 | static void MX_GPDMA1_Init(void)
       |             ^~~~~~~~~~~~~~
-../Core/Src/main.c:837:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
-  837 | static void MX_I2C3_Init(void)
+../Core/Src/main.c:313:13: error: invalid storage class for function 'MX_SPI2_Init'
+  313 | static void MX_SPI2_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:789:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
-  789 | static void MX_I2C2_Init(void)
+../Core/Src/main.c:370:1: warning: "/*" within comment [-Wcomment]
+  370 | /**
+      |  
+../Core/Src/main.c:375:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  375 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:13: error: invalid storage class for function 'MX_GPIO_Init'
+  428 | static void MX_GPIO_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:741:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
-  741 | static void MX_I2C1_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:648:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
-  648 | static void MX_DAC1_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:594:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
-  594 | static void MX_MDF1_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:531:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
-  531 | static void MX_ADF1_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:487:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
-  487 | static void MX_ADC1_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:470:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
-  470 | static void SystemPower_Config(void)
+../Core/Src/main.c: In function 'start_sensor_read_chain':
+../Core/Src/main.c:642:23: error: 'IIS3DWB_CS_GPIO_Port' undeclared (first use in this function); did you mean 'WIFI_CS_GPIO_Port'?
+  642 |     HAL_GPIO_WritePin(IIS3DWB_CS_GPIO_Port, IIS3DWB_CS_Pin, GPIO_PIN_RESET);
+      |                       ^~~~~~~~~~~~~~~~~~~~
+      |                       WIFI_CS_GPIO_Port
+../Core/Src/main.c:642:23: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:642:45: error: 'IIS3DWB_CS_Pin' undeclared (first use in this function)
+  642 |     HAL_GPIO_WritePin(IIS3DWB_CS_GPIO_Port, IIS3DWB_CS_Pin, GPIO_PIN_RESET);
+      |                                             ^~~~~~~~~~~~~~
+../Core/Src/main.c:650:23: error: 'ISM330DHCX_CS_GPIO_Port' undeclared (first use in this function); did you mean 'INT2_DHCX_GPIO_Port'?
+  650 |     HAL_GPIO_WritePin(ISM330DHCX_CS_GPIO_Port, ISM330DHCX_CS_Pin, GPIO_PIN_RESET);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~
+      |                       INT2_DHCX_GPIO_Port
+../Core/Src/main.c:650:48: error: 'ISM330DHCX_CS_Pin' undeclared (first use in this function)
+  650 |     HAL_GPIO_WritePin(ISM330DHCX_CS_GPIO_Port, ISM330DHCX_CS_Pin, GPIO_PIN_RESET);
+      |                                                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_SPI_TxRxCpltCallback':
+../Core/Src/main.c:681:31: error: 'IIS3DWB_CS_GPIO_Port' undeclared (first use in this function); did you mean 'WIFI_CS_GPIO_Port'?
+  681 |             HAL_GPIO_WritePin(IIS3DWB_CS_GPIO_Port, IIS3DWB_CS_Pin, GPIO_PIN_SET);
+      |                               ^~~~~~~~~~~~~~~~~~~~
+      |                               WIFI_CS_GPIO_Port
+../Core/Src/main.c:681:53: error: 'IIS3DWB_CS_Pin' undeclared (first use in this function)
+  681 |             HAL_GPIO_WritePin(IIS3DWB_CS_GPIO_Port, IIS3DWB_CS_Pin, GPIO_PIN_SET);
+      |                                                     ^~~~~~~~~~~~~~
+../Core/Src/main.c:684:31: error: 'ISM330DHCX_CS_GPIO_Port' undeclared (first use in this function); did you mean 'INT2_DHCX_GPIO_Port'?
+  684 |             HAL_GPIO_WritePin(ISM330DHCX_CS_GPIO_Port, ISM330DHCX_CS_Pin, GPIO_PIN_RESET);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~
+      |                               INT2_DHCX_GPIO_Port
+../Core/Src/main.c:684:56: error: 'ISM330DHCX_CS_Pin' undeclared (first use in this function)
+  684 |             HAL_GPIO_WritePin(ISM330DHCX_CS_GPIO_Port, ISM330DHCX_CS_Pin, GPIO_PIN_RESET);
+      |                                                        ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:727:1: error: expected declaration or statement at end of input
+  727 | }
+      | ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:117:13: warning: 'SystemPower_Config' declared 'static' but never defined [-Wunused-function]
+  117 | static void SystemPower_Config(void);
       |             ^~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:131:17: warning: 'spi_rx' defined but not used [-Wunused-variable]
-  131 | static uint8_t  spi_rx[32];
-      |                 ^~~~~~
-../Core/Src/main.c:130:17: warning: 'spi_tx' defined but not used [-Wunused-variable]
-  130 | static uint8_t  spi_tx[32];
-      |                 ^~~~~~
-arm-none-eabi-gcc -o "DMA_DHCX.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\DMA_DHCX\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_DHCX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: DMA_DHCX.elf
- 
-arm-none-eabi-size  DMA_DHCX.elf 
-arm-none-eabi-objdump -h -S DMA_DHCX.elf  > "DMA_DHCX.list"
-arm-none-eabi-objcopy  -O binary DMA_DHCX.elf  "DMA_DHCX.bin"
-   text	   data	    bss	    dec	    hex	filename
-  41455	     96	   3064	  44615	   ae47	DMA_DHCX.elf
-Finished building: default.size.stdout
- 
-Finished building: DMA_DHCX.list
- 
-Finished building: DMA_DHCX.bin
- 
-19:49:54 **** Incremental Build of configuration Debug for project DMA_DHCX ****
+../Core/Src/main.c:118:13: warning: 'MX_GPIO_Init' used but never defined
+  118 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:119:13: warning: 'MX_GPDMA1_Init' used but never defined
+  119 | static void MX_GPDMA1_Init(void);
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:120:13: warning: 'MX_ADC1_Init' declared 'static' but never defined [-Wunused-function]
+  120 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:121:13: warning: 'MX_ADF1_Init' declared 'static' but never defined [-Wunused-function]
+  121 | static void MX_ADF1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:122:13: warning: 'MX_MDF1_Init' declared 'static' but never defined [-Wunused-function]
+  122 | static void MX_MDF1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:123:13: warning: 'MX_DAC1_Init' declared 'static' but never defined [-Wunused-function]
+  123 | static void MX_DAC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:124:13: warning: 'MX_I2C1_Init' declared 'static' but never defined [-Wunused-function]
+  124 | static void MX_I2C1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:125:13: warning: 'MX_I2C2_Init' declared 'static' but never defined [-Wunused-function]
+  125 | static void MX_I2C2_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:126:13: warning: 'MX_I2C3_Init' declared 'static' but never defined [-Wunused-function]
+  126 | static void MX_I2C3_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:127:13: warning: 'MX_ICACHE_Init' declared 'static' but never defined [-Wunused-function]
+  127 | static void MX_ICACHE_Init(void);
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:128:13: warning: 'MX_RTC_Init' declared 'static' but never defined [-Wunused-function]
+  128 | static void MX_RTC_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:129:13: warning: 'MX_SAI1_Init' declared 'static' but never defined [-Wunused-function]
+  129 | static void MX_SAI1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:130:13: warning: 'MX_SDMMC1_SD_Init' declared 'static' but never defined [-Wunused-function]
+  130 | static void MX_SDMMC1_SD_Init(void);
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:131:13: warning: 'MX_SPI1_Init' declared 'static' but never defined [-Wunused-function]
+  131 | static void MX_SPI1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:132:13: warning: 'MX_SPI2_Init' used but never defined
+  132 | static void MX_SPI2_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:133:13: warning: 'MX_SPI3_Init' declared 'static' but never defined [-Wunused-function]
+  133 | static void MX_SPI3_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:134:13: warning: 'MX_TAMP_RTC_Init' declared 'static' but never defined [-Wunused-function]
+  134 | static void MX_TAMP_RTC_Init(void);
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:135:13: warning: 'MX_TIM3_Init' declared 'static' but never defined [-Wunused-function]
+  135 | static void MX_TIM3_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:136:13: warning: 'MX_USART2_UART_Init' used but never defined
+  136 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:137:13: warning: 'MX_USART3_UART_Init' declared 'static' but never defined [-Wunused-function]
+  137 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:138:13: warning: 'MX_USB_OTG_FS_PCD_Init' declared 'static' but never defined [-Wunused-function]
+  138 | static void MX_USB_OTG_FS_PCD_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:718:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  718 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:672:6: warning: 'HAL_SPI_TxRxCpltCallback' defined but not used [-Wunused-function]
+  672 | void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:635:6: warning: 'start_sensor_read_chain' defined but not used [-Wunused-function]
+  635 | void start_sensor_read_chain(void) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  428 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:375:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  375 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:313:13: warning: 'MX_SPI2_Init' defined but not used [-Wunused-function]
+  313 | static void MX_SPI2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:274:13: warning: 'MX_GPDMA1_Init' defined but not used [-Wunused-function]
+  274 | static void MX_GPDMA1_Init(void)
+      |             ^~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:01:33 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
 make -j8 all 
-arm-none-eabi-size  DMA_DHCX.elf 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
    text	   data	    bss	    dec	    hex	filename
-  41455	     96	   3064	  44615	   ae47	DMA_DHCX.elf
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
 Finished building: default.size.stdout
  
-19:50:34 **** Incremental Build of configuration Debug for project DMA_DHCX ****
-make -j8 all 
-arm-none-eabi-size  DMA_DHCX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  41455	     96	   3064	  44615	   ae47	DMA_DHCX.elf
-Finished building: default.size.stdout
- 
-20:06:07 **** Incremental Build of configuration Debug for project DMA_DHCX ****
+16:01:34 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:1444:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
- 1444 | static void MX_USB_OTG_FS_PCD_Init(void)
-      |             ^~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1396:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
- 1396 | static void MX_USART3_UART_Init(void)
-      |             ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1300:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
- 1300 | static void MX_TIM3_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:1251:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
- 1251 | static void MX_TAMP_RTC_Init(void)
-      |             ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:1194:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
- 1194 | static void MX_SPI3_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:1080:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
- 1080 | static void MX_SPI1_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:1049:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
- 1049 | static void MX_SDMMC1_SD_Init(void)
-      |             ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:965:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
-  965 | static void MX_SAI1_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:917:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
-  917 | static void MX_RTC_Init(void)
-      |             ^~~~~~~~~~~
-../Core/Src/main.c:885:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
-  885 | static void MX_ICACHE_Init(void)
-      |             ^~~~~~~~~~~~~~
-../Core/Src/main.c:837:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
-  837 | static void MX_I2C3_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:789:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
-  789 | static void MX_I2C2_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:741:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
-  741 | static void MX_I2C1_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:648:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
-  648 | static void MX_DAC1_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:594:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
-  594 | static void MX_MDF1_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:531:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
-  531 | static void MX_ADF1_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:487:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
-  487 | static void MX_ADC1_Init(void)
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:470:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
-  470 | static void SystemPower_Config(void)
+../Core/Src/main.c:371:1: warning: "/*" within comment [-Wcomment]
+  371 | /**
+      |  
+../Core/Src/main.c: In function 'start_sensor_read_chain':
+../Core/Src/main.c:643:23: error: 'IIS3DWB_CS_GPIO_Port' undeclared (first use in this function); did you mean 'WIFI_CS_GPIO_Port'?
+  643 |     HAL_GPIO_WritePin(IIS3DWB_CS_GPIO_Port, IIS3DWB_CS_Pin, GPIO_PIN_RESET);
+      |                       ^~~~~~~~~~~~~~~~~~~~
+      |                       WIFI_CS_GPIO_Port
+../Core/Src/main.c:643:23: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:643:45: error: 'IIS3DWB_CS_Pin' undeclared (first use in this function)
+  643 |     HAL_GPIO_WritePin(IIS3DWB_CS_GPIO_Port, IIS3DWB_CS_Pin, GPIO_PIN_RESET);
+      |                                             ^~~~~~~~~~~~~~
+../Core/Src/main.c:651:23: error: 'ISM330DHCX_CS_GPIO_Port' undeclared (first use in this function); did you mean 'INT2_DHCX_GPIO_Port'?
+  651 |     HAL_GPIO_WritePin(ISM330DHCX_CS_GPIO_Port, ISM330DHCX_CS_Pin, GPIO_PIN_RESET);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~
+      |                       INT2_DHCX_GPIO_Port
+../Core/Src/main.c:651:48: error: 'ISM330DHCX_CS_Pin' undeclared (first use in this function)
+  651 |     HAL_GPIO_WritePin(ISM330DHCX_CS_GPIO_Port, ISM330DHCX_CS_Pin, GPIO_PIN_RESET);
+      |                                                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_SPI_TxRxCpltCallback':
+../Core/Src/main.c:682:31: error: 'IIS3DWB_CS_GPIO_Port' undeclared (first use in this function); did you mean 'WIFI_CS_GPIO_Port'?
+  682 |             HAL_GPIO_WritePin(IIS3DWB_CS_GPIO_Port, IIS3DWB_CS_Pin, GPIO_PIN_SET);
+      |                               ^~~~~~~~~~~~~~~~~~~~
+      |                               WIFI_CS_GPIO_Port
+../Core/Src/main.c:682:53: error: 'IIS3DWB_CS_Pin' undeclared (first use in this function)
+  682 |             HAL_GPIO_WritePin(IIS3DWB_CS_GPIO_Port, IIS3DWB_CS_Pin, GPIO_PIN_SET);
+      |                                                     ^~~~~~~~~~~~~~
+../Core/Src/main.c:685:31: error: 'ISM330DHCX_CS_GPIO_Port' undeclared (first use in this function); did you mean 'INT2_DHCX_GPIO_Port'?
+  685 |             HAL_GPIO_WritePin(ISM330DHCX_CS_GPIO_Port, ISM330DHCX_CS_Pin, GPIO_PIN_RESET);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~
+      |                               INT2_DHCX_GPIO_Port
+../Core/Src/main.c:685:56: error: 'ISM330DHCX_CS_Pin' undeclared (first use in this function)
+  685 |             HAL_GPIO_WritePin(ISM330DHCX_CS_GPIO_Port, ISM330DHCX_CS_Pin, GPIO_PIN_RESET);
+      |                                                        ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:117:13: warning: 'SystemPower_Config' declared 'static' but never defined [-Wunused-function]
+  117 | static void SystemPower_Config(void);
       |             ^~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:131:17: warning: 'spi_rx' defined but not used [-Wunused-variable]
-  131 | static uint8_t  spi_rx[32];
-      |                 ^~~~~~
-../Core/Src/main.c:130:17: warning: 'spi_tx' defined but not used [-Wunused-variable]
-  130 | static uint8_t  spi_tx[32];
-      |                 ^~~~~~
-arm-none-eabi-gcc -o "DMA_DHCX.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\DMA_DHCX\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_DHCX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: DMA_DHCX.elf
- 
-arm-none-eabi-size  DMA_DHCX.elf 
-arm-none-eabi-objdump -h -S DMA_DHCX.elf  > "DMA_DHCX.list"
-arm-none-eabi-objcopy  -O binary DMA_DHCX.elf  "DMA_DHCX.bin"
+../Core/Src/main.c:120:13: warning: 'MX_ADC1_Init' declared 'static' but never defined [-Wunused-function]
+  120 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:121:13: warning: 'MX_ADF1_Init' declared 'static' but never defined [-Wunused-function]
+  121 | static void MX_ADF1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:122:13: warning: 'MX_MDF1_Init' declared 'static' but never defined [-Wunused-function]
+  122 | static void MX_MDF1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:123:13: warning: 'MX_DAC1_Init' declared 'static' but never defined [-Wunused-function]
+  123 | static void MX_DAC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:124:13: warning: 'MX_I2C1_Init' declared 'static' but never defined [-Wunused-function]
+  124 | static void MX_I2C1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:125:13: warning: 'MX_I2C2_Init' declared 'static' but never defined [-Wunused-function]
+  125 | static void MX_I2C2_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:126:13: warning: 'MX_I2C3_Init' declared 'static' but never defined [-Wunused-function]
+  126 | static void MX_I2C3_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:127:13: warning: 'MX_ICACHE_Init' declared 'static' but never defined [-Wunused-function]
+  127 | static void MX_ICACHE_Init(void);
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:128:13: warning: 'MX_RTC_Init' declared 'static' but never defined [-Wunused-function]
+  128 | static void MX_RTC_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:129:13: warning: 'MX_SAI1_Init' declared 'static' but never defined [-Wunused-function]
+  129 | static void MX_SAI1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:130:13: warning: 'MX_SDMMC1_SD_Init' declared 'static' but never defined [-Wunused-function]
+  130 | static void MX_SDMMC1_SD_Init(void);
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:131:13: warning: 'MX_SPI1_Init' declared 'static' but never defined [-Wunused-function]
+  131 | static void MX_SPI1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:133:13: warning: 'MX_SPI3_Init' declared 'static' but never defined [-Wunused-function]
+  133 | static void MX_SPI3_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:134:13: warning: 'MX_TAMP_RTC_Init' declared 'static' but never defined [-Wunused-function]
+  134 | static void MX_TAMP_RTC_Init(void);
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:135:13: warning: 'MX_TIM3_Init' declared 'static' but never defined [-Wunused-function]
+  135 | static void MX_TIM3_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:137:13: warning: 'MX_USART3_UART_Init' declared 'static' but never defined [-Wunused-function]
+  137 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:138:13: warning: 'MX_USB_OTG_FS_PCD_Init' declared 'static' but never defined [-Wunused-function]
+  138 | static void MX_USB_OTG_FS_PCD_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:08:06 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
    text	   data	    bss	    dec	    hex	filename
-  41455	     96	   3064	  44615	   ae47	DMA_DHCX.elf
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
 Finished building: default.size.stdout
  
-Finished building: DMA_DHCX.bin
+16:08:06 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:371:1: warning: "/*" within comment [-Wcomment]
+  371 | /**
+      |  
+../Core/Src/main.c:117:13: warning: 'SystemPower_Config' declared 'static' but never defined [-Wunused-function]
+  117 | static void SystemPower_Config(void);
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:120:13: warning: 'MX_ADC1_Init' declared 'static' but never defined [-Wunused-function]
+  120 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:121:13: warning: 'MX_ADF1_Init' declared 'static' but never defined [-Wunused-function]
+  121 | static void MX_ADF1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:122:13: warning: 'MX_MDF1_Init' declared 'static' but never defined [-Wunused-function]
+  122 | static void MX_MDF1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:123:13: warning: 'MX_DAC1_Init' declared 'static' but never defined [-Wunused-function]
+  123 | static void MX_DAC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:124:13: warning: 'MX_I2C1_Init' declared 'static' but never defined [-Wunused-function]
+  124 | static void MX_I2C1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:125:13: warning: 'MX_I2C2_Init' declared 'static' but never defined [-Wunused-function]
+  125 | static void MX_I2C2_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:126:13: warning: 'MX_I2C3_Init' declared 'static' but never defined [-Wunused-function]
+  126 | static void MX_I2C3_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:127:13: warning: 'MX_ICACHE_Init' declared 'static' but never defined [-Wunused-function]
+  127 | static void MX_ICACHE_Init(void);
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:128:13: warning: 'MX_RTC_Init' declared 'static' but never defined [-Wunused-function]
+  128 | static void MX_RTC_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:129:13: warning: 'MX_SAI1_Init' declared 'static' but never defined [-Wunused-function]
+  129 | static void MX_SAI1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:130:13: warning: 'MX_SDMMC1_SD_Init' declared 'static' but never defined [-Wunused-function]
+  130 | static void MX_SDMMC1_SD_Init(void);
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:131:13: warning: 'MX_SPI1_Init' declared 'static' but never defined [-Wunused-function]
+  131 | static void MX_SPI1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:133:13: warning: 'MX_SPI3_Init' declared 'static' but never defined [-Wunused-function]
+  133 | static void MX_SPI3_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:134:13: warning: 'MX_TAMP_RTC_Init' declared 'static' but never defined [-Wunused-function]
+  134 | static void MX_TAMP_RTC_Init(void);
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:135:13: warning: 'MX_TIM3_Init' declared 'static' but never defined [-Wunused-function]
+  135 | static void MX_TIM3_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:137:13: warning: 'MX_USART3_UART_Init' declared 'static' but never defined [-Wunused-function]
+  137 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:138:13: warning: 'MX_USB_OTG_FS_PCD_Init' declared 'static' but never defined [-Wunused-function]
+  138 | static void MX_USB_OTG_FS_PCD_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/SPI2_MDA_Chain_2_Sensor/Debug/../Core/Src/main.c:176:(.text.main+0xc): undefined reference to `SystemClock_Config'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: SPI2_MDA_Chain_2_Sensor.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:10:01 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
  
-Finished building: DMA_DHCX.list
+16:10:02 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:352:1: warning: "/*" within comment [-Wcomment]
+  352 | /**
+      |  
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/SPI2_MDA_Chain_2_Sensor/Debug/../Core/Src/main.c:157:(.text.main+0xc): undefined reference to `SystemClock_Config'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: SPI2_MDA_Chain_2_Sensor.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:11:19 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
  
-20:06:15 **** Incremental Build of configuration Debug for project DMA_DHCX ****
+16:11:20 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/SPI2_MDA_Chain_2_Sensor/Debug/../Core/Src/main.c:157:(.text.main+0xc): undefined reference to `SystemClock_Config'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: SPI2_MDA_Chain_2_Sensor.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:13:11 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+16:13:12 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  40479	     92	   2956	  43527	   aa07	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+16:15:36 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  40479	     92	   2956	  43527	   aa07	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:19:09 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  40479	     92	   2956	  43527	   aa07	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:23:51 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  40479	     92	   2956	  43527	   aa07	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+16:24:20 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:190:59: warning: implicit declaration of function 'Initialize_Sensors' [-Wimplicit-function-declaration]
+  190 |                                                           Initialize_Sensors();
+      |                                                           ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:677:6: warning: conflicting types for 'Initialize_Sensors'; have 'void(void)'
+  677 | void Initialize_Sensors(void) {
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:190:59: note: previous implicit declaration of 'Initialize_Sensors' with type 'void(void)'
+  190 |                                                           Initialize_Sensors();
+      |                                                           ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  41731	     92	   2956	  44779	   aeeb	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+16:29:41 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+16:29:42 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  41731	     92	   2956	  44779	   aeeb	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+16:29:57 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41731	     92	   2956	  44779	   aeeb	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:35:43 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  42283	     92	   2956	  45331	   b113	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+18:44:17 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Initialize_Sensors':
+../Core/Src/main.c:681:13: warning: variable 'tx_buf' set but not used [-Wunused-but-set-variable]
+  681 |     uint8_t tx_buf[2];
+      |             ^~~~~~
+../Core/Src/main.c:697:26: warning: 'rx_buf' is used uninitialized [-Wuninitialized]
+  697 |     who_am_i_val = rx_buf[1]; // The actual data is in the second byte received
+      |                    ~~~~~~^~~
+../Core/Src/main.c:682:13: note: 'rx_buf' declared here
+  682 |     uint8_t rx_buf[2];
+      |             ^~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  42299	     92	   2956	  45347	   b123	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+18:45:52 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+18:45:52 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  42303	     92	   2956	  45351	   b127	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+18:46:00 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42303	     92	   2956	  45351	   b127	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+18:46:36 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42303	     92	   2956	  45351	   b127	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+18:46:53 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42303	     92	   2956	  45351	   b127	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+18:53:07 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42303	     92	   2956	  45351	   b127	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+19:19:00 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Initialize_Sensors':
+../Core/Src/main.c:741:37: warning: passing argument 2 of 'HAL_SPI_TransmitReceive' from incompatible pointer type [-Wincompatible-pointer-types]
+  741 |     HAL_SPI_TransmitReceive(&hspi2, &tx_buf,rx_buf, 2, HAL_MAX_DELAY);
+      |                                     ^~~~~~~
+      |                                     |
+      |                                     uint8_t (*)[2] {aka unsigned char (*)[2]}
+In file included from ../Core/Inc/stm32u5xx_hal_conf.h:404,
+                 from ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_spi.h:846:83: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'uint8_t (*)[2]' {aka 'unsigned char (*)[2]'}
+  846 | HAL_StatusTypeDef HAL_SPI_TransmitReceive(SPI_HandleTypeDef *hspi, const uint8_t *pTxData, uint8_t *pRxData,
+      |                                                                    ~~~~~~~~~~~~~~~^~~~~~~
+../Core/Src/main.c:697:13: warning: variable 'read_cmd' set but not used [-Wunused-but-set-variable]
+  697 |     uint8_t read_cmd = 0x0F | 0x80; // WHO_AM_I Addr (0x0F) + Read Bit
+      |             ^~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  42323	     92	   2956	  45371	   b13b	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+19:21:13 **** Incremental Build of configuration Debug for project DMA_DHCX ****
 make -j8 all 
 arm-none-eabi-size  DMA_DHCX.elf 
    text	   data	    bss	    dec	    hex	filename
-  41455	     96	   3064	  44615	   ae47	DMA_DHCX.elf
+  40207	     92	   2996	  43295	   a91f	DMA_DHCX.elf
 Finished building: default.size.stdout
  
-20:06:59 **** Incremental Build of configuration Debug for project DMA_DHCX ****
+19:21:14 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+19:21:14 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Initialize_Sensors':
+../Core/Src/main.c:697:13: warning: variable 'read_cmd' set but not used [-Wunused-but-set-variable]
+  697 |     uint8_t read_cmd = 0x0F | 0x80; // WHO_AM_I Addr (0x0F) + Read Bit
+      |             ^~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  42323	     92	   2956	  45371	   b13b	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+19:22:18 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42323	     92	   2956	  45371	   b13b	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+19:26:15 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42323	     92	   2956	  45371	   b13b	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+19:26:44 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42323	     92	   2956	  45371	   b13b	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+19:38:36 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42323	     92	   2956	  45371	   b13b	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+19:52:42 **** Incremental Build of configuration Debug for project DMA_DHCX ****
 make -j8 all 
 arm-none-eabi-size  DMA_DHCX.elf 
    text	   data	    bss	    dec	    hex	filename
-  41455	     96	   3064	  44615	   ae47	DMA_DHCX.elf
+  40207	     92	   2996	  43295	   a91f	DMA_DHCX.elf
+Finished building: default.size.stdout
+ 
+19:52:42 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+19:52:43 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Initialize_Sensors':
+../Core/Src/main.c:708:13: warning: variable 'read_cmd' set but not used [-Wunused-but-set-variable]
+  708 |     uint8_t read_cmd = 0x0F | 0x80; // WHO_AM_I Addr (0x0F) + Read Bit
+      |             ^~~~~~~~
+../Core/Src/main.c: In function 'start_sensor_read_chain':
+../Core/Src/main.c:835:1: warning: "/*" within comment [-Wcomment]
+  835 | /*
+      |  
+../Core/Src/main.c:922:1: error: expected declaration or statement at end of input
+  922 | }
+      | ^
+../Core/Src/main.c:807:13: warning: unused variable 'rx_val' [-Wunused-variable]
+  807 |     uint8_t rx_val[2];
+      |             ^~~~~~
+../Core/Src/main.c:806:13: warning: unused variable 'tx_cmd' [-Wunused-variable]
+  806 |     uint8_t tx_cmd[2];
+      |             ^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:913:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  913 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:860:6: warning: 'HAL_SPI_TxRxCpltCallback' defined but not used [-Wunused-function]
+  860 | void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:840:10: warning: 'start_sensor_read_chain' defined but not used [-Wunused-function]
+  840 |     void start_sensor_read_chain(void) {
+      |          ^~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:53:41 **** Incremental Build of configuration Debug for project DMA_DHCX ****
+make -j8 all 
+arm-none-eabi-size  DMA_DHCX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  40207	     92	   2996	  43295	   a91f	DMA_DHCX.elf
+Finished building: default.size.stdout
+ 
+19:53:42 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+19:53:42 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Initialize_Sensors':
+../Core/Src/main.c:708:13: warning: variable 'read_cmd' set but not used [-Wunused-but-set-variable]
+  708 |     uint8_t read_cmd = 0x0F | 0x80; // WHO_AM_I Addr (0x0F) + Read Bit
+      |             ^~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  42247	     92	   2988	  45327	   b10f	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+19:54:24 **** Incremental Build of configuration Debug for project DMA_DHCX ****
+make -j8 all 
+arm-none-eabi-size  DMA_DHCX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  40207	     92	   2996	  43295	   a91f	DMA_DHCX.elf
+Finished building: default.size.stdout
+ 
+19:54:24 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+19:54:24 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Initialize_Sensors':
+../Core/Src/main.c:749:5: error: 'read_cmd' undeclared (first use in this function)
+  749 |     read_cmd = 0x0F | 0x80; // WHO_AM_I Addr (0x0F) + Read Bit
+      |     ^~~~~~~~
+../Core/Src/main.c:749:5: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:54:52 **** Incremental Build of configuration Debug for project DMA_DHCX ****
+make -j8 all 
+arm-none-eabi-size  DMA_DHCX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  40207	     92	   2996	  43295	   a91f	DMA_DHCX.elf
+Finished building: default.size.stdout
+ 
+19:54:53 **** Incremental Build of configuration Debug for project Olmuyorr_DMA_DWB ****
+make -j8 all 
+arm-none-eabi-size  Olmuyorr_DMA_DWB.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Olmuyorr_DMA_DWB.elf
+Finished building: default.size.stdout
+ 
+19:54:53 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  42235	     92	   2988	  45315	   b103	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+19:55:07 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42235	     92	   2988	  45315	   b103	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+19:57:29 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42235	     92	   2988	  45315	   b103	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+19:57:43 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42235	     92	   2988	  45315	   b103	SPI2_MDA_Chain_2_Sensor.elf
 Finished building: default.size.stdout
  

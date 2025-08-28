@@ -1,0 +1,10 @@
+15:19:21 **** Incremental Build of configuration Debug for project IIS3DWB_Test ****
+make -j8 all 
+arm-none-eabi-size  IIS3DWB_Test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41463	    112	   4008	  45583	   b20f	IIS3DWB_Test.elf
+Finished building: default.size.stdout
+ 
+
+15:19:22 Build Finished. 0 errors, 0 warnings. (took 789ms)
+

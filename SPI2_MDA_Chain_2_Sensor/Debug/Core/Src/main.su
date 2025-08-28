@@ -1,0 +1,10 @@
+../Core/Src/main.c:149:5:main	280	static
+../Core/Src/main.c:269:6:SystemClock_Config	128	static
+../Core/Src/main.c:336:13:MX_GPDMA1_Init	16	static
+../Core/Src/main.c:375:13:MX_SPI2_Init	24	static
+../Core/Src/main.c:437:13:MX_USART2_UART_Init	8	static
+../Core/Src/main.c:490:13:MX_GPIO_Init	64	static
+../Core/Src/main.c:691:6:Initialize_Sensors	136	static
+../Core/Src/main.c:840:10:start_sensor_read_chain	8	static
+../Core/Src/main.c:860:6:HAL_SPI_TxRxCpltCallback	16	static
+../Core/Src/main.c:913:6:Error_Handler	4	static,ignoring_inline_asm
