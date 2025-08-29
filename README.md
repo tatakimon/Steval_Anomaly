@@ -1,5 +1,8 @@
 # Steval_Anomaly
-Aralboly detection
+Aralboly detection 🧿
+
+
+
 Short description for the files since there are many :), 
 1-DMA_DHCX it works, takes data from ISM330DHCX using DMA and print using uart2.
 2-DMA_IIS3DWB not working !!!
