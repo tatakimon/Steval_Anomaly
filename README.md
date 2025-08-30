@@ -14,7 +14,7 @@ Short description for the files since there are many :),
 
 4-Olmuyorr_DMA_DWB it works, takes data from IIS3DWB using DMA and print using uart2.
 
-5-SPI2_MDA_Chain_2_Sensor it works, takes data both from IIS3DWB and ISM330DHCX using DMA and interrupt triggering and print every 100 repeated loops using uart2
+5-SPI2_MDA_Chain_2_Sensor it works, takes data both from IIS3DWB and ISM330DHCX using DMA and interrupt triggering and print every 100 repeated loops using uart2  (Watchdog Timer will be implemented...) ----> ⭐ The actual final design
 
 6-spi_IIS3DWB it works, it takes data from IIS3DWB and ISM330DHCX using CPU (traditional way) and print using uart2
 
