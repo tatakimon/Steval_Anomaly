@@ -29,6 +29,21 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+// A clear, simple struct for any 3-axis sensor data
+typedef struct {
+    int16_t x;
+    int16_t y;
+    int16_t z;
+} AxesRaw_t;
+
+// The new top-level structure for one complete reading of ALL sensors
+typedef struct {
+    uint32_t timestamp_ms;
+    AxesRaw_t iis3dwb_accel;
+    AxesRaw_t ism330_accel;
+    AxesRaw_t ism330_gyro;
+} SensorSample_t;
+
 
 /* USER CODE END PTD */
 
@@ -93,6 +108,15 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 
 /* USER CODE BEGIN PV */
+
+// --- Circular Buffer for Sensor Data ---
+#define CIRCULAR_BUFFER_SIZE 100 // Window size, can be changed
+SensorSample_t circular_buffer[CIRCULAR_BUFFER_SIZE];
+volatile uint32_t buffer_head = 0; // Index to write next sample
+volatile uint32_t buffer_count = 0; // Number of samples in the buffer
+
+// ... (your existing DMA buffers and other variables) ...
+
 
 #define IIS3DWB_DMA_LEN    7 // 1 command byte + 6 data bytes
 #define ISM330DHCX_DMA_LEN 13 // 1 command byte + 12 data bytes
@@ -216,39 +240,75 @@ int main(void)
 	      if (g_data_ready) {
 	          g_data_ready = 0; // Clear the flag immediately to wait for the next set
 
-	          // --- 1. Parse Sensor Data ---
-	          int16_t iis3dwb_accel[3];     // X, Y, Z
-	          int16_t ism330_gyro[3];       // X, Y, Z
-	          int16_t ism330_accel[3];      // X, Y, Z
+	          start_sensor_read_chain(); // START THE NEXT READ IMMEDIATELY
 
-	          // Parse IIS3DWB: (MSB << 8) | LSB
-	          iis3dwb_accel[0] = (int16_t)((iis3dwb_rx_buffer[1] << 8) | iis3dwb_rx_buffer[0]);
-	          iis3dwb_accel[1] = (int16_t)((iis3dwb_rx_buffer[3] << 8) | iis3dwb_rx_buffer[2]);
-	          iis3dwb_accel[2] = (int16_t)((iis3dwb_rx_buffer[5] << 8) | iis3dwb_rx_buffer[4]);
 
-	          // Parse ISM330DHCX: (MSB << 8) | LSB
-	          ism330_gyro[0] = (int16_t)((ism330dhcx_rx_buffer[1] << 8) | ism330dhcx_rx_buffer[0]);
-	          ism330_gyro[1] = (int16_t)((ism330dhcx_rx_buffer[3] << 8) | ism330dhcx_rx_buffer[2]);
-	          ism330_gyro[2] = (int16_t)((ism330dhcx_rx_buffer[5] << 8) | ism330dhcx_rx_buffer[4]);
-	          ism330_accel[0] = (int16_t)((ism330dhcx_rx_buffer[7] << 8) | ism330dhcx_rx_buffer[6]);
-	          ism330_accel[1] = (int16_t)((ism330dhcx_rx_buffer[9] << 8) | ism330dhcx_rx_buffer[8]);
-	          ism330_accel[2] = (int16_t)((ism330dhcx_rx_buffer[11] << 8) | ism330dhcx_rx_buffer[10]);
+	          // --- 1. Create a new sample and get the timestamp ---
+	                  SensorSample_t current_sample;
+	                  current_sample.timestamp_ms = HAL_GetTick(); // Get current system time in ms
 
-	          // --- 2. Format and Transmit over UART ---
-	          char uart_buf[200];
-	          sprintf(uart_buf,
-	                  "IIS3DWB Accel [X,Y,Z]: %d, %d, %d\r\n"
-	                  "ISM330 Gyro [X,Y,Z]: %d, %d, %d\r\n"
-	                  "ISM330 Accel [X,Y,Z]: %d, %d, %d\r\n---\r\n",
-	                  iis3dwb_accel[0], iis3dwb_accel[1], iis3dwb_accel[2],
-	                  ism330_gyro[0], ism330_gyro[1], ism330_gyro[2],
-	                  ism330_accel[0], ism330_accel[1], ism330_accel[2]);
 
-	          HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
+	                  // --- 2. Parse raw DMA data directly into the new structure ---
+	                          current_sample.iis3dwb_accel.x = (int16_t)((iis3dwb_rx_buffer[1] << 8) | iis3dwb_rx_buffer[0]);
+	                          current_sample.iis3dwb_accel.y = (int16_t)((iis3dwb_rx_buffer[3] << 8) | iis3dwb_rx_buffer[2]);
+	                          current_sample.iis3dwb_accel.z = (int16_t)((iis3dwb_rx_buffer[5] << 8) | iis3dwb_rx_buffer[4]);
 
-	          // --- 3. Prepare for Next Read ---
-	          HAL_Delay(100); // Wait 100ms before starting the next read cycle
-	          start_sensor_read_chain();
+	                          current_sample.ism330_gyro.x = (int16_t)((ism330dhcx_rx_buffer[1] << 8) | ism330dhcx_rx_buffer[0]);
+	                          current_sample.ism330_gyro.y = (int16_t)((ism330dhcx_rx_buffer[3] << 8) | ism330dhcx_rx_buffer[2]);
+	                          current_sample.ism330_gyro.z = (int16_t)((ism330dhcx_rx_buffer[5] << 8) | ism330dhcx_rx_buffer[4]);
+
+	                          current_sample.ism330_accel.x = (int16_t)((ism330dhcx_rx_buffer[7] << 8) | ism330dhcx_rx_buffer[6]);
+	                          current_sample.ism330_accel.y = (int16_t)((ism330dhcx_rx_buffer[9] << 8) | ism330dhcx_rx_buffer[8]);
+	                          current_sample.ism330_accel.z = (int16_t)((ism330dhcx_rx_buffer[11] << 8) | ism330dhcx_rx_buffer[10]);
+
+
+
+	                          // --- 3. Add the new sample to the circular buffer ---
+									  circular_buffer[buffer_head] = current_sample;
+									  buffer_head = (buffer_head + 1) % CIRCULAR_BUFFER_SIZE;
+									  if (buffer_count < CIRCULAR_BUFFER_SIZE) {
+										  buffer_count++;
+									  }
+
+
+									  // --- 4. Log the new structured data to UART ---
+									  // Check if the buffer is full
+									      if (buffer_count >= CIRCULAR_BUFFER_SIZE) {
+									          char uart_buf[250];
+
+									          // Signal that a full window is ready for processing/inference
+									          sprintf(uart_buf, "--- BUFFER FULL: Logging %d samples ---\r\n", CIRCULAR_BUFFER_SIZE);
+									          HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
+
+									          // Loop through the buffer and print all the collected data
+									             for (int i = 0; i < CIRCULAR_BUFFER_SIZE; i++) {
+									                 // This reuses the same parsing logic to format each sample for printing
+									                 sprintf(uart_buf,
+									                         "T:%lu | DWB_A:%d,%d,%d | DHCX_G:%d,%d,%d | DHCX_A:%d,%d,%d\r\n",
+									                         circular_buffer[i].timestamp_ms,
+									                         circular_buffer[i].iis3dwb_accel.x, circular_buffer[i].iis3dwb_accel.y, circular_buffer[i].iis3dwb_accel.z,
+									                         circular_buffer[i].ism330_gyro.x, circular_buffer[i].ism330_gyro.y, circular_buffer[i].ism330_gyro.z,
+									                         circular_buffer[i].ism330_accel.x, circular_buffer[i].ism330_accel.y, circular_buffer[i].ism330_accel.z);
+									                 HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
+									             }
+
+									             // Reset the count to start collecting the next window of data
+									             buffer_count = 0;
+									         }
+
+									          // --- 5. Check if the buffer is full (ready for inference) ---
+									                 if (buffer_count >= CIRCULAR_BUFFER_SIZE) {
+									                     // This is where you would trigger the model inference.
+									                     // For now, we'll just print a message and you can decide how to handle it.
+									                     char msg[] = "BUFFER FULL: Ready for inference.\r\n";
+									                     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+
+									                     // Optional: Reset the count to start filling the next window
+									                     // buffer_count = 0;
+									                 }
+
+
+
 
 
 
@@ -795,46 +855,6 @@ void Initialize_Sensors(void) {
 
 
 
-
-/**
-  * @brief  Starts the chained DMA read sequence.
-  * Includes WHO_AM_I reads for debugging SPI communication.
-  * @retval None
-  */
-/*
-void start_sensor_read_chain(void) {
-    uint8_t tx_cmd[2];
-    uint8_t rx_val[2];
-
-
-    // --- DEBUG: Read WHO_AM_I from IIS3DWB ---
-    tx_cmd[0] = 0x0F | 0x80; // WHO_AM_I register (0x0F) with read bit
-    tx_cmd[1] = 0x00;        // Dummy byte
-    HAL_GPIO_WritePin(CS_DWB_GPIO_Port, CS_DWB_Pin, GPIO_PIN_RESET);
-    HAL_SPI_TransmitReceive(&hspi2, tx_cmd, rx_val, 2, HAL_MAX_DELAY);
-    HAL_GPIO_WritePin(CS_DWB_GPIO_Port, CS_DWB_Pin, GPIO_PIN_SET);
-    iis3dwb_who_am_i = rx_val[1]; // The actual value is in the second byte received
-
-    // --- DEBUG: Read WHO_AM_I from ISM330DHCX ---
-    tx_cmd[0] = 0x0F | 0x80; // WHO_AM_I register (0x0F) with read bit
-    tx_cmd[1] = 0x00;        // Dummy byte
-    HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_RESET);
-    HAL_SPI_TransmitReceive(&hspi2, tx_cmd, rx_val, 2, HAL_MAX_DELAY);
-    HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
-    ism330dhcx_who_am_i = rx_val[1];
-
-    // --- START DMA CHAIN ---
-    // 1. Pull CS for the first sensor (IIS3DWB) LOW to select it
-    HAL_GPIO_WritePin(CS_DWB_GPIO_Port, CS_DWB_Pin, GPIO_PIN_RESET);
-
-    // 2. Start the first SPI DMA read/write.
-    if (HAL_SPI_TransmitReceive_DMA(&hspi2, dummy_tx_buffer, iis3dwb_rx_buffer, IIS3DWB_DATA_SIZE) != HAL_OK) {
-        Error_Handler();
-    }
-}
-
-
- */
 
 
     void start_sensor_read_chain(void) {

@@ -3,8 +3,13 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
-		<item value="read_cmd"/>
+		<item value="current_sample"/>
+		<item value="CIRCULAR_BUFFER"/>
+		<item value="CIRCULAR_BUFFER_SIZE"/>
+		<item value="user code begin 3"/>
+		<item value="read_step"/>
 		<item value="user code begin 4"/>
+		<item value="read_cmd"/>
 		<item value="g_data_ready"/>
 		<item value="user code begin 1"/>
 		<item value="who"/>

@@ -1,10 +1,10 @@
-19:57:43 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+13:38:10 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
 make -j8 all 
 arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
    text	   data	    bss	    dec	    hex	filename
-  42235	     92	   2988	  45315	   b103	SPI2_MDA_Chain_2_Sensor.elf
+  42739	     92	   5396	  48227	   bc63	SPI2_MDA_Chain_2_Sensor.elf
 Finished building: default.size.stdout
  
 
-19:57:43 Build Finished. 0 errors, 0 warnings. (took 247ms)
+13:38:10 Build Finished. 0 errors, 0 warnings. (took 267ms)
 
