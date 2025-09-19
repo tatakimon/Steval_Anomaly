@@ -1,0 +1,112 @@
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+	HAL_Init();
+
+							  /* USER CODE BEGIN Init */
+
+							  /* USER CODE END Init */
+
+							  /* Configure the System Power */
+							  SystemPower_Config();
+
+							  /* Configure the system clock */
+							  SystemClock_Config();
+
+							  /* Configure the peripherals common clocks */
+							  //PeriphCommonClock_Config();
+
+							  /* USER CODE BEGIN SysInit */
+
+							  /* USER CODE END SysInit */
+
+							  /* Initialize all configured peripherals */
+							  MX_GPIO_Init();
+							  //MX_IWDG_Init();
+							  MX_GPDMA1_Init();
+							  //MX_ADC1_Init();
+							  //MX_ADF1_Init();
+							  //MX_MDF1_Init();
+							  //MX_DAC1_Init();
+							  //MX_I2C1_Init();
+							  //MX_I2C2_Init();
+							  //MX_I2C3_Init();
+							  MX_ICACHE_Init();
+							  MX_RTC_Init();
+							  //MX_SAI1_Init();
+							  MX_SDMMC1_SD_Init();
+							  //MX_SPI1_Init();
+							  MX_SPI2_Init();
+							  //MX_SPI3_Init();
+							  MX_TAMP_RTC_Init();
+							  //MX_TIM3_Init();
+							  MX_USART2_UART_Init();
+							  //MX_USART3_UART_Init();
+							  //MX_USB_OTG_FS_PCD_Init();
+  /* USER CODE BEGIN 2 */
+							  Initialize_Sensors();
+							  start_sensor_read();
+
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+	  // --- 1. Trigger a new sensor read every 1 millisecond ---
+	      // MODIFIED: Non-blocking check to enforce 1000 Hz sample rate
+	      if (HAL_GetTick() - last_sample_time >= 1) {
+	          last_sample_time = HAL_GetTick(); // Update the timestamp
+	          start_sensor_read();              // Start the DMA read for the ISM330DHCX
+	      }
+
+	      // --- 2. Process data when DMA transfer is complete ---
+	      if (g_data_ready) {
+	          g_data_ready = 0; // Clear the flag immediately
+
+	          // Create a new sample and get the timestamp
+	          SensorSample_t current_sample;
+	          current_sample.timestamp_ms = HAL_GetTick(); // Use the current time
+
+	          // Parse raw DMA data into the structure
+	          current_sample.ism330_gyro.x = (int16_t)((ism330dhcx_rx_buffer[1] << 8) | ism330dhcx_rx_buffer[0]);
+	          current_sample.ism330_gyro.y = (int16_t)((ism330dhcx_rx_buffer[3] << 8) | ism330dhcx_rx_buffer[2]);
+	          current_sample.ism330_gyro.z = (int16_t)((ism330dhcx_rx_buffer[5] << 8) | ism330dhcx_rx_buffer[4]);
+	          current_sample.ism330_accel.x = (int16_t)((ism330dhcx_rx_buffer[7] << 8) | ism330dhcx_rx_buffer[6]);
+	          current_sample.ism330_accel.y = (int16_t)((ism330dhcx_rx_buffer[9] << 8) | ism330dhcx_rx_buffer[8]);
+	          current_sample.ism330_accel.z = (int16_t)((ism330dhcx_rx_buffer[11] << 8) | ism330dhcx_rx_buffer[10]);
+
+	          // Add the new sample to the circular buffer
+	          circular_buffer[buffer_head] = current_sample;
+	          buffer_head = (buffer_head + 1) % CIRCULAR_BUFFER_SIZE;
+	          if (buffer_count < CIRCULAR_BUFFER_SIZE) {
+	              buffer_count++;
+	          }
+	      }
+
+	      // --- 3. Log data window as JSONL when the buffer is full ---
+	      if (buffer_count >= CIRCULAR_BUFFER_SIZE) {
+	          char uart_buf[250]; // Buffer for each JSON line
+
+	          // Loop through the buffer and log all 100 samples
+	          for (int i = 0; i < CIRCULAR_BUFFER_SIZE; i++) {
+	              // MODIFIED: Format the output as a JSON object on a single line (JSONL)
+	              sprintf(uart_buf,
+	                      "{\"timestamp\":%lu,\"gyro\":{\"x\":%d,\"y\":%d,\"z\":%d},\"accel\":{\"x\":%d,\"y\":%d,\"z\":%d}}\r\n",
+	                      circular_buffer[i].timestamp_ms,
+	                      circular_buffer[i].ism330_gyro.x, circular_buffer[i].ism330_gyro.y, circular_buffer[i].ism330_gyro.z,
+	                      circular_buffer[i].ism330_accel.x, circular_buffer[i].ism330_accel.y, circular_buffer[i].ism330_accel.z);
+
+	              HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
+	          }
+
+	          // Reset the count to start collecting the next window of data
+	          buffer_count = 0;
+	      }
+	      /* USER CODE END 3 */
+	  }
+
+}

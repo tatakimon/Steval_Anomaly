@@ -76,6 +76,7 @@ void GPDMA1_Channel3_IRQHandler(void);
 void GPDMA1_Channel4_IRQHandler(void);
 void GPDMA1_Channel5_IRQHandler(void);
 void SPI2_IRQHandler(void);
+void SDMMC1_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */

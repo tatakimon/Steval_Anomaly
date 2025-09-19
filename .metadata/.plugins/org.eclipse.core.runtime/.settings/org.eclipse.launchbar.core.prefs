@@ -9,7 +9,7 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:DMA_IIS3DWB\ Debug/activeLaunch
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:IIS3DWB_Test\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Olmuyorr_DMA_DWB\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Olmuyorr_DMA_DWB\ Debug/activeLaunchTarget=null\:---
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SPI2_MDA_Chain_2_Sensor\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SPI2_MDA_Chain_2_Sensor\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SPI2_MDA_Chain_2_Sensor\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:spi_IIS3DWB\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:spi_IIS3DWB\ Debug/activeLaunchTarget=null\:---

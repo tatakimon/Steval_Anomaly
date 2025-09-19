@@ -48,7 +48,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_ll_usb.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_pcd_ex.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_exti.h \
- ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_mdf.h
+ ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_mdf.h \
+ ../FileX/App/app_filex.h ../Middlewares/ST/filex/common/inc/fx_api.h \
+ ../Middlewares/ST/filex/ports/generic/inc/fx_port.h \
+ ../FileX/App/fx_user.h ../FileX/Target/fx_stm32_sd_driver.h
 ../Core/Inc/main.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal.h:
 ../Core/Inc/stm32u5xx_hal_conf.h:
@@ -100,3 +103,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_pcd_ex.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_exti.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_mdf.h:
+../FileX/App/app_filex.h:
+../Middlewares/ST/filex/common/inc/fx_api.h:
+../Middlewares/ST/filex/ports/generic/inc/fx_port.h:
+../FileX/App/fx_user.h:
+../FileX/Target/fx_stm32_sd_driver.h:

@@ -3,17 +3,20 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
-		<item value="current_sample"/>
-		<item value="CIRCULAR_BUFFER"/>
-		<item value="CIRCULAR_BUFFER_SIZE"/>
+		<item value="hal_uart_transmit"/>
 		<item value="user code begin 3"/>
-		<item value="read_step"/>
-		<item value="user code begin 4"/>
-		<item value="read_cmd"/>
-		<item value="g_data_ready"/>
-		<item value="user code begin 1"/>
-		<item value="who"/>
-		<item value="systemclock_config"/>
-		<item value="user begin code pd"/>
+		<item value="fx_system_initialize"/>
+		<item value="sd_ll_smoke_test"/>
+		<item value="media"/>
+		<item value="uint8_t media_buffer[512];"/>
+		<item value="MX_FileX_Init"/>
+		<item value="HAL_SD_Init"/>
+		<item value="HAL_Init"/>
+		<item value="sd_media"/>
+		<item value="user code end 2"/>
+		<item value="user code begin pv"/>
+		<item value="user code begin 2"/>
+		<item value="MX_ADC1_Init"/>
+		<item value="MX_SDMMC1_SD_Init"/>
 	</list>
 </section>
