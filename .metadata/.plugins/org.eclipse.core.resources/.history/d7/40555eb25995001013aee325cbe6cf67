@@ -250,31 +250,53 @@ int main(void)
 
 
 
-  // Add this block after MX_RTC_Init();
+  // This check ensures the RTC is set ONLY ONCE after a fresh flash.
+  #define RTC_BKP_DR1_MAGIC_FLAG 0x32F2 // A "magic number" to check if the RTC is set
 
-  RTC_TimeTypeDef sTime = {0};
-  RTC_DateTypeDef sDate = {0};
-
-  // --- Set the Time to 16:15:00 ---
-  sTime.Hours   = 16;
-  sTime.Minutes = 39;
-  sTime.Seconds = 0;
-  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
-  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
-  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
+  if (HAL_RTCEx_ReadBackupRegister(&hrtc, RTC_BKP_DR1) != RTC_BKP_DR1_MAGIC_FLAG)
   {
-    Error_Handler();
-  }
+    // --- RTC is not set, so configure it with the computer's time at compile ---
+    RTC_TimeTypeDef sTime = {0};
+    RTC_DateTypeDef sDate = {0};
 
-  // --- Set the Date to September 19, 2025 (a Friday) ---
-  sDate.WeekDay = RTC_WEEKDAY_FRIDAY;
-  sDate.Month   = RTC_MONTH_SEPTEMBER; // Use the HAL enumerator for the month
-  sDate.Date    = 19;
-  sDate.Year    = 25;                  // Year 25 for 2025
+    char const* build_date = __DATE__; // e.g., "Sep 19 2025"
+    char const* build_time = __TIME__; // e.g., "16:06:04"
 
-  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
-  {
-    Error_Handler();
+    // Set the Time from the __TIME__ macro
+    sTime.Hours   = (build_time[0] - '0') * 10 + (build_time[1] - '0');
+    sTime.Minutes = (build_time[3] - '0') * 10 + (build_time[4] - '0');
+    sTime.Seconds = (build_time[6] - '0') * 10 + (build_time[7] - '0');
+    if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    // Set the Date from the __DATE__ macro
+    sDate.Year = (build_date[9] - '0') * 10 + (build_date[10] - '0'); // e.g., "25" for 2025
+
+    // Parse the month string
+    char month_str[4];
+    sscanf(build_date, "%s %hhd %*d", month_str, &sDate.Date);
+    if (strcmp(month_str, "Jan") == 0) sDate.Month = RTC_MONTH_JANUARY;
+    else if (strcmp(month_str, "Feb") == 0) sDate.Month = RTC_MONTH_FEBRUARY;
+    else if (strcmp(month_str, "Mar") == 0) sDate.Month = RTC_MONTH_MARCH;
+    else if (strcmp(month_str, "Apr") == 0) sDate.Month = RTC_MONTH_APRIL;
+    else if (strcmp(month_str, "May") == 0) sDate.Month = RTC_MONTH_MAY;
+    else if (strcmp(month_str, "Jun") == 0) sDate.Month = RTC_MONTH_JUNE;
+    else if (strcmp(month_str, "Jul") == 0) sDate.Month = RTC_MONTH_JULY;
+    else if (strcmp(month_str, "Aug") == 0) sDate.Month = RTC_MONTH_AUGUST;
+    else if (strcmp(month_str, "Sep") == 0) sDate.Month = RTC_MONTH_SEPTEMBER;
+    else if (strcmp(month_str, "Oct") == 0) sDate.Month = RTC_MONTH_OCTOBER;
+    else if (strcmp(month_str, "Nov") == 0) sDate.Month = RTC_MONTH_NOVEMBER;
+    else if (strcmp(month_str, "Dec") == 0) sDate.Month = RTC_MONTH_DECEMBER;
+
+    if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    // Write the flag to the backup register so this block is skipped on the next boot.
+    HAL_RTCEx_WriteBackupRegister(&hrtc, RTC_BKP_DR1, RTC_BKP_DR1_MAGIC_FLAG);
   }
 
 
@@ -314,8 +336,8 @@ int main(void)
 							  		  		                              media_buffer, sizeof(media_buffer));
 
 							  		  char m[64];
-							  		 		 // sprintf(m, "fx_media_open status=%u\r\n", status);
-							  		 		 // HAL_UART_Transmit(&huart2, (uint8_t*)m, strlen(m), HAL_MAX_DELAY);
+							  		 		  sprintf(m, "fx_media_open status=%u\r\n", status);
+							  		 		  HAL_UART_Transmit(&huart2, (uint8_t*)m, strlen(m), HAL_MAX_DELAY);
 
 							  		  if (status != FX_SUCCESS) { Error_Handler(); }
 
@@ -454,13 +476,7 @@ int main(void)
 			          uint32_t start_write_time = HAL_GetTick();
 
 			          // 2. Write the entire 10KB block to the SD card.
-			          // Write the entire consolidated block to the file's RAM buffer.
 			          fx_file_write(&log_file, json_buffer, total_bytes);
-
-			          // ADD THIS LINE:
-			          // This command forces the system to write the RAM buffer to the physical SD card.
-			          // It's the "Save" button.
-			          fx_media_flush(&sd_media);
 
 			          // 3. Calculate how long the write took.
 			          uint32_t write_duration = HAL_GetTick() - start_write_time;
@@ -479,7 +495,7 @@ int main(void)
 			                        rtcDate.Year, rtcDate.Month, rtcDate.Date,
 			                        rtcTime.Hours, rtcTime.Minutes, rtcTime.Seconds);
 
-			               // HAL_UART_Transmit(&huart2, (uint8_t*)debug_msg, strlen(debug_msg), HAL_MAX_DELAY);
+			                HAL_UART_Transmit(&huart2, (uint8_t*)debug_msg, strlen(debug_msg), HAL_MAX_DELAY);
 
 			                // --- End of Part B ---
 			          // --- End of Part B ---
@@ -490,7 +506,7 @@ int main(void)
 
 			          // --- 4. Go to Sleep ---
 			            // Put the CPU into a low-power sleep mode until the next interrupt arrives.
-			           // __WFI();
+			            __WFI();
 
 
 			      }
@@ -1904,8 +1920,8 @@ void Initialize_Sensors(void) {
     who_am_i_val = rx_buf[1]; // The actual data is in the second byte
 
     if (who_am_i_val == 0x6B) {
-       // sprintf(uart_buf, "ISM330DHCX WHO_AM_I: OK (0x%X)\r\n", who_am_i_val);
-        //HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
+        sprintf(uart_buf, "ISM330DHCX WHO_AM_I: OK (0x%X)\r\n", who_am_i_val);
+        HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
 
         // CRITICAL: Enable BDU and Address Auto-Increment
         tx_data[0] = 0x12; // CTRL3_C Register Address
@@ -1929,8 +1945,8 @@ void Initialize_Sensors(void) {
         HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
 
     } else {
-       // sprintf(uart_buf, "ISM330DHCX WHO_AM_I: FAILED! Got 0x%X\r\n", who_am_i_val);
-        //HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
+        sprintf(uart_buf, "ISM330DHCX WHO_AM_I: FAILED! Got 0x%X\r\n", who_am_i_val);
+        HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
         Error_Handler();
     }
 

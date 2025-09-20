@@ -257,7 +257,7 @@ int main(void)
 
   // --- Set the Time to 16:15:00 ---
   sTime.Hours   = 16;
-  sTime.Minutes = 39;
+  sTime.Minutes = 35;
   sTime.Seconds = 0;
   sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
   sTime.StoreOperation = RTC_STOREOPERATION_RESET;

@@ -4768,3 +4768,1195 @@ arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf
  103469	    184	  32704	 136357	  214a5	SPI2_MDA_Chain_2_Sensor.elf
 Finished building: default.size.stdout
  
+15:33:38 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:356:61: warning: format '%lu' expects a matching 'long unsigned int' argument [-Wformat=]
+  356 |                                           "{\"timestamp\":%lu ms,\"gyro\":{\"x\":%d,\"y\":%d,\"z\":%d},\"accel\":{\"x\":%d,\"y\":%d,\"z\":%d}}\r\n");
+      |                                                           ~~^
+      |                                                             |
+      |                                                             long unsigned int
+../Core/Src/main.c:356:83: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+  356 |                                           "{\"timestamp\":%lu ms,\"gyro\":{\"x\":%d,\"y\":%d,\"z\":%d},\"accel\":{\"x\":%d,\"y\":%d,\"z\":%d}}\r\n");
+      |                                                                                  ~^
+      |                                                                                   |
+      |                                                                                   int
+../Core/Src/main.c:356:92: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+  356 |                                           "{\"timestamp\":%lu ms,\"gyro\":{\"x\":%d,\"y\":%d,\"z\":%d},\"accel\":{\"x\":%d,\"y\":%d,\"z\":%d}}\r\n");
+      |                                                                                           ~^
+      |                                                                                            |
+      |                                                                                            int
+../Core/Src/main.c:356:101: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+  356 |                                           "{\"timestamp\":%lu ms,\"gyro\":{\"x\":%d,\"y\":%d,\"z\":%d},\"accel\":{\"x\":%d,\"y\":%d,\"z\":%d}}\r\n");
+      |                                                                                                    ~^
+      |                                                                                                     |
+      |                                                                                                     int
+../Core/Src/main.c:356:122: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+  356 |                                           "{\"timestamp\":%lu ms,\"gyro\":{\"x\":%d,\"y\":%d,\"z\":%d},\"accel\":{\"x\":%d,\"y\":%d,\"z\":%d}}\r\n");
+      |                                                                                                                         ~^
+      |                                                                                                                          |
+      |                                                                                                                          int
+../Core/Src/main.c:356:131: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+  356 |                                           "{\"timestamp\":%lu ms,\"gyro\":{\"x\":%d,\"y\":%d,\"z\":%d},\"accel\":{\"x\":%d,\"y\":%d,\"z\":%d}}\r\n");
+      |                                                                                                                                  ~^
+      |                                                                                                                                   |
+      |                                                                                                                                   int
+../Core/Src/main.c:356:140: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+  356 |                                           "{\"timestamp\":%lu ms,\"gyro\":{\"x\":%d,\"y\":%d,\"z\":%d},\"accel\":{\"x\":%d,\"y\":%d,\"z\":%d}}\r\n");
+      |                                                                                                                                           ~^
+      |                                                                                                                                            |
+      |                                                                                                                                            int
+../Core/Src/main.c:270:32: warning: unused variable 'media_buffer' [-Wunused-variable]
+  270 |                   static UCHAR media_buffer[4096] __attribute__((aligned(32))); // ≥ sector size, cache-line aligned
+      |                                ^~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1536:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1536 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1488:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1488 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1392:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1392 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1286:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1286 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1172:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1172 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1057:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1057 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:902:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  902 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:854:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  854 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:806:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  806 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:713:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  713 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:659:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  659 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:596:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  596 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:552:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  552 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  66951	     92	  18096	  85139	  14c93	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+15:37:49 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:270:32: warning: unused variable 'media_buffer' [-Wunused-variable]
+  270 |                   static UCHAR media_buffer[4096] __attribute__((aligned(32))); // ≥ sector size, cache-line aligned
+      |                                ^~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1548:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1548 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1500:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1500 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1404:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1404 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1298:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1298 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1184:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1184 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1069:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1069 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:914:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  914 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:866:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  866 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:818:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  818 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:725:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  725 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:671:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  671 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:608:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  608 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:564:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  564 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:366:56: warning: 'rtcDate.Year' may be used uninitialized [-Wmaybe-uninitialized]
+  366 |                                                 rtcDate.Year, rtcDate.Month, rtcDate.Date,
+      |                                                 ~~~~~~~^~~~~
+../Core/Src/main.c:357:53: note: 'rtcDate' declared here
+  357 |                                     RTC_DateTypeDef rtcDate;
+      |                                                     ^~~~~~~
+../Core/Src/main.c:366:70: warning: 'rtcDate.Month' may be used uninitialized [-Wmaybe-uninitialized]
+  366 |                                                 rtcDate.Year, rtcDate.Month, rtcDate.Date,
+      |                                                               ~~~~~~~^~~~~~
+../Core/Src/main.c:357:53: note: 'rtcDate' declared here
+  357 |                                     RTC_DateTypeDef rtcDate;
+      |                                                     ^~~~~~~
+../Core/Src/main.c:366:85: warning: 'rtcDate.Date' may be used uninitialized [-Wmaybe-uninitialized]
+  366 |                                                 rtcDate.Year, rtcDate.Month, rtcDate.Date,
+      |                                                                              ~~~~~~~^~~~~
+../Core/Src/main.c:357:53: note: 'rtcDate' declared here
+  357 |                                     RTC_DateTypeDef rtcDate;
+      |                                                     ^~~~~~~
+../Core/Src/main.c:367:56: warning: 'rtcTime.Hours' may be used uninitialized [-Wmaybe-uninitialized]
+  367 |                                                 rtcTime.Hours, rtcTime.Minutes, rtcTime.Seconds, milliseconds,
+      |                                                 ~~~~~~~^~~~~~
+../Core/Src/main.c:356:53: note: 'rtcTime' declared here
+  356 |                                     RTC_TimeTypeDef rtcTime;
+      |                                                     ^~~~~~~
+../Core/Src/main.c:367:71: warning: 'rtcTime.Minutes' may be used uninitialized [-Wmaybe-uninitialized]
+  367 |                                                 rtcTime.Hours, rtcTime.Minutes, rtcTime.Seconds, milliseconds,
+      |                                                                ~~~~~~~^~~~~~~~
+../Core/Src/main.c:356:53: note: 'rtcTime' declared here
+  356 |                                     RTC_TimeTypeDef rtcTime;
+      |                                                     ^~~~~~~
+../Core/Src/main.c:367:88: warning: 'rtcTime.Seconds' may be used uninitialized [-Wmaybe-uninitialized]
+  367 |                                                 rtcTime.Hours, rtcTime.Minutes, rtcTime.Seconds, milliseconds,
+      |                                                                                 ~~~~~~~^~~~~~~~
+../Core/Src/main.c:356:53: note: 'rtcTime' declared here
+  356 |                                     RTC_TimeTypeDef rtcTime;
+      |                                                     ^~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  67251	     92	  18096	  85439	  14dbf	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+15:41:20 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:1554:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1554 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1506:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1506 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1410:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1410 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1304:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1304 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1190:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1190 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1075:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1075 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:920:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  920 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:872:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  872 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:824:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  824 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:731:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  731 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:677:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  677 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:614:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  614 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:570:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  570 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  67723	     92	  18096	  85911	  14f97	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+15:43:27 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:1556:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1556 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1508:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1508 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1412:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1412 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1306:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1306 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1192:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1192 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1077:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1077 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:922:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  922 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:874:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  874 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:826:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  826 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:733:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  733 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:679:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  679 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:616:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  616 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:572:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  572 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  67723	     92	  18096	  85911	  14f97	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+15:43:38 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  67723	     92	  18096	  85911	  14f97	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+15:44:57 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  67723	     92	  18096	  85911	  14f97	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+15:46:24 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  67723	     92	  18096	  85911	  14f97	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+15:48:37 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:1587:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1587 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1539:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1539 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1443:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1443 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1337:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1337 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1223:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1223 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1108:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1108 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:953:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  953 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:905:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  905 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:857:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  857 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:764:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  764 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:710:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  710 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:647:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  647 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:603:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  603 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+ 104973	    184	  32704	 137861	  21a85	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+15:48:49 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 104973	    184	  32704	 137861	  21a85	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+15:51:00 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 104973	    184	  32704	 137861	  21a85	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+15:52:33 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 104973	    184	  32704	 137861	  21a85	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+15:55:41 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:1588:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1588 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1540:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1540 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1444:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1444 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1338:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1338 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1224:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1224 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1109:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1109 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:954:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  954 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:906:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  906 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:858:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  858 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:765:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  765 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:711:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  711 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:648:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  648 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:604:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  604 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+ 104973	    184	  32704	 137861	  21a85	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+15:55:52 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 104973	    184	  32704	 137861	  21a85	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+15:56:55 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 104973	    184	  32704	 137861	  21a85	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+15:59:05 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:428:49: error: 'rtcDate' undeclared (first use in this function)
+  428 |                                                 rtcDate.Year, rtcDate.Month, rtcDate.Date,
+      |                                                 ^~~~~~~
+../Core/Src/main.c:428:49: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:429:49: error: 'rtcTime' undeclared (first use in this function)
+  429 |                                                 rtcTime.Hours, rtcTime.Minutes, rtcTime.Seconds);
+      |                                                 ^~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1600:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1600 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1552:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1552 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1456:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1456 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1350:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1350 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1236:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1236 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1121:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1121 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:966:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  966 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:918:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  918 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:870:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  870 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:777:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  777 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:723:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  723 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:660:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  660 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:616:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  616 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:00:35 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:1608:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1608 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1560:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1560 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1464:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1464 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1358:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1358 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1244:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1244 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1129:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1129 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:974:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  974 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:926:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  926 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:878:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  878 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:785:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  785 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:731:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  731 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:668:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  668 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:624:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  624 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+ 105053	    184	  32704	 137941	  21ad5	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+16:00:49 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105053	    184	  32704	 137941	  21ad5	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:01:52 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105053	    184	  32704	 137941	  21ad5	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:07:16 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:256:7: warning: implicit declaration of function 'HAL_RTCEx_ReadBackupRegister' [-Wimplicit-function-declaration]
+  256 |   if (HAL_RTCEx_ReadBackupRegister(&hrtc, RTC_BKP_DR1) != RTC_BKP_DR1_MAGIC_FLAG)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:299:5: warning: implicit declaration of function 'HAL_RTCEx_WriteBackupRegister' [-Wimplicit-function-declaration]
+  299 |     HAL_RTCEx_WriteBackupRegister(&hrtc, RTC_BKP_DR1, RTC_BKP_DR1_MAGIC_FLAG);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1667:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1667 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1619:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1619 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1523:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1523 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1417:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1417 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1303:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1303 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1188:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1188 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1033:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+ 1033 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:985:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  985 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:937:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  937 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:844:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  844 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:790:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  790 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:727:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  727 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:683:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  683 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/SPI2_MDA_Chain_2_Sensor/Debug/../Core/Src/main.c:256:(.text.main+0x2a): undefined reference to `HAL_RTCEx_ReadBackupRegister'
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/SPI2_MDA_Chain_2_Sensor/Debug/../Core/Src/main.c:299:(.text.main+0x2c0): undefined reference to `HAL_RTCEx_WriteBackupRegister'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:68: SPI2_MDA_Chain_2_Sensor.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:08:13 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:282:63: warning: implicit declaration of function 'HAL_RTCEx_ReadBackupRegister' [-Wimplicit-function-declaration]
+  282 |                                                           if (HAL_RTCEx_ReadBackupRegister(&hrtc, RTC_BKP_DR1) != RTC_BKP_DR1_MAGIC_FLAG)
+      |                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:325:61: warning: implicit declaration of function 'HAL_RTCEx_WriteBackupRegister' [-Wimplicit-function-declaration]
+  325 |                                                             HAL_RTCEx_WriteBackupRegister(&hrtc, RTC_BKP_DR1, RTC_BKP_DR1_MAGIC_FLAG);
+      |                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1679:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1679 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1631:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1631 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1535:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1535 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1429:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1429 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1315:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1315 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1200:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1200 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1045:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+ 1045 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:997:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  997 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:949:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  949 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:856:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  856 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:802:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  802 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:739:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  739 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:695:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  695 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/SPI2_MDA_Chain_2_Sensor/Debug/../Core/Src/main.c:282:(.text.main+0x46): undefined reference to `HAL_RTCEx_ReadBackupRegister'
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/SPI2_MDA_Chain_2_Sensor/Debug/../Core/Src/main.c:325:(.text.main+0x2dc): undefined reference to `HAL_RTCEx_WriteBackupRegister'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:68: SPI2_MDA_Chain_2_Sensor.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:08:51 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:1645:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1645 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1597:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1597 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1501:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1501 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1395:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1395 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1281:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1281 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1166:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1166 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1011:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+ 1011 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:963:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  963 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:915:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  915 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:822:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  822 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:768:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  768 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:705:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  705 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:661:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  661 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+ 105181	    184	  32704	 138069	  21b55	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+16:09:03 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105181	    184	  32704	 138069	  21b55	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:10:24 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105181	    184	  32704	 138069	  21b55	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:13:07 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:316:80: warning: unused variable 'm' [-Wunused-variable]
+  316 |                                                                           char m[64];
+      |                                                                                ^
+../Core/Src/main.c: In function 'Initialize_Sensors':
+../Core/Src/main.c:1883:10: warning: unused variable 'uart_buf' [-Wunused-variable]
+ 1883 |     char uart_buf[100];
+      |          ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1645:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1645 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1597:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1597 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1501:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1501 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1395:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1395 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1281:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1281 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1166:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1166 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1011:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+ 1011 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:963:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  963 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:915:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  915 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:822:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  822 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:768:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  768 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:705:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  705 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:661:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  661 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+ 104561	    184	  32704	 137449	  218e9	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+16:13:43 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:316:80: warning: unused variable 'm' [-Wunused-variable]
+  316 |                                                                           char m[64];
+      |                                                                                ^
+../Core/Src/main.c: In function 'Initialize_Sensors':
+../Core/Src/main.c:1883:10: warning: unused variable 'uart_buf' [-Wunused-variable]
+ 1883 |     char uart_buf[100];
+      |          ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1645:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1645 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1597:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1597 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1501:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1501 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1395:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1395 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1281:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1281 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1166:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1166 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1011:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+ 1011 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:963:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  963 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:915:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  915 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:822:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  822 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:768:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  768 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:705:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  705 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:661:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  661 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+ 104561	    184	  32704	 137449	  218e9	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+16:14:31 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 104561	    184	  32704	 137449	  218e9	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:24:15 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:316:80: warning: unused variable 'm' [-Wunused-variable]
+  316 |                                                                           char m[64];
+      |                                                                                ^
+../Core/Src/main.c: In function 'Initialize_Sensors':
+../Core/Src/main.c:1889:10: warning: unused variable 'uart_buf' [-Wunused-variable]
+ 1889 |     char uart_buf[100];
+      |          ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1651:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1651 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1603:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1603 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1507:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1507 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1401:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1401 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1287:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1287 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1172:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1172 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1017:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+ 1017 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:969:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  969 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:921:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  921 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:828:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  828 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:774:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  774 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:711:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  711 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:667:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  667 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+ 105729	    184	  32704	 138617	  21d79	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+16:24:30 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105729	    184	  32704	 138617	  21d79	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:24:57 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105729	    184	  32704	 138617	  21d79	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:27:03 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:316:80: warning: unused variable 'm' [-Wunused-variable]
+  316 |                                                                           char m[64];
+      |                                                                                ^
+../Core/Src/main.c: In function 'Initialize_Sensors':
+../Core/Src/main.c:1889:10: warning: unused variable 'uart_buf' [-Wunused-variable]
+ 1889 |     char uart_buf[100];
+      |          ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1651:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1651 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1603:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1603 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1507:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1507 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1401:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1401 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1287:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1287 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1172:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1172 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1017:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+ 1017 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:969:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  969 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:921:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  921 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:828:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  828 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:774:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  774 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:711:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  711 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:667:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  667 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+ 105729	    184	  32704	 138617	  21d79	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+16:27:27 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105729	    184	  32704	 138617	  21d79	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:29:54 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105729	    184	  32704	 138617	  21d79	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:30:20 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105729	    184	  32704	 138617	  21d79	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:30:56 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105729	    184	  32704	 138617	  21d79	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:37:44 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:316:80: warning: unused variable 'm' [-Wunused-variable]
+  316 |                                                                           char m[64];
+      |                                                                                ^
+../Core/Src/main.c: In function 'Initialize_Sensors':
+../Core/Src/main.c:1889:10: warning: unused variable 'uart_buf' [-Wunused-variable]
+ 1889 |     char uart_buf[100];
+      |          ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1651:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1651 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1603:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1603 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1507:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1507 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1401:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1401 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1287:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1287 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1172:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1172 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1017:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+ 1017 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:969:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  969 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:921:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  921 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:828:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  828 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:774:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  774 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:711:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  711 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:667:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  667 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:14: warning: 'media_buffer' defined but not used [-Wunused-variable]
+   57 | static UCHAR media_buffer[4096];  // 8 sectors, aligned
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI2_MDA_Chain_2_Sensor.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\SPI2_MDA_Chain_2_Sensor\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI2_MDA_Chain_2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI2_MDA_Chain_2_Sensor.elf
+ 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+arm-none-eabi-objdump -h -S SPI2_MDA_Chain_2_Sensor.elf  > "SPI2_MDA_Chain_2_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+ 105729	    184	  32704	 138617	  21d79	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI2_MDA_Chain_2_Sensor.list
+ 
+16:38:58 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105729	    184	  32704	 138617	  21d79	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:39:21 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105729	    184	  32704	 138617	  21d79	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:41:10 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105729	    184	  32704	 138617	  21d79	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 
+16:43:47 **** Incremental Build of configuration Debug for project SPI2_MDA_Chain_2_Sensor ****
+make -j8 all 
+arm-none-eabi-size  SPI2_MDA_Chain_2_Sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105729	    184	  32704	 138617	  21d79	SPI2_MDA_Chain_2_Sensor.elf
+Finished building: default.size.stdout
+ 

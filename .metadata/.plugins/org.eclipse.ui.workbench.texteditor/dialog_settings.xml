@@ -3,6 +3,11 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="hal_uart_trans"/>
+		<item value="hal_uart"/>
+		<item value="rtcDate"/>
+		<item value="RTC_TimeTypeDef"/>
+		<item value="rtcTime"/>
 		<item value="hal_uart_transmit"/>
 		<item value="user code begin 3"/>
 		<item value="fx_system_initialize"/>
@@ -13,10 +18,5 @@
 		<item value="HAL_SD_Init"/>
 		<item value="HAL_Init"/>
 		<item value="sd_media"/>
-		<item value="user code end 2"/>
-		<item value="user code begin pv"/>
-		<item value="user code begin 2"/>
-		<item value="MX_ADC1_Init"/>
-		<item value="MX_SDMMC1_SD_Init"/>
 	</list>
 </section>

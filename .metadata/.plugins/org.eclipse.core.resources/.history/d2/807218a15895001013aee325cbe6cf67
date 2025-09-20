@@ -246,43 +246,6 @@ int main(void)
   //MX_I2C3_Init();
   MX_ICACHE_Init();
   MX_RTC_Init();
-
-
-
-
-  // Add this block after MX_RTC_Init();
-
-  RTC_TimeTypeDef sTime = {0};
-  RTC_DateTypeDef sDate = {0};
-
-  // --- Set the Time to 16:15:00 ---
-  sTime.Hours   = 16;
-  sTime.Minutes = 39;
-  sTime.Seconds = 0;
-  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
-  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
-  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  // --- Set the Date to September 19, 2025 (a Friday) ---
-  sDate.WeekDay = RTC_WEEKDAY_FRIDAY;
-  sDate.Month   = RTC_MONTH_SEPTEMBER; // Use the HAL enumerator for the month
-  sDate.Date    = 19;
-  sDate.Year    = 25;                  // Year 25 for 2025
-
-  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-
-
-
-
-
-
   //MX_SAI1_Init();
   MX_SDMMC1_SD_Init();
   //MX_SPI1_Init();
@@ -314,8 +277,8 @@ int main(void)
 							  		  		                              media_buffer, sizeof(media_buffer));
 
 							  		  char m[64];
-							  		 		 // sprintf(m, "fx_media_open status=%u\r\n", status);
-							  		 		 // HAL_UART_Transmit(&huart2, (uint8_t*)m, strlen(m), HAL_MAX_DELAY);
+							  		 		  sprintf(m, "fx_media_open status=%u\r\n", status);
+							  		 		  HAL_UART_Transmit(&huart2, (uint8_t*)m, strlen(m), HAL_MAX_DELAY);
 
 							  		  if (status != FX_SUCCESS) { Error_Handler(); }
 
@@ -446,30 +409,16 @@ int main(void)
 			    	        total_bytes += bytes_written;
 			      }
 
-
-
-			          // --- Part B: Your performance measurement and UART debug code ---
+			      // --- Part B: Your performance measurement and UART debug code ---
 
 			          // 1. Get a timestamp BEFORE the slow operation (SD card write).
 			          uint32_t start_write_time = HAL_GetTick();
 
 			          // 2. Write the entire 10KB block to the SD card.
-			          // Write the entire consolidated block to the file's RAM buffer.
 			          fx_file_write(&log_file, json_buffer, total_bytes);
-
-			          // ADD THIS LINE:
-			          // This command forces the system to write the RAM buffer to the physical SD card.
-			          // It's the "Save" button.
-			          fx_media_flush(&sd_media);
 
 			          // 3. Calculate how long the write took.
 			          uint32_t write_duration = HAL_GetTick() - start_write_time;
-
-			          // 4. Get the current date and time from the RTC for the debug message.
-			          RTC_TimeTypeDef rtcTime;
-			          RTC_DateTypeDef rtcDate;
-			          HAL_RTC_GetTime(&hrtc, &rtcTime, RTC_FORMAT_BIN);
-			          HAL_RTC_GetDate(&hrtc, &rtcDate, RTC_FORMAT_BIN);
 
 			          // 4. Print ONE short, efficient debug summary.
 			          // 5. Print ONE short, efficient debug summary with the full timestamp.
@@ -479,7 +428,7 @@ int main(void)
 			                        rtcDate.Year, rtcDate.Month, rtcDate.Date,
 			                        rtcTime.Hours, rtcTime.Minutes, rtcTime.Seconds);
 
-			               // HAL_UART_Transmit(&huart2, (uint8_t*)debug_msg, strlen(debug_msg), HAL_MAX_DELAY);
+			                HAL_UART_Transmit(&huart2, (uint8_t*)debug_msg, strlen(debug_msg), HAL_MAX_DELAY);
 
 			                // --- End of Part B ---
 			          // --- End of Part B ---
@@ -490,7 +439,7 @@ int main(void)
 
 			          // --- 4. Go to Sleep ---
 			            // Put the CPU into a low-power sleep mode until the next interrupt arrives.
-			           // __WFI();
+			            __WFI();
 
 
 			      }
@@ -1904,8 +1853,8 @@ void Initialize_Sensors(void) {
     who_am_i_val = rx_buf[1]; // The actual data is in the second byte
 
     if (who_am_i_val == 0x6B) {
-       // sprintf(uart_buf, "ISM330DHCX WHO_AM_I: OK (0x%X)\r\n", who_am_i_val);
-        //HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
+        sprintf(uart_buf, "ISM330DHCX WHO_AM_I: OK (0x%X)\r\n", who_am_i_val);
+        HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
 
         // CRITICAL: Enable BDU and Address Auto-Increment
         tx_data[0] = 0x12; // CTRL3_C Register Address
@@ -1929,8 +1878,8 @@ void Initialize_Sensors(void) {
         HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
 
     } else {
-       // sprintf(uart_buf, "ISM330DHCX WHO_AM_I: FAILED! Got 0x%X\r\n", who_am_i_val);
-        //HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
+        sprintf(uart_buf, "ISM330DHCX WHO_AM_I: FAILED! Got 0x%X\r\n", who_am_i_val);
+        HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
         Error_Handler();
     }
 

@@ -257,7 +257,7 @@ int main(void)
 
   // --- Set the Time to 16:15:00 ---
   sTime.Hours   = 16;
-  sTime.Minutes = 39;
+  sTime.Minutes = 9;
   sTime.Seconds = 0;
   sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
   sTime.StoreOperation = RTC_STOREOPERATION_RESET;
@@ -314,8 +314,8 @@ int main(void)
 							  		  		                              media_buffer, sizeof(media_buffer));
 
 							  		  char m[64];
-							  		 		 // sprintf(m, "fx_media_open status=%u\r\n", status);
-							  		 		 // HAL_UART_Transmit(&huart2, (uint8_t*)m, strlen(m), HAL_MAX_DELAY);
+							  		 		  sprintf(m, "fx_media_open status=%u\r\n", status);
+							  		 		  HAL_UART_Transmit(&huart2, (uint8_t*)m, strlen(m), HAL_MAX_DELAY);
 
 							  		  if (status != FX_SUCCESS) { Error_Handler(); }
 
@@ -454,13 +454,7 @@ int main(void)
 			          uint32_t start_write_time = HAL_GetTick();
 
 			          // 2. Write the entire 10KB block to the SD card.
-			          // Write the entire consolidated block to the file's RAM buffer.
 			          fx_file_write(&log_file, json_buffer, total_bytes);
-
-			          // ADD THIS LINE:
-			          // This command forces the system to write the RAM buffer to the physical SD card.
-			          // It's the "Save" button.
-			          fx_media_flush(&sd_media);
 
 			          // 3. Calculate how long the write took.
 			          uint32_t write_duration = HAL_GetTick() - start_write_time;
@@ -479,7 +473,7 @@ int main(void)
 			                        rtcDate.Year, rtcDate.Month, rtcDate.Date,
 			                        rtcTime.Hours, rtcTime.Minutes, rtcTime.Seconds);
 
-			               // HAL_UART_Transmit(&huart2, (uint8_t*)debug_msg, strlen(debug_msg), HAL_MAX_DELAY);
+			                HAL_UART_Transmit(&huart2, (uint8_t*)debug_msg, strlen(debug_msg), HAL_MAX_DELAY);
 
 			                // --- End of Part B ---
 			          // --- End of Part B ---
@@ -490,7 +484,7 @@ int main(void)
 
 			          // --- 4. Go to Sleep ---
 			            // Put the CPU into a low-power sleep mode until the next interrupt arrives.
-			           // __WFI();
+			            __WFI();
 
 
 			      }
@@ -1904,8 +1898,8 @@ void Initialize_Sensors(void) {
     who_am_i_val = rx_buf[1]; // The actual data is in the second byte
 
     if (who_am_i_val == 0x6B) {
-       // sprintf(uart_buf, "ISM330DHCX WHO_AM_I: OK (0x%X)\r\n", who_am_i_val);
-        //HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
+        sprintf(uart_buf, "ISM330DHCX WHO_AM_I: OK (0x%X)\r\n", who_am_i_val);
+        HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
 
         // CRITICAL: Enable BDU and Address Auto-Increment
         tx_data[0] = 0x12; // CTRL3_C Register Address
@@ -1929,8 +1923,8 @@ void Initialize_Sensors(void) {
         HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
 
     } else {
-       // sprintf(uart_buf, "ISM330DHCX WHO_AM_I: FAILED! Got 0x%X\r\n", who_am_i_val);
-        //HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
+        sprintf(uart_buf, "ISM330DHCX WHO_AM_I: FAILED! Got 0x%X\r\n", who_am_i_val);
+        HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
         Error_Handler();
     }
 
