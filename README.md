@@ -17,16 +17,6 @@
 
 ---
 
-## Why it matters (skills demonstrated)
-
-- **Embedded C on STM32U5** with **STM32CubeIDE/HAL**
-- **High‑throughput SPI** with **DMA** and **interrupt state machines**
-- **Real‑time buffering** (ring buffer), producer/consumer thinking
-- **Sensor interfacing & validation** (WHO\_AM\_I, ODR/units, scaling)
-- **Deterministic timing** reasoning (clock trees, prescalers, ISR latency)
-- **Clean debugging** over UART; practical logs for ML ingestion
-
----
 
 ## Hardware & sensors
 
