@@ -1,6 +1,6 @@
 # STEVAL‑STWIN.box: Dual‑IMU DMA Acquisition & Circular Buffer (Anomaly Sensing Prototype)
 
-> **Recruiter‑friendly summary**: I built a low‑latency sensor pipeline on the **STEVAL‑STWINBX1 (STM32U585)** that streams simultaneous data from **two SPI IMUs (IIS3DWB + ISM330DHCX)** using **DMA + interrupt chaining**, pushes samples into a **100‑slot circular buffer**, and **logs/streams** over **UART2\@115200**. The design shows hands‑on embedded skills: STM32 HAL, SPI timing, DMA, ISR design, buffering, and practical debugging (WHO\_AM\_I, CS handling, prescalers, ODR alignment). This repo is the firmware foundation for an on‑device anomaly detection pipeline.
+> **summary**: I built a low‑latency sensor pipeline on the **STEVAL‑STWINBX1 (STM32U585)** that streams simultaneous data from **two SPI IMUs (IIS3DWB + ISM330DHCX)** using **DMA + interrupt chaining**, pushes samples into a **100‑slot circular buffer**, and **logs/streams** over **UART2\@115200**. The design shows hands‑on embedded skills: STM32 HAL, SPI timing, DMA, ISR design, buffering, and practical debugging (WHO\_AM\_I, CS handling, prescalers, ODR alignment). This repo is the firmware foundation for an on‑device anomaly detection pipeline.
 
 ---
 
