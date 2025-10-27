@@ -1,0 +1,310 @@
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "app_filex.h"
+
+/* Private includes ----------------------------------------------------------*/
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+/* Private typedef -----------------------------------------------------------*/
+typedef struct {
+    int16_t x;
+    int16_t y;
+    int16_t z;
+} AxesRaw_t;
+
+typedef struct {
+    uint32_t   timestamp_ms;
+    AxesRaw_t  ism330_accel;
+    AxesRaw_t  ism330_gyro;
+} SensorSample_t;
+
+/* Private define ------------------------------------------------------------*/
+/* ---- ISM330DHCX register helpers ---- */
+#define ISM_REG_WHO_AM_I     0x0F
+#define ISM_WHO_AM_I_VAL     0x6B
+
+#define ISM_REG_CTRL1_XL     0x10
+#define ISM_REG_CTRL2_G      0x11
+#define ISM_REG_CTRL3_C      0x12
+#define ISM_REG_OUTX_L_G     0x22
+
+/* Set BDU=1 (bit6), IF_INC=1 (bit2) */
+#define ISM_CTRL3_C_BDU_INC  0x44
+/* ODR=1.04kHz (HP) -> 0x80 (ODR bits only; scale left default) */
+#define ISM_ODR_1040_HZ      0x80
+
+/* SPI helpers */
+#define ISM_SPI_READ_BIT     0x80
+#define ISM_DMA_DATA_BYTES   12u     /* 6x int16: 3 gyro + 3 accel */
+#define ISM_DMA_FRAME        (1u + ISM_DMA_DATA_BYTES) /* cmd + data */
+
+#define CIRCULAR_BUFFER_SIZE 100u
+
+/* FileX media buffer: multiple of sector size, cache-line aligned */
+#if defined(__GNUC__)
+__attribute__((aligned(32)))
+#endif
+static UCHAR media_buffer[4096];
+
+/* Private macro -------------------------------------------------------------*/
+/* none */
+
+/* Private variables ---------------------------------------------------------*/
+/* Only keep the handles actually used by this file */
+RTC_HandleTypeDef  hrtc;
+SD_HandleTypeDef   hsd1;
+SPI_HandleTypeDef  hspi2;
+UART_HandleTypeDef huart2;
+
+/* GPDMA (assigned in MX_GPDMA1_Init for SPI2 & SDMMC1) */
+DMA_HandleTypeDef handle_GPDMA1_Channel0; /* as needed by CubeMX mapping */
+DMA_HandleTypeDef handle_GPDMA1_Channel1;
+DMA_HandleTypeDef handle_GPDMA1_Channel2;
+DMA_HandleTypeDef handle_GPDMA1_Channel3;
+DMA_HandleTypeDef handle_GPDMA1_Channel4;
+DMA_HandleTypeDef handle_GPDMA1_Channel5;
+
+/* FileX media + file */
+FX_MEDIA sd_media;
+FX_FILE  log_file;
+
+/* Circular buffer */
+static SensorSample_t circular_buffer[CIRCULAR_BUFFER_SIZE];
+static volatile uint32_t buf_head  = 0;
+static volatile uint32_t buf_count = 0;
+
+/* SPI DMA command+data buffers */
+static uint8_t ism_tx_dma_buf[ISM_DMA_FRAME] = {0};
+static uint8_t ism_rx_dma_buf[ISM_DMA_FRAME] = {0};
+static uint8_t ism_rx_data[ISM_DMA_DATA_BYTES] = {0}; /* data-only after skipping cmd */
+
+/* Flags / timing */
+static volatile uint8_t  g_data_ready = 0;
+static uint32_t          last_sample_tick = 0;
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+void PeriphCommonClock_Config(void);
+static void SystemPower_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_GPDMA1_Init(void);
+static void MX_ICACHE_Init(void);
+static void MX_RTC_Init(void);
+static void MX_TAMP_RTC_Init(void);
+static void MX_SDMMC1_SD_Init(void);
+static void MX_SPI2_Init(void);
+static void MX_USART2_UART_Init(void);
+static void Initialize_Sensors(void);
+static void Start_SensorRead_DMA(void);
+
+/* Application ----------------------------------------------------------------*/
+
+int main(void)
+{
+  HAL_Init();
+  SystemPower_Config();
+  SystemClock_Config();
+  PeriphCommonClock_Config();
+
+  MX_GPIO_Init();
+  MX_GPDMA1_Init();
+  MX_ICACHE_Init();
+  MX_RTC_Init();
+  MX_SDMMC1_SD_Init();
+  MX_SPI2_Init();
+  MX_TAMP_RTC_Init();
+  MX_USART2_UART_Init();
+  MX_FileX_Init();
+
+  /* ---- RTC: set an initial date-time (example) ---- */
+  {
+    RTC_TimeTypeDef t = {0};
+    RTC_DateTypeDef d = {0};
+
+    t.Hours = 16; t.Minutes = 39; t.Seconds = 0;
+    t.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+    t.StoreOperation = RTC_STOREOPERATION_RESET;
+    if (HAL_RTC_SetTime(&hrtc, &t, RTC_FORMAT_BIN) != HAL_OK) Error_Handler();
+
+    d.WeekDay = RTC_WEEKDAY_FRIDAY;
+    d.Month   = RTC_MONTH_SEPTEMBER;
+    d.Date    = 19;
+    d.Year    = 25; /* 2025 */
+    if (HAL_RTC_SetDate(&hrtc, &d, RTC_FORMAT_BIN) != HAL_OK) Error_Handler();
+  }
+
+  /* ---- Sensor init ---- */
+  Initialize_Sensors();
+
+  /* ---- FileX: open media + file once ---- */
+  {
+    UINT fx_stat = fx_media_open(&sd_media, "SD_DISK",
+                                 fx_stm32_sd_driver, (VOID*)&hsd1,
+                                 media_buffer, sizeof(media_buffer));
+    if (fx_stat != FX_SUCCESS) Error_Handler();
+
+    fx_stat = fx_file_open(&sd_media, &log_file, "datalog.jsonl", FX_OPEN_FOR_WRITE);
+    if (fx_stat == FX_NOT_FOUND) {
+      fx_file_create(&sd_media, "datalog.jsonl");
+      fx_stat = fx_file_open(&sd_media, &log_file, "datalog.jsonl", FX_OPEN_FOR_WRITE);
+    }
+    if (fx_stat != FX_SUCCESS) Error_Handler();
+
+    /* Append */
+    fx_file_seek(&log_file, log_file.fx_file_current_file_size);
+  }
+
+  /* Kick the first DMA read */
+  Start_SensorRead_DMA();
+
+  /* ---- Main loop ---- */
+  while (1)
+  {
+    /* 1 kHz pacing for starting new reads (non-blocking) */
+    uint32_t now = HAL_GetTick();
+    if ((now - last_sample_tick) >= 1u) {
+      last_sample_tick = now;
+      Start_SensorRead_DMA();
+    }
+
+    /* When a DMA frame arrives, parse & push into circular buffer */
+    if (g_data_ready) {
+      g_data_ready = 0;
+
+      SensorSample_t s;
+      s.timestamp_ms = HAL_GetTick();
+
+      /* Parse DMA data: [Gx_L,Gx_H,Gy_L,Gy_H,Gz_L,Gz_H,Ax_L,Ax_H,Ay_L,Ay_H,Az_L,Az_H] */
+      s.ism330_gyro.x  = (int16_t)((ism_rx_data[1]  << 8) | ism_rx_data[0]);
+      s.ism330_gyro.y  = (int16_t)((ism_rx_data[3]  << 8) | ism_rx_data[2]);
+      s.ism330_gyro.z  = (int16_t)((ism_rx_data[5]  << 8) | ism_rx_data[4]);
+      s.ism330_accel.x = (int16_t)((ism_rx_data[7]  << 8) | ism_rx_data[6]);
+      s.ism330_accel.y = (int16_t)((ism_rx_data[9]  << 8) | ism_rx_data[8]);
+      s.ism330_accel.z = (int16_t)((ism_rx_data[11] << 8) | ism_rx_data[10]);
+
+      circular_buffer[buf_head] = s;
+      buf_head = (buf_head + 1u) % CIRCULAR_BUFFER_SIZE;
+      if (buf_count < CIRCULAR_BUFFER_SIZE) buf_count++;
+    }
+
+    /* When window is full: dump 100 lines to SD (JSONL) */
+    if (buf_count >= CIRCULAR_BUFFER_SIZE) {
+      static char json_buf[12800]; /* ~128B/line x 100 lines headroom */
+      char*  p = json_buf;
+      int    total = 0;
+
+      for (uint32_t i = 0; i < CIRCULAR_BUFFER_SIZE; i++) {
+        RTC_TimeTypeDef rt;
+        RTC_DateTypeDef rd;
+        HAL_RTC_GetTime(&hrtc, &rt, RTC_FORMAT_BIN);
+        HAL_RTC_GetDate(&hrtc, &rd, RTC_FORMAT_BIN);
+        uint32_t ms = circular_buffer[i].timestamp_ms % 1000u;
+
+        int n = sprintf(p,
+          "{\"timestamp\":\"20%02d-%02d-%02d %02d:%02d:%02d.%03lu\","
+          "\"gyro\":{\"x\":%d,\"y\":%d,\"z\":%d},"
+          "\"accel\":{\"x\":%d,\"y\":%d,\"z\":%d}}\r\n",
+          rd.Year, rd.Month, rd.Date, rt.Hours, rt.Minutes, rt.Seconds, (unsigned long)ms,
+          circular_buffer[i].ism330_gyro.x, circular_buffer[i].ism330_gyro.y, circular_buffer[i].ism330_gyro.z,
+          circular_buffer[i].ism330_accel.x, circular_buffer[i].ism330_accel.y, circular_buffer[i].ism330_accel.z
+        );
+        p     += n;
+        total += n;
+      }
+
+      uint32_t t0 = HAL_GetTick();
+      fx_file_write(&log_file, json_buf, (ULONG)total);
+      fx_media_flush(&sd_media); /* force to card */
+
+      /* Optional: short UART notice (commented to keep loop lean) */
+      /* char dbg[96];
+         int len = sprintf(dbg, "Wrote 100 lines in %lu ms\r\n", (unsigned long)dt);
+         HAL_UART_Transmit(&huart2, (uint8_t*)dbg, len, 50); */
+
+      buf_count = 0;
+    }
+
+    /* Optionally enter sleep here */
+    /* __WFI(); */
+  }
+}
+
+/* -------------------- Sensors -------------------- */
+
+static void Initialize_Sensors(void)
+{
+  /* WHO_AM_I read (2 bytes) */
+  uint8_t tx[2] = { (uint8_t)(ISM_REG_WHO_AM_I | ISM_SPI_READ_BIT), 0x00 };
+  uint8_t rx[2] = { 0 };
+
+  HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_RESET);
+  HAL_SPI_TransmitReceive(&hspi2, tx, rx, 2, HAL_MAX_DELAY);
+  HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
+
+  if (rx[1] != ISM_WHO_AM_I_VAL) {
+    Error_Handler();
+  }
+
+  /* Enable BDU + Address auto-increment */
+  uint8_t cfg[2] = { ISM_REG_CTRL3_C, ISM_CTRL3_C_BDU_INC };
+  HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_RESET);
+  HAL_SPI_Transmit(&hspi2, cfg, 2, HAL_MAX_DELAY);
+  HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
+
+  /* ODR 1.04 kHz for accel and gyro (scales left at default) */
+  uint8_t a_odr[2] = { ISM_REG_CTRL1_XL, ISM_ODR_1040_HZ };
+  HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_RESET);
+  HAL_SPI_Transmit(&hspi2, a_odr, 2, HAL_MAX_DELAY);
+  HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
+
+  uint8_t g_odr[2] = { ISM_REG_CTRL2_G,  ISM_ODR_1040_HZ };
+  HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_RESET);
+  HAL_SPI_Transmit(&hspi2, g_odr, 2, HAL_MAX_DELAY);
+  HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
+
+  HAL_Delay(100);
+}
+
+static void Start_SensorRead_DMA(void)
+{
+  /* Multi-byte read starting at OUTX_L_G (gyro first, then accel) */
+  ism_tx_dma_buf[0] = (uint8_t)(ISM_REG_OUTX_L_G | ISM_SPI_READ_BIT);
+
+  HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_RESET);
+  if (HAL_SPI_TransmitReceive_DMA(&hspi2, ism_tx_dma_buf, ism_rx_dma_buf, ISM_DMA_FRAME) != HAL_OK) {
+    HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
+    Error_Handler();
+  }
+}
+
+/* SPI TxRx complete callback (called after DMA completes) */
+void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi)
+{
+  if (hspi->Instance == SPI2) {
+    HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
+    /* skip first byte (command), copy data bytes */
+    memcpy(ism_rx_data, &ism_rx_dma_buf[1], ISM_DMA_DATA_BYTES);
+    g_data_ready = 1;
+  }
+}
+
+/* ---- CubeMX-generated init functions (declared; definitions in auto files) ---- */
+void SystemClock_Config(void)            { /* CubeMX */ }
+void PeriphCommonClock_Config(void)      { /* CubeMX */ }
+static void SystemPower_Config(void)     { /* CubeMX */ }
+static void MX_GPIO_Init(void)           { /* CubeMX; ensure CS_DHCX high */ }
+static void MX_GPDMA1_Init(void)         { /* CubeMX; map SPI2 RX/TX + SDMMC1 */ }
+static void MX_ICACHE_Init(void)         { /* CubeMX */ }
+static void MX_RTC_Init(void)            { /* CubeMX */ }
+static void MX_TAMP_RTC_Init(void)       { /* CubeMX (backup domain) */ }
+static void MX_SDMMC1_SD_Init(void)      { /* CubeMX */ }
+static void MX_SPI2_Init(void)           { /* CubeMX */ }
+static void MX_USART2_UART_Init(void)    { /* CubeMX */ }
+
+void Error_Handler(void)
+{
+  __disable_irq();
+  while (1) { /* trap */ }
+}

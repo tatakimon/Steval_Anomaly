@@ -1,0 +1,17 @@
+18:20:54 **** Incremental Build of configuration Debug for project trigger ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "trigger.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\prototype\prototype trigger\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="trigger.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: trigger.elf
+ 
+arm-none-eabi-size  trigger.elf 
+arm-none-eabi-objdump -h -S trigger.elf  > "trigger.list"
+   text	   data	    bss	    dec	    hex	filename
+  52919	    184	  31896	  84999	  14c07	trigger.elf
+Finished building: default.size.stdout
+ 
+Finished building: trigger.list
+ 
+
+18:20:59 Build Finished. 0 errors, 0 warnings. (took 4s.494ms)
+

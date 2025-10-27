@@ -1,0 +1,10 @@
+18:07:53 **** Incremental Build of configuration Debug for project ADC battery management ****
+make -j8 all 
+arm-none-eabi-size  ADC\ battery\ management.elf 
+   text	   data	    bss	    dec	    hex	filename
+  71183	     92	   6116	  77391	  12e4f	ADC battery management.elf
+Finished building: default.size.stdout
+ 
+
+18:07:54 Build Finished. 0 errors, 0 warnings. (took 689ms)
+

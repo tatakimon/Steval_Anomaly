@@ -3,20 +3,20 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="mx_usart3"/>
+		<item value="begin pfp"/>
+		<item value="begin 4"/>
+		<item value="hadc1"/>
+		<item value="begin 2"/>
+		<item value="user code end 4"/>
+		<item value="user code begin 2"/>
+		<item value="ADC_SINGLE_ENDED "/>
+		<item value="stm32u5xx_hal_adc.h"/>
+		<item value="ADC_SINGLE_ENDE"/>
+		<item value="adc"/>
+		<item value="#include &quot;stm32u5xx_hal.h&quot;"/>
+		<item value="single_ended"/>
 		<item value="hal_uart_trans"/>
 		<item value="hal_uart"/>
-		<item value="rtcDate"/>
-		<item value="RTC_TimeTypeDef"/>
-		<item value="rtcTime"/>
-		<item value="hal_uart_transmit"/>
-		<item value="user code begin 3"/>
-		<item value="fx_system_initialize"/>
-		<item value="sd_ll_smoke_test"/>
-		<item value="media"/>
-		<item value="uint8_t media_buffer[512];"/>
-		<item value="MX_FileX_Init"/>
-		<item value="HAL_SD_Init"/>
-		<item value="HAL_Init"/>
-		<item value="sd_media"/>
 	</list>
 </section>

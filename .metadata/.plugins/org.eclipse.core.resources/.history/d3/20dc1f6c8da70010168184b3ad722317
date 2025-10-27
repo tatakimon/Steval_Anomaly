@@ -1,0 +1,1711 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2025 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+
+
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "app_filex.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+
+#include <stdio.h>   // For sprintf
+#include <string.h>  // For strlen
+#include <stdlib.h> // <-- Add this for abs()
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+typedef struct {
+    int16_t x;
+    int16_t y;
+    int16_t z;
+} AxesRaw_t;
+
+
+typedef struct {
+    uint32_t timestamp_ms;			// logical ms since start (exactly +1 per sample)
+    AxesRaw_t ism330_accel;
+    AxesRaw_t ism330_gyro;
+} SensorSample_t;
+
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN Defines */
+/* ============================== LEDs (PH12=HB, PH10=ERR) =================== */
+#define LED_HB_PORT   GPIOH
+#define LED_HB_PIN    GPIO_PIN_12
+#define LED_ERR_PORT  GPIOH
+#define LED_ERR_PIN   GPIO_PIN_10
+
+/* ============================== Motion gate (gyro) =========================
+ * NOTE: Used only by update_activity_gate(); that function is currently not
+ * called anywhere. Safe to keep for future or remove together.               */
+#define MOTION_ON_HOLD_SAMPLES   8      // ~8 ms above ON threshold -> ACTIVE
+#define MOTION_OFF_HOLD_SAMPLES  200    // ~200 ms below OFF threshold -> IDLE
+#define GYRO_ENERGY_ON           (12000000)  // sum(g^2) enter ACTIVE
+#define GYRO_ENERGY_OFF          ( 6000000)  // sum(g^2) leave ACTIVE
+
+/* ============================== Two-phase logging (displacement + gyro) ==== */
+#define ENTRY_DISP_ON_M2         (0.006f * 0.006f)  // ~3 cm^2 to START capture
+#define ENTRY_ON_HOLD_SAMPLES    6                // ~6 ms above entry
+#define EXIT_DISP_OFF_M2         (0.02f * 0.02f) // ~2 cm^2 quiet to STOP
+#define EXIT_OFF_HOLD_SAMPLES    500             // ~0.5 s quiet
+#define EXIT_GYRO_E2_THRESH      (2000000)        // also keep gyro energy low
+
+/* ============================== Displacement integrator ==================== */
+#define FS_ACC_G                 2          // accel FS (±2 g)
+#define ACC_SENS_MG_PER_LSB      0.061f     // ISM330DHCX @ ±2 g
+#define GRAVITY_MPS2             9.80665f
+#define SAMPLE_HZ                1000.0f
+#define DT_SEC                   (1.0f / SAMPLE_HZ)
+#define GRAV_LPF_ALPHA           0.002f     // gravity LPF alpha (~0.5 s time-const)
+#define VEL_LEAK                 0.01f    // small leak to limit drift
+#define DISP_LEAK                0.02f
+
+/* (Legacy thresholds not used now; kept for reference)
+   #define DISP_ON_M2  (0.05f * 0.05f)
+   #define DISP_OFF_M2 (0.02f * 0.02f)
+   #define DISP_ON_HOLD_SAMPLES 8
+   #define DISP_OFF_HOLD_SAMPLES 200
+*/
+/* ============================== SPI frame sizes ============================ */
+#define ISM330DHCX_DATA_SIZE   12   // 6 axes * 2B (gyro3 + accel3)
+#define ISM330DHCX_DMA_LEN     13   // 1 command byte + 12 data bytes
+/* USER CODE END Defines */
+
+
+
+
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+ADC_HandleTypeDef hadc1;
+
+MDF_HandleTypeDef AdfHandle0;
+MDF_FilterConfigTypeDef AdfFilterConfig0;
+MDF_HandleTypeDef MdfHandle0;
+MDF_FilterConfigTypeDef MdfFilterConfig0;
+DMA_NodeTypeDef Node_GPDMA1_Channel5;
+DMA_QListTypeDef List_GPDMA1_Channel5;
+DMA_HandleTypeDef handle_GPDMA1_Channel5;
+DMA_NodeTypeDef Node_GPDMA1_Channel4;
+DMA_QListTypeDef List_GPDMA1_Channel4;
+DMA_HandleTypeDef handle_GPDMA1_Channel4;
+
+DAC_HandleTypeDef hdac1;
+
+I2C_HandleTypeDef hi2c1;
+I2C_HandleTypeDef hi2c2;
+I2C_HandleTypeDef hi2c3;
+DMA_HandleTypeDef handle_GPDMA1_Channel3;
+DMA_HandleTypeDef handle_GPDMA1_Channel2;
+
+RTC_HandleTypeDef hrtc;
+
+SAI_HandleTypeDef hsai_BlockA1;
+SAI_HandleTypeDef hsai_BlockB1;
+
+SD_HandleTypeDef hsd1;
+
+SPI_HandleTypeDef hspi1;
+SPI_HandleTypeDef hspi2;
+SPI_HandleTypeDef hspi3;
+DMA_HandleTypeDef handle_GPDMA1_Channel1;
+DMA_HandleTypeDef handle_GPDMA1_Channel0;
+
+TIM_HandleTypeDef htim3;
+
+UART_HandleTypeDef huart2;
+UART_HandleTypeDef huart3;
+
+PCD_HandleTypeDef hpcd_USB_OTG_FS;
+
+/* USER CODE BEGIN PV */
+/* -------- FileX media buffer (aligned) -------- */
+#if defined(__GNUC__)
+__attribute__((aligned(32)))
+#endif
+static UCHAR media_buffer[4096];    // used by fx_media_open
+
+
+/* ===== Debug controls for SD echo (pure C) ===== */
+static uint8_t  debug_sd_echo            = 1;     /* 1=mirror window writes to UART */
+static uint16_t debug_sd_echo_max_lines  = 20;    /* max lines to echo per window */
+static uint8_t  debug_sd_echo_head_tail  = 1;     /* 1=head+tail if too many lines */
+static uint32_t window_seq               = 0;     /* sequential window number */
+
+/* Optional: live switch to skip writing windows to SD (set from debugger) */
+static volatile uint8_t debug_drop_windows = 0;
+
+
+
+
+
+/* Idle tracking between sessions */
+static uint8_t  idle_active     = 0;      // 1 while not capturing, after a stop
+static uint32_t idle_start_tick = 0;      // HAL_GetTick() at stop time
+
+
+
+/* -------- Runtime flags / counters -------- */
+volatile uint8_t  run_logging            = 1;  // if 0, loop idles but keeps blinking
+volatile uint8_t  spi_busy               = 0;  // DMA in-flight guard
+volatile uint8_t  g_data_ready           = 0;  // set in SPI DMA callback
+
+/* Logical sample time (ms) — increments when a sample is actually stored */
+volatile uint32_t sample_count_ms        = 0;
+
+/* Debug counters (UART heartbeat) */
+volatile uint32_t dbg_last_1s_ms         = 0;
+volatile uint32_t dbg_dma_starts         = 0;
+volatile uint32_t dbg_dma_cb             = 0;
+volatile uint32_t dbg_cb_same_ms         = 0;
+volatile uint32_t dbg_cb_last_ms         = 0;
+volatile uint32_t dbg_samples_pushed     = 0;
+volatile uint32_t dbg_windows_written    = 0;
+volatile uint32_t dbg_fx_write_errs      = 0;
+volatile uint32_t dbg_fx_flushes         = 0;
+volatile uint32_t dbg_fx_flush_errs      = 0;
+volatile uint32_t dbg_last_sample_gate_ms= 0;
+volatile uint32_t dbg_start_while_busy   = 0;
+volatile uint32_t spi_dma_start_cnt      = 0;
+volatile uint32_t spi_dma_cplt_cnt       = 0;
+volatile uint32_t spi_dma_busy_err_cnt   = 0;
+
+/* LED & housekeeping timers */
+static uint32_t   last_heartbeat_ms      = 0;
+static uint32_t   last_flush_ms          = 0;
+static uint32_t   last_debug_ms          = 0;
+
+/* -------- Logging session state (two-phase) -------- */
+volatile uint8_t  capture_mode           = 0;  // 0=IDLE, 1=CAPTURE
+static uint16_t   entry_hold             = 0;  // persistence counters
+static uint16_t   exit_hold              = 0;
+
+
+
+/* -------- Displacement integrator state -------- */
+static float acc_lp[3]   = {0};    // gravity LPF (m/s^2)
+static float vel_mps[3]  = {0};    // integrated velocity (m/s)
+static float disp_m[3]   = {0};    // integrated displacement (m)
+
+/* -------- RTC anchor (captured once per run) -------- */
+static uint8_t  anchor_year, anchor_month, anchor_date;
+static uint8_t  anchor_hour, anchor_min, anchor_sec;
+static uint32_t anchor_ms = 0;       // logical ms at anchor moment
+
+/* -------- FileX objects -------- */
+FX_MEDIA sd_media;
+FX_FILE  log_file;
+
+/* -------- Circular buffer -------- */
+#define CIRCULAR_BUFFER_SIZE  100
+static SensorSample_t circular_buffer[CIRCULAR_BUFFER_SIZE];
+static volatile uint32_t buffer_head  = 0;   // next write index
+static volatile uint32_t buffer_count = 0;   // number of valid samples
+
+/* -------- SPI DMA buffers for ISM330DHCX -------- */
+static uint8_t ism330dhcx_tx_dma_buf[ISM330DHCX_DMA_LEN] = {0}; // first byte = register|0x80
+static uint8_t ism330dhcx_rx_dma_buf[ISM330DHCX_DMA_LEN] = {0}; // includes 1 command echo + 12 data
+static uint8_t ism330dhcx_rx_buffer[ISM330DHCX_DATA_SIZE];      // pure 12-byte data payload
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+void PeriphCommonClock_Config(void);
+static void SystemPower_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_GPDMA1_Init(void);
+static void MX_ICACHE_Init(void);
+static void MX_RTC_Init(void);
+static void MX_SDMMC1_SD_Init(void);
+static void MX_SPI2_Init(void);
+static void MX_TAMP_RTC_Init(void);
+static void MX_USART2_UART_Init(void);
+
+
+/* USER CODE BEGIN PFP */
+
+/* High-level gates */
+static void update_displacement_gate(const SensorSample_t* s);
+
+/* Housekeeping */
+static void heartbeat_tick(void);
+static void safe_debug_tick(void);
+
+/* IMU I/O */
+static void Initialize_Sensors(void);     // bring-up & ODR config
+static void start_sensor_read(void);      // SPI2 DMA read burst (gyro+accel)
+
+
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+static void heartbeat_tick(void)
+{
+  uint32_t now = HAL_GetTick();
+  if ((now - last_heartbeat_ms) >= 250U) {      // 4 Hz heartbeat
+    last_heartbeat_ms = now;
+    HAL_GPIO_TogglePin(LED_HB_PORT, LED_HB_PIN);
+  }
+}
+
+
+static void safe_debug_tick(void)
+{
+  uint32_t now = HAL_GetTick();
+  if ((now - last_debug_ms) >= 1000U) {
+    last_debug_ms = now;
+    char dbg[128];
+    int n = snprintf(dbg, sizeof(dbg),
+                     "DMA start=%lu cplt=%lu busy=%lu\r\n",
+                     (unsigned long)spi_dma_start_cnt,
+                     (unsigned long)spi_dma_cplt_cnt,
+                     (unsigned long)spi_dma_busy_err_cnt);
+    if (n > 0) HAL_UART_Transmit(&huart2, (uint8_t*)dbg, (uint16_t)n, 10);
+  }
+}
+
+
+/* USER CODE END 0 */
+
+/* ------------------------------------------------------------------------------------------------- */
+/*                                  main()                                    */
+/* ------------------------------------------------------------------------------------------------- */
+
+
+int main(void)
+{
+
+	  /* USER CODE BEGIN 1 */
+	  /* (nothing) */
+	  /* USER CODE END 1 */
+
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+
+  /* USER CODE BEGIN Init */
+  /* (nothing) */
+  /* USER CODE END Init */
+
+  /* Power / clocks */
+  SystemPower_Config();
+  SystemClock_Config();
+  PeriphCommonClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+  /* (nothing) */
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+
+
+
+  // --- Manual LED GPIO init (PH12, PH10) ---
+  __HAL_RCC_GPIOH_CLK_ENABLE();  // in case CubeMX didn't enable H clock
+
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+  GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull  = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+
+  // PH12 (heartbeat)
+  GPIO_InitStruct.Pin = LED_HB_PIN;
+  HAL_GPIO_Init(LED_HB_PORT, &GPIO_InitStruct);
+
+  // PH10 (error)
+  GPIO_InitStruct.Pin = LED_ERR_PIN;
+  HAL_GPIO_Init(LED_ERR_PORT, &GPIO_InitStruct);
+
+  // Start with both OFF (LEDs are active-high per schematic)
+  HAL_GPIO_WritePin(LED_HB_PORT,  LED_HB_PIN,  GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LED_ERR_PORT, LED_ERR_PIN, GPIO_PIN_RESET);
+
+
+
+
+
+
+
+  //MX_IWDG_Init();
+  MX_GPDMA1_Init();
+  //MX_ADC1_Init();
+  //MX_ADF1_Init();
+  //MX_MDF1_Init();
+  //MX_DAC1_Init();
+  //MX_I2C1_Init();
+  //MX_I2C2_Init();
+  //MX_I2C3_Init();
+  MX_ICACHE_Init();
+  MX_RTC_Init();
+
+  /* USER CODE BEGIN Set_RTC_Time
+   * WARNING: This hard-sets RTC on every boot. Remove in production or
+   * replace with a real-time sync (BLE/USB/NTP) to avoid resetting time. */
+
+
+  {
+    RTC_TimeTypeDef sTime = {0};
+    RTC_DateTypeDef sDate = {0};
+    sTime.Hours   = 17; sTime.Minutes = 10; sTime.Seconds = 0;
+    sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+    sTime.StoreOperation = RTC_STOREOPERATION_RESET;
+    if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK) { Error_Handler(); }
+    sDate.WeekDay = RTC_WEEKDAY_SUNDAY; sDate.Month = RTC_MONTH_OCTOBER;
+    sDate.Date    = 12;                 sDate.Year  = 25;  // 2025
+    if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK) { Error_Handler(); }
+  }
+  /* USER CODE END Set_RTC_Time */
+
+
+
+
+
+
+  //MX_SAI1_Init();
+  MX_SDMMC1_SD_Init();
+  //MX_SPI1_Init();
+  MX_SPI2_Init();
+  //MX_SPI3_Init();
+  MX_TAMP_RTC_Init();
+  //MX_TIM3_Init();
+  MX_USART2_UART_Init();
+  //MX_USART3_UART_Init();
+  //MX_USB_OTG_FS_PCD_Init();
+  MX_FileX_Init();
+
+
+  /* USER CODE BEGIN 2
+   * Bring up sensor, open SD media, open/append log file, take RTC anchor. */
+  Initialize_Sensors();
+
+  /* Mount SD */
+  {
+    UINT st = fx_media_open(&sd_media, "SD_DISK",
+                            fx_stm32_sd_driver, (VOID*)&hsd1,
+                            media_buffer, sizeof(media_buffer));
+    if (st != FX_SUCCESS) {
+      char msg[80]; int n = snprintf(msg, sizeof msg, "fx_media_open: 0x%08X\r\n", st);
+      if (n > 0) HAL_UART_Transmit(&huart2, (uint8_t*)msg, (uint16_t)n, HAL_MAX_DELAY);
+      run_logging = 0; Error_Handler();
+    }
+  }
+
+  /* Open file for append (create if needed) */
+  {
+    UINT st = fx_file_open(&sd_media, &log_file, "datalog.jsonl", FX_OPEN_FOR_WRITE);
+    if (st == FX_NOT_FOUND) {
+      st = fx_file_create(&sd_media, "datalog.jsonl");
+      if (st != FX_SUCCESS) {
+        char msg[80]; int n = snprintf(msg, sizeof msg, "fx_file_create: 0x%08X\r\n", st);
+        if (n > 0) HAL_UART_Transmit(&huart2, (uint8_t*)msg, (uint16_t)n, HAL_MAX_DELAY);
+        run_logging = 0; Error_Handler();
+      }
+      st = fx_file_open(&sd_media, &log_file, "datalog.jsonl", FX_OPEN_FOR_WRITE);
+    }
+    if (st != FX_SUCCESS) {
+      char msg[80]; int n = snprintf(msg, sizeof msg, "fx_file_open: 0x%08X\r\n", st);
+      if (n > 0) HAL_UART_Transmit(&huart2, (uint8_t*)msg, (uint16_t)n, HAL_MAX_DELAY);
+      run_logging = 0; Error_Handler();
+    }
+    /* Seek to end for append mode */
+    fx_file_seek(&log_file, log_file.fx_file_current_file_size);
+  }
+
+  /* Capture RTC anchor once (start-of-session) */
+  {
+    RTC_TimeTypeDef t0; RTC_DateTypeDef d0;
+    HAL_RTC_GetTime(&hrtc, &t0, RTC_FORMAT_BIN);
+    HAL_RTC_GetDate(&hrtc, &d0, RTC_FORMAT_BIN);
+    anchor_year  = d0.Year;  anchor_month = d0.Month; anchor_date = d0.Date;
+    anchor_hour  = t0.Hours; anchor_min   = t0.Minutes; anchor_sec  = t0.Seconds;
+    anchor_ms    = sample_count_ms;  // likely 0 at boot
+  }
+
+  /* Optional: first read “kick” — safe to keep; sampling is loop-paced too */
+  {
+    static uint32_t last_sample_tick = 0;
+    uint32_t now = HAL_GetTick();
+    if (!spi_busy) {
+      if (((uint32_t)(now - last_sample_tick) >= 1U) || (now == last_sample_tick)) {
+        last_sample_tick = now;
+        dbg_last_sample_gate_ms = now;
+        start_sensor_read();
+      }
+    }
+  }
+  /* USER CODE END 2 */
+
+
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+
+
+  while (1)
+   {
+     /* USER CODE END WHILE */
+
+     /* USER CODE BEGIN 3 */
+     if (!run_logging) { heartbeat_tick(); safe_debug_tick(); continue; }
+
+     /* ---- 1) Pace at ~1 kHz (guarded by spi_busy) ---- */
+     {
+       static uint32_t last_sample_tick = 0;
+       uint32_t now = HAL_GetTick();
+       if (!spi_busy && ( ((uint32_t)(now - last_sample_tick) >= 1U) || (last_sample_tick == 0) )) {
+         last_sample_tick = now;
+         dbg_last_sample_gate_ms = now;
+         start_sensor_read();
+       }
+     }
+
+     /* ---- 2) Process a completed DMA frame ---- */
+     if (g_data_ready) {
+       g_data_ready = 0;                    // consume flag
+
+       SensorSample_t s;                    // parse 12-byte payload into struct
+       s.timestamp_ms        = sample_count_ms;  // logical time (deterministic)
+
+       /* Gyro 3x int16 (little endian) */
+       s.ism330_gyro.x  = (int16_t)((ism330dhcx_rx_buffer[1]  << 8) | ism330dhcx_rx_buffer[0]);
+       s.ism330_gyro.y  = (int16_t)((ism330dhcx_rx_buffer[3]  << 8) | ism330dhcx_rx_buffer[2]);
+       s.ism330_gyro.z  = (int16_t)((ism330dhcx_rx_buffer[5]  << 8) | ism330dhcx_rx_buffer[4]);
+       /* Accel 3x int16 */
+       s.ism330_accel.x = (int16_t)((ism330dhcx_rx_buffer[7]  << 8) | ism330dhcx_rx_buffer[6]);
+       s.ism330_accel.y = (int16_t)((ism330dhcx_rx_buffer[9]  << 8) | ism330dhcx_rx_buffer[8]);
+       s.ism330_accel.z = (int16_t)((ism330dhcx_rx_buffer[11] << 8) | ism330dhcx_rx_buffer[10]);
+
+       /* Motion gates (choose one). Currently using displacement gate: */
+       update_displacement_gate(&s);
+       /* update_activity_gate(&s);  // (available, but not used now) */
+
+       /* If capturing, push into circular window and advance logical time */
+       if (capture_mode) {
+         circular_buffer[buffer_head] = s;
+         buffer_head  = (buffer_head + 1) % CIRCULAR_BUFFER_SIZE;
+         if (buffer_count < CIRCULAR_BUFFER_SIZE) buffer_count++;
+         sample_count_ms++;                 // advance logical ms only for stored samples
+         dbg_samples_pushed++;
+       }
+     }
+
+     /* ---- 3) When window is full, serialize to JSONL and write ---- */
+     if (buffer_count >= CIRCULAR_BUFFER_SIZE) {
+       static char json_buffer[12800];      // big local buffer
+       int total_bytes = 0;
+
+       /* Oldest index in chronological order when full */
+       uint32_t start = (buffer_head + CIRCULAR_BUFFER_SIZE - buffer_count) % CIRCULAR_BUFFER_SIZE;
+
+       for (int i = 0; i < CIRCULAR_BUFFER_SIZE; i++) {
+         size_t space_left = sizeof(json_buffer) - (size_t)total_bytes;
+         if (space_left <= 1) break;
+
+         /* Chronological index */
+         uint32_t idx = (start + (uint32_t)i) % CIRCULAR_BUFFER_SIZE;
+
+         /* Convert logical ms -> anchored wall time (no date carry across days) */
+         uint32_t elapsed_ms = circular_buffer[idx].timestamp_ms - anchor_ms;
+
+
+
+         /* One compact line: elapsed_ms + raw values (values now ALSO from idx) */
+            int n = snprintf(&json_buffer[total_bytes], space_left,
+                "{\"elapsed_ms\":%lu,"
+                "\"gyro\":{\"x\":%d,\"y\":%d,\"z\":%d},"
+                "\"accel\":{\"x\":%d,\"y\":%d,\"z\":%d}}\r\n",
+                (unsigned long)elapsed_ms,
+                circular_buffer[idx].ism330_gyro.x,  circular_buffer[idx].ism330_gyro.y,  circular_buffer[idx].ism330_gyro.z,
+                circular_buffer[idx].ism330_accel.x, circular_buffer[idx].ism330_accel.y, circular_buffer[idx].ism330_accel.z);
+
+         if (n < 0) break;                         // snprintf error
+         if ((size_t)n >= space_left) {            // truncated: cap and stop
+           total_bytes = (int)sizeof(json_buffer) - 1;
+           break;
+         }
+         total_bytes += n;
+       }
+
+       /* Write the whole window */
+       uint32_t t0 = HAL_GetTick();
+       UINT st = fx_file_write(&log_file, json_buffer, (ULONG)total_bytes);
+       uint32_t dt = HAL_GetTick() - t0;
+
+       dbg_windows_written++;
+       if (st != FX_SUCCESS) dbg_fx_write_errs++;
+
+       /* Short debug line */
+       {
+         char wmsg[128];
+         int wn = snprintf(wmsg, sizeof(wmsg),
+                           "WIN #%lu bytes=%d write=%lums st=0x%02X\r\n",
+                           (unsigned long)dbg_windows_written, total_bytes,
+                           (unsigned long)dt, (unsigned)st);
+         if (wn > 0) HAL_UART_Transmit(&huart2, (uint8_t*)wmsg, (uint16_t)wn, 20);
+       }
+
+       /* Reset for next window */
+       buffer_count = 0;
+
+       /* Periodic media flush (~1 s) */
+       uint32_t now2 = HAL_GetTick();
+       if ((now2 - last_flush_ms) >= 1000U) {
+         UINT fs = fx_media_flush(&sd_media);
+         dbg_fx_flushes++;
+         if (fs != FX_SUCCESS) dbg_fx_flush_errs++;
+         char fmsg[96];
+         int fn = snprintf(fmsg, sizeof(fmsg),
+                           "FLUSH #%lu st=0x%02X\r\n",
+                           (unsigned long)dbg_fx_flushes, (unsigned)fs);
+         if (fn > 0) HAL_UART_Transmit(&huart2, (uint8_t*)fmsg, (uint16_t)fn, 20);
+         last_flush_ms = now2;
+       }
+     }
+
+     /* ---- 4) Once-per-second status line ---- */
+     {
+       uint32_t tnow = HAL_GetTick();
+       if ((tnow - dbg_last_1s_ms) >= 1000U) {
+         dbg_last_1s_ms = tnow;
+         char line[200];
+         int n = snprintf(line, sizeof(line),
+           "[%lu] starts=%lu cb=%lu cb_same_ms=%lu samples=%lu win=%lu busy_err=%lu start_busy=%lu gate_ms=%lu\r\n",
+           (unsigned long)tnow,
+           (unsigned long)dbg_dma_starts,
+           (unsigned long)dbg_dma_cb,
+           (unsigned long)dbg_cb_same_ms,
+           (unsigned long)dbg_samples_pushed,
+           (unsigned long)dbg_windows_written,
+           (unsigned long)spi_dma_busy_err_cnt,
+           (unsigned long)dbg_start_while_busy,
+           (unsigned long)dbg_last_sample_gate_ms);
+         if (n > 0) HAL_UART_Transmit(&huart2, (uint8_t*)line, (uint16_t)n, 20);
+       }
+     }
+
+     /* Housekeeping */
+     heartbeat_tick();
+     safe_debug_tick();
+     /* USER CODE END 3 */
+   }
+ }
+
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+  /** Configure the main internal regulator output voltage
+  */
+  if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48|RCC_OSCILLATORTYPE_HSI
+                              |RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
+  RCC_OscInitStruct.LSIDiv = RCC_LSI_DIV1;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLMBOOST = RCC_PLLMBOOST_DIV1;
+  RCC_OscInitStruct.PLL.PLLM = 1;
+  RCC_OscInitStruct.PLL.PLLN = 10;
+  RCC_OscInitStruct.PLL.PLLP = 2;
+  RCC_OscInitStruct.PLL.PLLQ = 2;
+  RCC_OscInitStruct.PLL.PLLR = 1;
+  RCC_OscInitStruct.PLL.PLLRGE = RCC_PLLVCIRANGE_1;
+  RCC_OscInitStruct.PLL.PLLFRACN = 0;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2
+                              |RCC_CLOCKTYPE_PCLK3;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB3CLKDivider = RCC_HCLK_DIV1;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/**
+  * @brief Peripherals Common Clock Configuration
+  * @retval None
+  */
+void PeriphCommonClock_Config(void)
+{
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
+
+  /** Initializes the common periph clock
+  */
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_MDF1|RCC_PERIPHCLK_ADF1
+                              |RCC_PERIPHCLK_ADCDAC;
+  PeriphClkInit.Mdf1ClockSelection = RCC_MDF1CLKSOURCE_PLL3;
+  PeriphClkInit.Adf1ClockSelection = RCC_ADF1CLKSOURCE_PLL3;
+  PeriphClkInit.AdcDacClockSelection = RCC_ADCDACCLKSOURCE_PLL2;
+  PeriphClkInit.PLL3.PLL3Source = RCC_PLLSOURCE_HSE;
+  PeriphClkInit.PLL3.PLL3M = 2;
+  PeriphClkInit.PLL3.PLL3N = 48;
+  PeriphClkInit.PLL3.PLL3P = 2;
+  PeriphClkInit.PLL3.PLL3Q = 25;
+  PeriphClkInit.PLL3.PLL3R = 2;
+  PeriphClkInit.PLL3.PLL3RGE = RCC_PLLVCIRANGE_1;
+  PeriphClkInit.PLL3.PLL3FRACN = 0;
+  PeriphClkInit.PLL3.PLL3ClockOut = RCC_PLL3_DIVQ;
+  PeriphClkInit.PLL2.PLL2Source = RCC_PLLSOURCE_HSE;
+  PeriphClkInit.PLL2.PLL2M = 2;
+  PeriphClkInit.PLL2.PLL2N = 48;
+  PeriphClkInit.PLL2.PLL2P = 2;
+  PeriphClkInit.PLL2.PLL2Q = 7;
+  PeriphClkInit.PLL2.PLL2R = 25;
+  PeriphClkInit.PLL2.PLL2RGE = RCC_PLLVCIRANGE_1;
+  PeriphClkInit.PLL2.PLL2FRACN = 0;
+  PeriphClkInit.PLL2.PLL2ClockOut = RCC_PLL2_DIVR;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/**
+  * @brief Power Configuration
+  * @retval None
+  */
+static void SystemPower_Config(void)
+{
+  HAL_PWREx_EnableVddIO2();
+
+  /*
+   * Disable the internal Pull-Up in Dead Battery pins of UCPD peripheral
+   */
+  HAL_PWREx_DisableUCPDDeadBattery();
+
+  /*
+   * SRAM Power Down In Stop Mode Config
+   */
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_SRAM2_PAGE1_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_SRAM2_PAGE2_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_SRAM3_PAGE1_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_SRAM3_PAGE2_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_SRAM3_PAGE3_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_SRAM3_PAGE4_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_SRAM3_PAGE5_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_SRAM3_PAGE6_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_SRAM3_PAGE7_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_SRAM3_PAGE8_STOP_RETENTION);
+/* USER CODE BEGIN PWR */
+/* USER CODE END PWR */
+}
+
+
+
+
+/**
+  * @brief GPDMA1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPDMA1_Init(void)
+{
+
+  /* USER CODE BEGIN GPDMA1_Init 0 */
+
+  /* USER CODE END GPDMA1_Init 0 */
+
+  /* Peripheral clock enable */
+  __HAL_RCC_GPDMA1_CLK_ENABLE();
+
+  /* GPDMA1 interrupt Init */
+    HAL_NVIC_SetPriority(GPDMA1_Channel0_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(GPDMA1_Channel0_IRQn);
+    HAL_NVIC_SetPriority(GPDMA1_Channel1_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(GPDMA1_Channel1_IRQn);
+    HAL_NVIC_SetPriority(GPDMA1_Channel2_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(GPDMA1_Channel2_IRQn);
+    HAL_NVIC_SetPriority(GPDMA1_Channel3_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(GPDMA1_Channel3_IRQn);
+    HAL_NVIC_SetPriority(GPDMA1_Channel4_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(GPDMA1_Channel4_IRQn);
+    HAL_NVIC_SetPriority(GPDMA1_Channel5_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(GPDMA1_Channel5_IRQn);
+
+  /* USER CODE BEGIN GPDMA1_Init 1 */
+
+  /* USER CODE END GPDMA1_Init 1 */
+  /* USER CODE BEGIN GPDMA1_Init 2 */
+
+  /* USER CODE END GPDMA1_Init 2 */
+
+}
+
+
+
+/**
+  * @brief ICACHE Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ICACHE_Init(void)
+{
+
+  /* USER CODE BEGIN ICACHE_Init 0 */
+
+  /* USER CODE END ICACHE_Init 0 */
+
+  /* USER CODE BEGIN ICACHE_Init 1 */
+
+  /* USER CODE END ICACHE_Init 1 */
+
+  /** Enable instruction cache in 1-way (direct mapped cache)
+  */
+  if (HAL_ICACHE_ConfigAssociativityMode(ICACHE_1WAY) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_ICACHE_Enable() != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ICACHE_Init 2 */
+
+  /* USER CODE END ICACHE_Init 2 */
+
+}
+
+/**
+  * @brief RTC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_RTC_Init(void)
+{
+
+  /* USER CODE BEGIN RTC_Init 0 */
+
+  /* USER CODE END RTC_Init 0 */
+
+  RTC_PrivilegeStateTypeDef privilegeState = {0};
+  RTC_TimeTypeDef sTime = {0};
+  RTC_DateTypeDef sDate = {0};
+
+  /* USER CODE BEGIN RTC_Init 1 */
+
+  /* USER CODE END RTC_Init 1 */
+
+  /** Initialize RTC Only
+  */
+  hrtc.Instance = RTC;
+  hrtc.Init.HourFormat = RTC_HOURFORMAT_24;
+  hrtc.Init.AsynchPrediv = 127;
+  hrtc.Init.SynchPrediv = 255;
+  hrtc.Init.OutPut = RTC_OUTPUT_DISABLE;
+  hrtc.Init.OutPutRemap = RTC_OUTPUT_REMAP_NONE;
+  hrtc.Init.OutPutPolarity = RTC_OUTPUT_POLARITY_HIGH;
+  hrtc.Init.OutPutType = RTC_OUTPUT_TYPE_OPENDRAIN;
+  hrtc.Init.OutPutPullUp = RTC_OUTPUT_PULLUP_NONE;
+  hrtc.Init.BinMode = RTC_BINARY_NONE;
+  if (HAL_RTC_Init(&hrtc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  privilegeState.rtcPrivilegeFull = RTC_PRIVILEGE_FULL_NO;
+  privilegeState.backupRegisterPrivZone = RTC_PRIVILEGE_BKUP_ZONE_NONE;
+  privilegeState.backupRegisterStartZone2 = RTC_BKP_DR0;
+  privilegeState.backupRegisterStartZone3 = RTC_BKP_DR0;
+  if (HAL_RTCEx_PrivilegeModeSet(&hrtc, &privilegeState) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /* USER CODE BEGIN Check_RTC_BKUP */
+
+  /* USER CODE END Check_RTC_BKUP */
+
+  /** Initialize RTC and set the Time and Date
+  */
+  sTime.Hours = 0;
+  sTime.Minutes = 0;
+  sTime.Seconds = 0;
+  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
+  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sDate.WeekDay = RTC_WEEKDAY_MONDAY;
+  sDate.Month = RTC_MONTH_JANUARY;
+  sDate.Date = 1;
+  sDate.Year = 0;
+
+  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN RTC_Init 2 */
+
+  /* USER CODE END RTC_Init 2 */
+
+}
+
+/**
+  * @brief SAI1 Initialization Function
+  * @param None
+  * @retval None
+  */
+
+
+/**
+  * @brief SDMMC1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_SDMMC1_SD_Init(void)
+{
+
+  /* USER CODE BEGIN SDMMC1_Init 0 */
+
+  /* USER CODE END SDMMC1_Init 0 */
+
+  /* USER CODE BEGIN SDMMC1_Init 1 */
+
+  /* USER CODE END SDMMC1_Init 1 */
+  hsd1.Instance = SDMMC1;
+  hsd1.Init.ClockEdge = SDMMC_CLOCK_EDGE_RISING;
+  hsd1.Init.ClockPowerSave = SDMMC_CLOCK_POWER_SAVE_DISABLE;
+  hsd1.Init.BusWide = SDMMC_BUS_WIDE_4B;
+  hsd1.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
+  hsd1.Init.ClockDiv = 0;
+  if (HAL_SD_Init(&hsd1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN SDMMC1_Init 2 */
+
+  /* USER CODE END SDMMC1_Init 2 */
+
+}
+
+
+
+/**
+  * @brief SPI2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_SPI2_Init(void)
+{
+
+  /* USER CODE BEGIN SPI2_Init 0 */
+
+  /* USER CODE END SPI2_Init 0 */
+
+  SPI_AutonomousModeConfTypeDef HAL_SPI_AutonomousMode_Cfg_Struct = {0};
+
+  /* USER CODE BEGIN SPI2_Init 1 */
+
+  /* USER CODE END SPI2_Init 1 */
+  /* SPI2 parameter configuration*/
+  hspi2.Instance = SPI2;
+  hspi2.Init.Mode = SPI_MODE_MASTER;
+  hspi2.Init.Direction = SPI_DIRECTION_2LINES;
+  hspi2.Init.DataSize = SPI_DATASIZE_8BIT;
+  hspi2.Init.CLKPolarity = SPI_POLARITY_LOW;
+  hspi2.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi2.Init.NSS = SPI_NSS_SOFT;
+  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_8;
+  hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
+  hspi2.Init.TIMode = SPI_TIMODE_DISABLE;
+  hspi2.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+  hspi2.Init.CRCPolynomial = 0x7;
+  hspi2.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
+  hspi2.Init.NSSPolarity = SPI_NSS_POLARITY_LOW;
+  hspi2.Init.FifoThreshold = SPI_FIFO_THRESHOLD_01DATA;
+  hspi2.Init.MasterSSIdleness = SPI_MASTER_SS_IDLENESS_00CYCLE;
+  hspi2.Init.MasterInterDataIdleness = SPI_MASTER_INTERDATA_IDLENESS_00CYCLE;
+  hspi2.Init.MasterReceiverAutoSusp = SPI_MASTER_RX_AUTOSUSP_DISABLE;
+  hspi2.Init.MasterKeepIOState = SPI_MASTER_KEEP_IO_STATE_DISABLE;
+  hspi2.Init.IOSwap = SPI_IO_SWAP_DISABLE;
+  hspi2.Init.ReadyMasterManagement = SPI_RDY_MASTER_MANAGEMENT_INTERNALLY;
+  hspi2.Init.ReadyPolarity = SPI_RDY_POLARITY_HIGH;
+  if (HAL_SPI_Init(&hspi2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  HAL_SPI_AutonomousMode_Cfg_Struct.TriggerState = SPI_AUTO_MODE_DISABLE;
+  HAL_SPI_AutonomousMode_Cfg_Struct.TriggerSelection = SPI_GRP1_GPDMA_CH1_TCF_TRG;
+  HAL_SPI_AutonomousMode_Cfg_Struct.TriggerPolarity = SPI_TRIG_POLARITY_RISING;
+  if (HAL_SPIEx_SetConfigAutonomousMode(&hspi2, &HAL_SPI_AutonomousMode_Cfg_Struct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN SPI2_Init 2 */
+
+  /* USER CODE END SPI2_Init 2 */
+
+}
+
+
+
+/**
+  * @brief TAMP Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TAMP_RTC_Init(void)
+{
+
+  /* USER CODE BEGIN TAMP_Init 0 */
+
+  /* USER CODE END TAMP_Init 0 */
+
+  RTC_PrivilegeStateTypeDef privilegeState = {0};
+  RTC_TamperTypeDef sTamper = {0};
+
+  /* USER CODE BEGIN TAMP_Init 1 */
+
+  /* USER CODE END TAMP_Init 1 */
+
+  /** Enable the RTC Active Tamper
+  */
+  privilegeState.tampPrivilegeFull = TAMP_PRIVILEGE_FULL_YES;
+  privilegeState.MonotonicCounterPrivilege = TAMP_MONOTONIC_CNT_PRIVILEGE_NO;
+  if (HAL_RTCEx_PrivilegeModeSet(&hrtc, &privilegeState) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Enable the RTC Tamper 1
+  */
+  sTamper.Tamper = RTC_TAMPER_1;
+  sTamper.Trigger = RTC_TAMPERTRIGGER_RISINGEDGE;
+  sTamper.NoErase = RTC_TAMPER_ERASE_BACKUP_ENABLE;
+  sTamper.MaskFlag = RTC_TAMPERMASK_FLAG_DISABLE;
+  sTamper.Filter = RTC_TAMPERFILTER_DISABLE;
+  sTamper.SamplingFrequency = RTC_TAMPERSAMPLINGFREQ_RTCCLK_DIV32768;
+  sTamper.PrechargeDuration = RTC_TAMPERPRECHARGEDURATION_1RTCCLK;
+  sTamper.TamperPullUp = RTC_TAMPER_PULLUP_ENABLE;
+  sTamper.TimeStampOnTamperDetection = RTC_TIMESTAMPONTAMPERDETECTION_ENABLE;
+  if (HAL_RTCEx_SetTamper(&hrtc, &sTamper) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TAMP_Init 2 */
+
+  /* USER CODE END TAMP_Init 2 */
+
+}
+
+
+
+/**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART2_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART2_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 115200;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_RTS;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart2.Init.ClockPrescaler = UART_PRESCALER_DIV1;
+  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_UARTEx_SetTxFifoThreshold(&huart2, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_UARTEx_SetRxFifoThreshold(&huart2, UART_RXFIFO_THRESHOLD_1_8) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_UARTEx_DisableFifoMode(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
+
+}
+
+
+
+
+
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+  /* USER CODE BEGIN MX_GPIO_Init_1 */
+
+  /* USER CODE END MX_GPIO_Init_1 */
+
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOE_CLK_ENABLE();
+  __HAL_RCC_GPIOI_CLK_ENABLE();
+  __HAL_RCC_GPIOG_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOH_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
+  __HAL_RCC_GPIOF_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOH, CS_DHCX_Pin|CS_DLPC_Pin|WIFI_CS_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOI, EX_SPI_NSS_Pin|CS_ICLX_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12|GPIO_PIN_10, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(BLE_SPI_CS_GPIO_Port, BLE_SPI_CS_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(CS_DWB_GPIO_Port, CS_DWB_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin : INT_HTS_Pin */
+  GPIO_InitStruct.Pin = INT_HTS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(INT_HTS_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : WIFI_FLOW_Pin SD_DETECT_Pin INT_EX_Pin INT_EXG5_Pin */
+  GPIO_InitStruct.Pin = WIFI_FLOW_Pin|SD_DETECT_Pin|INT_EX_Pin|INT_EXG5_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : CS_DHCX_Pin PH12 PH10 CS_DLPC_Pin
+                           WIFI_CS_Pin */
+  GPIO_InitStruct.Pin = CS_DHCX_Pin|GPIO_PIN_12|GPIO_PIN_10|CS_DLPC_Pin
+                          |WIFI_CS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : DCDC_2_EN_Pin SPI2_MISO_p2_Pin */
+  GPIO_InitStruct.Pin = DCDC_2_EN_Pin|SPI2_MISO_p2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOI, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : C_EN_Pin INT_EXD15_Pin BLE_RST_Pin WIFI_BOOT_Pin */
+  GPIO_InitStruct.Pin = C_EN_Pin|INT_EXD15_Pin|BLE_RST_Pin|WIFI_BOOT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : EX_SPI_NSS_Pin CS_ICLX_Pin */
+  GPIO_InitStruct.Pin = EX_SPI_NSS_Pin|CS_ICLX_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOI, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : BLE_SPI_CS_Pin */
+  GPIO_InitStruct.Pin = BLE_SPI_CS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(BLE_SPI_CS_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : BOOT0_Pin STSAFE_RESET_Pin */
+  GPIO_InitStruct.Pin = BOOT0_Pin|STSAFE_RESET_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : USR_BUTTON_Pin WIFI_NOTIFY_Pin */
+  GPIO_InitStruct.Pin = USR_BUTTON_Pin|WIFI_NOTIFY_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : INT1_DHCX_Pin NFC_INT_Pin */
+  GPIO_InitStruct.Pin = INT1_DHCX_Pin|NFC_INT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : GPIO2_EX_Pin BLE_TEST9_Pin BLE_TEST8_Pin */
+  GPIO_InitStruct.Pin = GPIO2_EX_Pin|BLE_TEST9_Pin|BLE_TEST8_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : INT1_DLPC_Pin INT2_DLPC_Pin INT_MAG_Pin INT_STT_Pin
+                           INT1_ICLX_Pin INT2_DHCX_Pin BLE_INT_Pin INT2_ICLX_Pin
+                           INT1_DWB_Pin */
+  GPIO_InitStruct.Pin = INT1_DLPC_Pin|INT2_DLPC_Pin|INT_MAG_Pin|INT_STT_Pin
+                          |INT1_ICLX_Pin|INT2_DHCX_Pin|BLE_INT_Pin|INT2_ICLX_Pin
+                          |INT1_DWB_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : SW_SEL_Pin CHRG_Pin */
+  GPIO_InitStruct.Pin = SW_SEL_Pin|CHRG_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : uC_ADC_BATT_Pin ADC_EX_Pin */
+  GPIO_InitStruct.Pin = uC_ADC_BATT_Pin|ADC_EX_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : CS_DWB_Pin */
+  GPIO_InitStruct.Pin = CS_DWB_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(CS_DWB_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : BUTTON_PWR_Pin */
+  GPIO_InitStruct.Pin = BUTTON_PWR_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(BUTTON_PWR_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : SPI2_MOSI_p2_Pin GPIO1_EX_Pin */
+  GPIO_InitStruct.Pin = SPI2_MOSI_p2_Pin|GPIO1_EX_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LDO_EN_Pin WIFI_EN_Pin */
+  GPIO_InitStruct.Pin = LDO_EN_Pin|WIFI_EN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI1_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI1_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI2_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI2_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI3_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI4_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI5_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI5_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI6_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI6_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI7_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI7_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI8_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI8_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI9_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI10_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI10_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI11_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI11_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI13_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI13_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI14_IRQn, 7, 0);
+  HAL_NVIC_EnableIRQ(EXTI14_IRQn);
+
+  /* USER CODE BEGIN MX_GPIO_Init_2 */
+
+  /* USER CODE END MX_GPIO_Init_2 */
+}
+
+/* USER CODE BEGIN 4 */
+
+/* ---------- Float problem solvers ---------- */
+static inline long to_u1e6(float x)   { return (long)(x * 1000000.0f); }   // micro-units
+static inline long to_u1e3(float x)   { return (long)(x * 1000.0f); }      // milli-units
+static inline long to_u1e4(float x)   { return (long)(x * 10000.0f); }     // 1e-4 units
+
+
+/* ---------- Helpers ---------- */
+static inline int32_t sqi16(int16_t v) { return (int32_t)v * (int32_t)v; }
+static inline float lsb_to_mps2(int16_t raw)
+{
+  return (float)raw * ACC_SENS_MG_PER_LSB * 1e-3f * GRAVITY_MPS2;
+}
+
+
+/* ====== Pure C helpers for echoing SD window content over UART ====== */
+static int debug_count_lines(const char* buf, int len)
+{
+    int lines = 0;
+    const char* p = buf;
+    const char* end = buf + len;
+    while (p < end) {
+        const void* nl = memchr(p, '\n', (size_t)(end - p));
+        if (!nl) break;
+        lines++;
+        p = ((const char*)nl) + 1;
+    }
+    return lines;
+}
+
+/* Print up to k lines from *pp (advances *pp) */
+static void debug_print_k_lines(UART_HandleTypeDef* huart, const char** pp,
+                                const char* end, int k)
+{
+    int i;
+    const char* cur = *pp;
+    for (i = 0; i < k && cur < end; i++) {
+        const void* nl = memchr(cur, '\n', (size_t)(end - cur));
+        int chunk = nl ? (int)((const char*)nl - cur + 1) : (int)(end - cur);
+        if (chunk <= 0) break;
+        HAL_UART_Transmit(huart, (uint8_t*)cur, (uint16_t)chunk, 400);
+        cur += chunk;
+    }
+    *pp = cur;
+}
+
+/* Echo the JSON window to UART in manageable chunks */
+static void debug_echo_window(const char* buf, int len)
+{
+    if (!debug_sd_echo || buf == NULL || len <= 0) return;
+
+    const char* p   = buf;
+    const char* end = buf + len;
+    int total_lines = debug_count_lines(buf, len);
+    char tmp[120];
+    int n;
+
+    /* Header */
+    n = snprintf(tmp, sizeof tmp,
+                 "[ECHO] window #%lu bytes=%d lines=%d\r\n",
+                 (unsigned long)window_seq, len, total_lines);
+    if (n > 0) HAL_UART_Transmit(&huart2, (uint8_t*)tmp, (uint16_t)n, 100);
+
+    if (total_lines <= debug_sd_echo_max_lines) {
+        /* Print all lines */
+        debug_print_k_lines(&huart2, &p, end, total_lines);
+    } else if (debug_sd_echo_head_tail) {
+        /* Print head + tail */
+        int head = (int)(debug_sd_echo_max_lines / 2);
+        int tail = (int)(debug_sd_echo_max_lines - head);
+        if (head < 1) head = 1;
+        if (tail < 1) tail = 1;
+
+        /* Head */
+        debug_print_k_lines(&huart2, &p, end, head);
+
+        /* Ellipsis marker */
+        static const char dots[] = "[...]\r\n";
+        HAL_UART_Transmit(&huart2, (const uint8_t*)dots, (uint16_t)(sizeof dots - 1), 50);
+
+        /* Find start of last 'tail' lines */
+        const char* q = end;
+        int need = tail;
+        while (q > buf && need > 0) {
+            q--;
+            if (*q == '\n') need--;
+        }
+        if (q < buf) q = buf;
+
+        /* Tail */
+        if (q < end) {
+            HAL_UART_Transmit(&huart2, (uint8_t*)q, (uint16_t)(end - q), 400);
+        }
+    } else {
+        /* Print first N lines only */
+        debug_print_k_lines(&huart2, &p, end, debug_sd_echo_max_lines);
+    }
+
+    /* Footer */
+    n = snprintf(tmp, sizeof tmp, "[ECHO] done\r\n");
+    if (n > 0) HAL_UART_Transmit(&huart2, (uint8_t*)tmp, (uint16_t)n, 50);
+}
+
+
+
+
+
+
+/* Write a single JSONL event line with RTC timestamp.
+   event_str: "start" or "stop"
+   idle_ms  : pass 0 for "stop"; for "start" pass computed idle duration. */
+static void log_event_line(const char* event_str, uint32_t idle_ms)
+{
+    RTC_TimeTypeDef t; RTC_DateTypeDef d;
+    HAL_RTC_GetTime(&hrtc, &t, RTC_FORMAT_BIN);
+    HAL_RTC_GetDate(&hrtc, &d, RTC_FORMAT_BIN);
+
+    char line[160];
+    int n;
+    if (idle_ms == 0) {
+        // stop line (no idle_ms field)
+        n = snprintf(line, sizeof line,
+            "{\"event\":\"%s\",\"rtc\":\"20%02u-%02u-%02u %02u:%02u:%02u\"}\r\n",
+            event_str, d.Year, d.Month, d.Date, t.Hours, t.Minutes, t.Seconds);
+    } else {
+        // start line (includes prior idle duration)
+        n = snprintf(line, sizeof line,
+            "{\"event\":\"%s\",\"rtc\":\"20%02u-%02u-%02u %02u:%02u:%02u\",\"idle_ms\":%lu}\r\n",
+            event_str, d.Year, d.Month, d.Date, t.Hours, t.Minutes, t.Seconds,
+            (unsigned long)idle_ms);
+    }
+    if (n > 0) {
+        UINT st = fx_file_write(&log_file, line, (ULONG)n);
+        (void)st; // optionally check status
+    }
+}
+
+
+
+
+
+
+
+
+/* ---------- Displacement-based two-phase capture gate ---------- */
+static void update_displacement_gate(const SensorSample_t* s)
+{
+  /* Convert accel to m/s^2 and remove gravity with a slow LPF */
+  float ax = lsb_to_mps2(s->ism330_accel.x);
+  float ay = lsb_to_mps2(s->ism330_accel.y);
+  float az = lsb_to_mps2(s->ism330_accel.z);
+
+  acc_lp[0] += GRAV_LPF_ALPHA * (ax - acc_lp[0]);
+  acc_lp[1] += GRAV_LPF_ALPHA * (ay - acc_lp[1]);
+  acc_lp[2] += GRAV_LPF_ALPHA * (az - acc_lp[2]);
+
+  float ahx = ax - acc_lp[0];
+  float ahy = ay - acc_lp[1];
+  float ahz = az - acc_lp[2];
+
+  /* Integrate with small leaks to limit drift */
+  vel_mps[0] = (vel_mps[0] + ahx * DT_SEC) * (1.0f - VEL_LEAK);
+  vel_mps[1] = (vel_mps[1] + ahy * DT_SEC) * (1.0f - VEL_LEAK);
+  vel_mps[2] = (vel_mps[2] + ahz * DT_SEC) * (1.0f - VEL_LEAK);
+
+  disp_m[0]  = (disp_m[0]  + vel_mps[0] * DT_SEC) * (1.0f - DISP_LEAK);
+  disp_m[1]  = (disp_m[1]  + vel_mps[1] * DT_SEC) * (1.0f - DISP_LEAK);
+  disp_m[2]  = (disp_m[2]  + vel_mps[2] * DT_SEC) * (1.0f - DISP_LEAK);
+
+  float d2 = disp_m[0]*disp_m[0] + disp_m[1]*disp_m[1] + disp_m[2]*disp_m[2];
+  int32_t g2 = sqi16(s->ism330_gyro.x) + sqi16(s->ism330_gyro.y) + sqi16(s->ism330_gyro.z);
+
+  if (!capture_mode) {
+    /* Phase A: wait for consistent displacement to START capture */
+    if (d2 > ENTRY_DISP_ON_M2) {
+      if (++entry_hold >= ENTRY_ON_HOLD_SAMPLES) {
+        capture_mode = 1; entry_hold = 0; exit_hold = 0; buffer_count = 0;
+        char m[32]; int n = snprintf(m, sizeof m, "CAPTURE: START\r\n");
+        if (n > 0) HAL_UART_Transmit(&huart2, (uint8_t*)m, (uint16_t)n, 10);
+
+
+
+        uint32_t idle_ms = 0;
+                   if (idle_active) {
+                       uint32_t now = HAL_GetTick();
+                       idle_ms = (uint32_t)(now - idle_start_tick);  // wrap-safe unsigned math
+                   }
+                   log_event_line("start", idle_ms);     // include how long we were idle
+                   idle_active = 0;                      // back to capturing
+
+
+
+        /* --- LOG: one-time anchor line (human clock at capture start) --- */
+        {
+            RTC_TimeTypeDef t0; RTC_DateTypeDef d0;
+            HAL_RTC_GetTime(&hrtc, &t0, RTC_FORMAT_BIN);
+            HAL_RTC_GetDate(&hrtc, &d0, RTC_FORMAT_BIN);
+
+            char hdr[96];
+            int hn = snprintf(hdr, sizeof hdr,
+                "{\"anchor\":\"20%02u-%02u-%02u %02u:%02u:%02u\",\"note\":\"start\"}\r\n",
+                d0.Year, d0.Month, d0.Date, t0.Hours, t0.Minutes, t0.Seconds);
+            if (hn > 0) {
+                UINT st_hdr = fx_file_write(&log_file, hdr, (ULONG)hn);
+                (void)st_hdr; // optional: check or count errors
+            }
+        }
+
+
+
+      }
+    } else {
+      entry_hold = 0;
+    }
+  } else {
+	  // right after: capture_mode = 0; exit_hold = 0; entry_hold = 0; ...
+
+
+
+
+
+    /* Phase B: keep logging; stop only after sustained stillness */
+    if ((d2 < EXIT_DISP_OFF_M2) && (g2 < EXIT_GYRO_E2_THRESH)) {
+      if (++exit_hold >= EXIT_OFF_HOLD_SAMPLES) {
+        capture_mode = 0; exit_hold = 0; entry_hold = 0;
+        memset((void*)vel_mps, 0, sizeof(vel_mps));
+        memset((void*)disp_m, 0, sizeof(disp_m));
+        char m[32]; int n = snprintf(m, sizeof m, "CAPTURE: STOP\r\n");
+        if (n > 0) HAL_UART_Transmit(&huart2, (uint8_t*)m, (uint16_t)n, 10);
+
+
+
+        /* >>> ADD THIS <<< */
+          log_event_line("stop", 0);                // one line only
+          idle_active     = 1;                      // now in idle
+          idle_start_tick = HAL_GetTick();          // remember when idle began
+          /* <<< END ADD >>> */
+
+
+
+
+
+      }
+      {
+     	      RTC_TimeTypeDef t1; RTC_DateTypeDef d1;
+     	      HAL_RTC_GetTime(&hrtc, &t1, RTC_FORMAT_BIN);
+     	      HAL_RTC_GetDate(&hrtc, &d1, RTC_FORMAT_BIN);
+     	      char f[96];
+     	      int fn = snprintf(f, sizeof f,
+     	          "{\"anchor\":\"20%02u-%02u-%02u %02u:%02u:%02u\",\"note\":\"stop\"}\r\n",
+     	          d1.Year, d1.Month, d1.Date, t1.Hours, t1.Minutes, t1.Seconds);
+     	      if (fn > 0) { UINT stf = fx_file_write(&log_file, f, (ULONG)fn); (void)stf; }
+     	  }
+
+
+    } else {
+      exit_hold = 0;
+    }
+  }
+
+  static uint16_t dbg_cnt = 0;
+  if (capture_mode && (++dbg_cnt % 200 == 0)) { // ~every 0.2 s
+      char msg[112];
+      long d2_u1e6 = to_u1e6(d2);  // d2 in micro-m^2
+      int n = snprintf(msg, sizeof msg,
+          "gate d2_u1e6=%ld g2=%ld exit_hold=%u\r\n",
+          d2_u1e6, (long)g2, (unsigned)exit_hold);
+      if (n > 0) HAL_UART_Transmit(&huart2, (uint8_t*)msg, (uint16_t)n, 10);
+  }
+
+  static uint16_t dbg_cnt_entry = 0;
+  if (!capture_mode && (++dbg_cnt_entry % 200 == 0)) {
+      char msg[96];
+      long d2_u1e6 = (long)(d2 * 1000000.0f);
+      int n = snprintf(msg, sizeof msg,
+          "idle d2_u1e6=%ld entry_hold=%u\r\n", d2_u1e6, (unsigned)entry_hold);
+      if (n > 0) HAL_UART_Transmit(&huart2, (uint8_t*)msg, (uint16_t)n, 10);
+  }
+
+
+
+
+}
+
+
+/* ---------- Sensor bring-up ---------- */
+static void Initialize_Sensors(void)
+{
+  char uart_buf[96];
+
+  /* Read WHO_AM_I (0x0F) using SPI2, CS_DHCX (CubeMX pins) */
+  uint8_t tx[2] = { (uint8_t)(0x0F | 0x80), 0x00 };  // read bit set
+  uint8_t rx[2] = {0};
+  HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_RESET);
+  HAL_SPI_TransmitReceive(&hspi2, tx, rx, 2, HAL_MAX_DELAY);
+  HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
+  uint8_t who = rx[1];
+
+  if (who == 0x6B) {
+    int n = snprintf(uart_buf, sizeof uart_buf, "ISM330DHCX WHO_AM_I: OK (0x%02X)\r\n", who);
+    if (n > 0) HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, (uint16_t)n, HAL_MAX_DELAY);
+
+    /* CTRL3_C (0x12): BDU=1, IF_INC=1  -> 0b0100 0100 = 0x44 */
+    uint8_t wr[2] = { 0x12, 0x44 };
+    HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_RESET);
+    HAL_SPI_Transmit(&hspi2, wr, 2, HAL_MAX_DELAY);
+    HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
+
+    /* CTRL1_XL (0x10): set accel ODR to 1.04 kHz (HP mode) -> 0x80 */
+    wr[0] = 0x10; wr[1] = 0x80;
+    HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_RESET);
+    HAL_SPI_Transmit(&hspi2, wr, 2, HAL_MAX_DELAY);
+    HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
+
+    /* CTRL2_G (0x11): set gyro  ODR to 1.04 kHz (HP mode) -> 0x80 */
+    wr[0] = 0x11; wr[1] = 0x80;
+    HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_RESET);
+    HAL_SPI_Transmit(&hspi2, wr, 2, HAL_MAX_DELAY);
+    HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
+  } else {
+    /* NOTE: In your original code, uart_buf was not set in the failure path.
+       Here we still avoid changing behavior materially; we just send a clear msg. */
+    int n = snprintf(uart_buf, sizeof uart_buf, "ISM330DHCX WHO_AM_I FAIL: 0x%02X\r\n", who);
+    if (n > 0) HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, (uint16_t)n, HAL_MAX_DELAY);
+    Error_Handler();
+  }
+
+  HAL_Delay(100); // settle time after config
+}
+
+/* ---------- Kick a SPI2 DMA read of 12 bytes (gyro+accel) ---------- */
+static void start_sensor_read(void)
+{
+  if (spi_busy || !run_logging) { dbg_start_while_busy++; return; }
+
+  /* OUTX_L_G = 0x22; use auto-increment (IF_INC=1) to read 12 bytes */
+  ism330dhcx_tx_dma_buf[0] = (uint8_t)(0x22 | 0x80);
+  HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_RESET);
+  spi_busy = 1;
+
+  HAL_StatusTypeDef hs = HAL_SPI_TransmitReceive_DMA(
+      &hspi2, ism330dhcx_tx_dma_buf, ism330dhcx_rx_dma_buf, ISM330DHCX_DMA_LEN);
+
+  if (hs != HAL_OK) {
+    spi_busy = 0; spi_dma_busy_err_cnt++;  // keep running; count the error
+    return;
+  }
+  spi_dma_start_cnt++; dbg_dma_starts++;
+}
+
+/* ---------- SPI DMA completion ---------- */
+void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi)
+{
+  if (hspi->Instance == SPI2) {
+    HAL_GPIO_WritePin(CS_DHCX_GPIO_Port, CS_DHCX_Pin, GPIO_PIN_SET);
+
+    /* Skip command echo byte; copy only the 12 data bytes */
+    memcpy(ism330dhcx_rx_buffer, &ism330dhcx_rx_dma_buf[1], ISM330DHCX_DATA_SIZE);
+
+    g_data_ready = 1;               // let main loop parse
+    spi_busy     = 0;
+    spi_dma_cplt_cnt++; dbg_dma_cb++;
+
+    /* Simple rate stat: how many callbacks landed in same HAL tick */
+    uint32_t now = HAL_GetTick();
+    if (now == dbg_cb_last_ms) { dbg_cb_same_ms++; }
+    else { dbg_cb_last_ms = now; }
+  }
+}
+/* USER CODE END 4 */
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void)
+{
+	  /* USER CODE BEGIN Error_Handler_Debug */
+	  run_logging = 0;  // stop logging
+
+	  // If you worry about SysTick not ticking here, use a spin delay:
+	  while (1) {
+		//  HAL_GPIO_TogglePin(LED_ERR_PORT, LED_ERR_PIN);
+	    // HAL_Delay(100); // works if SysTick is alive
+	    for (volatile uint32_t i = 0; i < 1200000; ++i) { __NOP(); } // ~100ms @ ~120MHz
+	  }
+	  /* USER CODE END Error_Handler_Debug */
+}
+#ifdef USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */

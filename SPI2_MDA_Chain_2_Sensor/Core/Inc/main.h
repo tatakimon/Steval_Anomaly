@@ -126,8 +126,6 @@ void Error_Handler(void);
 #define INT_EX_GPIO_Port GPIOG
 #define TIM3_PWM_Pin GPIO_PIN_6
 #define TIM3_PWM_GPIO_Port GPIOC
-#define uC_ADC_BATT_Pin GPIO_PIN_2
-#define uC_ADC_BATT_GPIO_Port GPIOC
 #define INT_EXG5_Pin GPIO_PIN_5
 #define INT_EXG5_GPIO_Port GPIOG
 #define INT_EXD15_Pin GPIO_PIN_15

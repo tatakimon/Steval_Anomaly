@@ -1,0 +1,29 @@
+18:20:51 **** Incremental Build of configuration Debug for project project-trigger ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32u5xx_it.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -DFX_INCLUDE_USER_DEFINE_FILE -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I../FileX/App -I../FileX/Target -I../Middlewares/ST/filex/common/inc -I../Middlewares/ST/filex/ports/generic/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32u5xx_it.d" -MT"Core/Src/stm32u5xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32u5xx_it.o"
+../Core/Src/stm32u5xx_it.c: In function 'GPDMA1_Channel2_IRQHandler':
+../Core/Src/stm32u5xx_it.c:436:23: error: 'handle_GPDMA1_Channel2' undeclared (first use in this function); did you mean 'handle_GPDMA1_Channel0'?
+  436 |   HAL_DMA_IRQHandler(&handle_GPDMA1_Channel2);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~
+      |                       handle_GPDMA1_Channel0
+../Core/Src/stm32u5xx_it.c:436:23: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/stm32u5xx_it.c: In function 'GPDMA1_Channel3_IRQHandler':
+../Core/Src/stm32u5xx_it.c:450:23: error: 'handle_GPDMA1_Channel3' undeclared (first use in this function); did you mean 'handle_GPDMA1_Channel0'?
+  450 |   HAL_DMA_IRQHandler(&handle_GPDMA1_Channel3);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~
+      |                       handle_GPDMA1_Channel0
+../Core/Src/stm32u5xx_it.c: In function 'GPDMA1_Channel4_IRQHandler':
+../Core/Src/stm32u5xx_it.c:464:23: error: 'handle_GPDMA1_Channel4' undeclared (first use in this function); did you mean 'handle_GPDMA1_Channel0'?
+  464 |   HAL_DMA_IRQHandler(&handle_GPDMA1_Channel4);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~
+      |                       handle_GPDMA1_Channel0
+../Core/Src/stm32u5xx_it.c: In function 'GPDMA1_Channel5_IRQHandler':
+../Core/Src/stm32u5xx_it.c:478:23: error: 'handle_GPDMA1_Channel5' undeclared (first use in this function); did you mean 'handle_GPDMA1_Channel0'?
+  478 |   HAL_DMA_IRQHandler(&handle_GPDMA1_Channel5);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~
+      |                       handle_GPDMA1_Channel0
+make: *** [Core/Src/subdir.mk:34: Core/Src/stm32u5xx_it.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+18:20:54 Build Failed. 5 errors, 0 warnings. (took 2s.315ms)
+
