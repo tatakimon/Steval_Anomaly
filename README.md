@@ -1,6 +1,6 @@
 # STEVAL‑STWIN.box: Dual‑IMU DMA Acquisition & Circular Buffer (Anomaly Sensing Prototype)
 
-> **Recruiter‑friendly summary**: I built a low‑latency sensor pipeline on the **STEVAL‑STWINBX1 (STM32U585)** that streams simultaneous data from **two SPI IMUs (IIS3DWB + ISM330DHCX)** using **DMA + interrupt chaining**, pushes samples into a **100‑slot circular buffer**, and **logs/streams** over **UART2\@115200**. The design shows hands‑on embedded skills: STM32 HAL, SPI timing, DMA, ISR design, buffering, and practical debugging (WHO\_AM\_I, CS handling, prescalers, ODR alignment). This repo is the firmware foundation for an on‑device anomaly detection pipeline.
+> **summary**: I built a low‑latency sensor pipeline on the **STEVAL‑STWINBX1 (STM32U585)** that streams simultaneous data from **two SPI IMUs (IIS3DWB + ISM330DHCX)** using **DMA + interrupt chaining**, pushes samples into a **100‑slot circular buffer**, and **logs/streams** over **UART2\@115200**. The design shows hands‑on embedded skills: STM32 HAL, SPI timing, DMA, ISR design, buffering, and practical debugging (WHO\_AM\_I, CS handling, prescalers, ODR alignment). This repo is the firmware foundation for an on‑device anomaly detection pipeline.
 
 ---
 
@@ -17,16 +17,6 @@
 
 ---
 
-## Why it matters (skills demonstrated)
-
-- **Embedded C on STM32U5** with **STM32CubeIDE/HAL**
-- **High‑throughput SPI** with **DMA** and **interrupt state machines**
-- **Real‑time buffering** (ring buffer), producer/consumer thinking
-- **Sensor interfacing & validation** (WHO\_AM\_I, ODR/units, scaling)
-- **Deterministic timing** reasoning (clock trees, prescalers, ISR latency)
-- **Clean debugging** over UART; practical logs for ML ingestion
-
----
 
 ## Hardware & sensors
 
