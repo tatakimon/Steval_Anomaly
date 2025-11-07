@@ -1,0 +1,7 @@
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Handover.c:138:10:NDEF_ReadAuxData	40	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Handover.c:198:10:NDEF_ReadAC	592	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Handover.c:277:10:NDEF_ReadHandover	584	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Handover.c:357:10:NDEF_CreateHandover	24	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Handover.c:403:10:NDEF_AddAlternativeCarrier	168	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Handover.c:459:10:NDEF_GetACDataLength	32	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Handover.c:489:10:NDEF_WriteHandover	24	static

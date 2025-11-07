@@ -1,0 +1,8 @@
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Vcard.c:45:13:NDEF_FillVcardStruct	40	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Vcard.c:88:13:NDEF_ExtractVcard	32	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Vcard.c:133:10:NDEF_ReadVcard	24	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Vcard.c:156:10:NDEF_WriteVcard	24	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Vcard.c:172:10:NDEF_GetVcardLength	24	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Vcard.c:296:6:NDEF_PrepareVcardMessage	40	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Vcard.c:540:17:from_base64	24	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Vcard.c:587:5:NDEF_getVcardPicture	32	static

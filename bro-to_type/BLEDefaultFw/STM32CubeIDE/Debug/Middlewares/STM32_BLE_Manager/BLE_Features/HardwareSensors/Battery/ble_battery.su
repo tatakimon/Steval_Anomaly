@@ -1,0 +1,4 @@
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/STM32_BLE_Manager/Src/ble_battery.c:51:20:ble_init_battery_service	16	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/STM32_BLE_Manager/Src/ble_battery.c:95:14:ble_battery_update	40	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/STM32_BLE_Manager/Src/ble_battery.c:139:13:attr_mod_request_battery	24	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/STM32_BLE_Manager/Src/ble_battery.c:173:13:notify_event_battery	16	static

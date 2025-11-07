@@ -1,0 +1,5 @@
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Geo.c:55:13:NDEF_FillGeoStruct	7
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Geo.c:109:13:NDEF_ReadURI_Geo	2
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Geo.c:140:10:NDEF_ReadGeo	6
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Geo.c:190:10:NDEF_WriteGeo	1
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/lib_NDEF_Geo.c:207:6:NDEF_PrepareGeoMessage	10

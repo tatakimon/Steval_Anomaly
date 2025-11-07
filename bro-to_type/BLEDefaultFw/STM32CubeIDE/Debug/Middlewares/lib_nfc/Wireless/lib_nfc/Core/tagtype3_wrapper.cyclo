@@ -1,0 +1,4 @@
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/tagtype3_wrapper.c:36:10:NfcType3_GetLength	3
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/tagtype3_wrapper.c:55:10:NfcType3_ReadNDEF	3
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/tagtype3_wrapper.c:73:10:NfcType3_WriteNDEF	4
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/tagtype3_wrapper.c:99:10:NfcType3_WriteProprietary	1

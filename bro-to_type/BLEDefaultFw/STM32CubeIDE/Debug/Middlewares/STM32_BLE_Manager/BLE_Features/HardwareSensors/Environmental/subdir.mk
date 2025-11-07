@@ -1,0 +1,27 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+# Toolchain: GNU Tools for STM32 (13.3.rel1)
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/STM32_BLE_Manager/Src/ble_environmental.c 
+
+OBJS += \
+./Middlewares/STM32_BLE_Manager/BLE_Features/HardwareSensors/Environmental/ble_environmental.o 
+
+C_DEPS += \
+./Middlewares/STM32_BLE_Manager/BLE_Features/HardwareSensors/Environmental/ble_environmental.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+Middlewares/STM32_BLE_Manager/BLE_Features/HardwareSensors/Environmental/ble_environmental.o: C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/STM32_BLE_Manager/Src/ble_environmental.c Middlewares/STM32_BLE_Manager/BLE_Features/HardwareSensors/Environmental/subdir.mk
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../../Inc -I../../Drivers/STM32U5xx_HAL_Driver/Inc -I../../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../../Drivers/CMSIS/Include -I../../Middlewares/Third_Party/parson -I../../Middlewares/ST/STM32_BLE_Manager/Inc -I../../Drivers/BSP/STWIN.box -I../../Drivers/BSP/Components/Common -I../../Middlewares/ST/BlueNRG-2/hci/hci_tl_patterns/Basic -I../../Middlewares/ST/BlueNRG-2/utils -I../../Middlewares/ST/BlueNRG-2/includes -I../../Drivers/BSP/Components/ism330dhcx -I../../Drivers/BSP/Components/iis2mdc -I../../Drivers/BSP/Components/iis2dlpc -I../../Drivers/BSP/Components/iis2iclx -I../../Drivers/BSP/Components/iis3dwb -I../../Drivers/BSP/Components/stts22h -I../../Drivers/BSP/Components/ilps22qs -I../../Drivers/BSP/Components/ST25DV -I../../Middlewares/ST/lib_nfc/lib_NDEF/Core/inc -I../../Middlewares/ST/lib_nfc/Common/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+
+clean: clean-Middlewares-2f-STM32_BLE_Manager-2f-BLE_Features-2f-HardwareSensors-2f-Environmental
+
+clean-Middlewares-2f-STM32_BLE_Manager-2f-BLE_Features-2f-HardwareSensors-2f-Environmental:
+	-$(RM) ./Middlewares/STM32_BLE_Manager/BLE_Features/HardwareSensors/Environmental/ble_environmental.cyclo ./Middlewares/STM32_BLE_Manager/BLE_Features/HardwareSensors/Environmental/ble_environmental.d ./Middlewares/STM32_BLE_Manager/BLE_Features/HardwareSensors/Environmental/ble_environmental.o ./Middlewares/STM32_BLE_Manager/BLE_Features/HardwareSensors/Environmental/ble_environmental.su
+
+.PHONY: clean-Middlewares-2f-STM32_BLE_Manager-2f-BLE_Features-2f-HardwareSensors-2f-Environmental
+

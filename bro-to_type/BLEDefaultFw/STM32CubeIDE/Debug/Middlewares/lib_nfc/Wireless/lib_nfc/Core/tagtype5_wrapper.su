@@ -1,0 +1,9 @@
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/tagtype5_wrapper.c:76:10:NfcType5_ReadNDEF	32	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/tagtype5_wrapper.c:142:10:NfcType5_WriteData	40	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/tagtype5_wrapper.c:207:10:NfcType5_WriteNDEF	16	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/tagtype5_wrapper.c:221:10:NfcTag_WriteProprietary	16	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/tagtype5_wrapper.c:233:10:NfcType5_WriteCCFile	24	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/tagtype5_wrapper.c:260:10:NfcType5_ReadCCFile	24	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/tagtype5_wrapper.c:287:10:NfcType5_TT5Init	32	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/tagtype5_wrapper.c:343:10:NfcType5_NDEFDetection	32	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Middlewares/ST/lib_nfc/lib_NDEF/Core/src/tagtype5_wrapper.c:454:10:NfcType5_GetLength	24	static

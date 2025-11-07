@@ -1,0 +1,6 @@
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Drivers/BSP/STWIN.box/STWIN.box_debug_pins.c:96:6:BSP_DEBUG_PIN_Init_All	1
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Drivers/BSP/STWIN.box/STWIN.box_debug_pins.c:146:6:BSP_DEBUG_PIN_Init	23
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Drivers/BSP/STWIN.box/STWIN.box_debug_pins.c:164:7:BSP_DEBUG_PIN_DeInit	23
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Drivers/BSP/STWIN.box/STWIN.box_debug_pins.c:170:6:BSP_DEBUG_PIN_On	1
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Drivers/BSP/STWIN.box/STWIN.box_debug_pins.c:175:6:BSP_DEBUG_PIN_Off	1
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Drivers/BSP/STWIN.box/STWIN.box_debug_pins.c:180:6:BSP_DEBUG_PIN_Toggle	1

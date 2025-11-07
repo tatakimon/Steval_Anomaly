@@ -1,0 +1,3 @@
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Src/lib_NDEF_config.c:31:9:NDEF_Wrapper_ReadData	24	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Src/lib_NDEF_config.c:47:9:NDEF_Wrapper_WriteData	24	static
+C:/Users/kerem/OneDrive/Documents/bro-to_type/BLEDefaultFw/Src/lib_NDEF_config.c:60:10:NDEF_Wrapper_GetMemorySize	8	static
