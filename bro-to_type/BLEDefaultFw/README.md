@@ -1,126 +1,161 @@
-## <b>BLEDefaultFw Application Description</b>
+What we want long term
 
-This firmware package includes Components Device Drivers, Board Support Package and example application for the following STMicroelectronics elements:
+STWIN.box mounted on CNC:
 
-  - STEVAL-STWINBX1 (STWIN.box) evaluation board that contains the following components:
-      - MEMS sensor devices: IIS2DLPC, IIS2MDC, IIS3DWB, ISM330DHCX, IIS2ICLX, ILPS22QS, STTS22H
-	  - Dynamic NFC tag: ST25DV64K
-	  - On-board Bluetooth® low energy wireless technology: BlueNRG-M2
-	  - Analog MEMS microphone: IMP23ABSU
-	  - Industrial grade digital MEMS microphone: IMP34DT05	  
- 
-The Example application provides one example on how to perform a firmware over the air update using Bluetooth.
-For increasing the security, for making the connection is necessary to use a pin: 123456 for default that could be changed 
-after the connection
-The board uses also the NFC for providing a direct connection with the board
-At the Beginning the board use the NFC for writing a URL, than pressing the user button the content of NFC is changed 
-with all the necessary information for making the ble connection
-The firwmare over the air update allows also to change the Firwmare running on the board
+sleeps most of the time,
 
-This is the default firmware pre-loaded on the STEVAL-STWINBX1
+wakes on vibration, logs DHCX accel+gyro to SD,
 
-### <b>Required STM32CubeMX settings</b>
+when machine stops, sends logged data via BLE to a Pi (or PC),
 
-Before code generation in Project Manager:
+then sleeps again.
 
- - for toolchain/IDE EWARM set Min Version to 8.50 (default is 9.20).
- - for toolchain/IDE MKD-ARM set Min Version to 5.32 (default is 5.39).
- 
-Without this setting the code will be building but the flashing on board will fail.
- 
-### <b>Required IDE settings</b>
+For now: we’re not doing real wake-on-vibration or SD yet. We are:
 
-For Keil IDE:
+validating the state machine logic,
 
- - set the "Micro LIB" option from within the "Project/Option for Target" menu (Target tab).
- - set the "Misc Controls" option with the "-Wno-format" string, from within the "Project/Option for Target" menu (C/C++ (AC6) tab).
+validating BLE data streaming,
 
-### <b>Keywords</b>
+and starting to optimize radio / battery behavior.
 
-NFC, SPI, I2C, UART, MEMS, BLE, BLE_Manager, BlueNRG-2
+What we implemented in this firmware step-by-step
 
-### <b>Hardware and Software environment</b>
+Custom BLE “USER DATA” characteristic
 
-- This example runs on STEVAL-STWINBX1 (STWIN.box) evaluation board and it can be easily tailored to any other supported device and development board.
-- This example must be used with the related ST BLE Sensor Android/iOS application (Version 5.0.0 or higher) available on the Google Play or Apple App Store, in order to read the sent information by Bluetooth Low Energy protocol
+New service + notify characteristic (USER_DATA_Notify).
 
-ADDITIONAL_COMP : [IIS2DLPC](https://www.st.com/en/mems-and-sensors/iis2dlpc.html)
+We can send arbitrary text lines (later binary) to a client (Python).
 
-ADDITIONAL_COMP : [IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html)
+Simple run state machine
 
-ADDITIONAL_COMP : [IIS3DWB](https://www.st.com/en/mems-and-sensors/iis3dwb.html)
+RS_SLEEP → RS_LOG → RS_XFER → RS_SLEEP → …
 
-ADDITIONAL_COMP : [ISM330DHCX](https://www.st.com/en/mems-and-sensors/ism330dhcx.html)
+Currently:
 
-ADDITIONAL_COMP : [IIS2ICLX](https://www.st.com/en/mems-and-sensors/iis2iclx.html)
+RS_LOG = “mock logging” → fills a 10-line text buffer instead of real sensor data.
 
-ADDITIONAL_COMP : [ILPS22QS](https://www.st.com/en/mems-and-sensors/ilps22qs.html)
+RS_XFER = sends those 10 lines over the new notify characteristic.
 
-ADDITIONAL_COMP : [STTS22H](https://www.st.com/en/mems-and-sensors/stts22h.html)
+This runs even if no client is connected; when a client subscribes, it sees lines.
 
-ADDITIONAL_COMP : [ST25DV64K](https://www.st.com/en/nfc/st25dv64k.html)
+GATT quiet-window
 
-ADDITIONAL_COMP : [BlueNRG-M2](https://www.st.com/en/wireless-connectivity/bluenrg-m2.html)
+On hci_le_connection_complete_event, we set:
 
-ADDITIONAL_COMP : [IMP23ABSU](https://www.st.com/en/mems-and-sensors/imp23absu.html)
+user_gatt_ready = 0
 
-ADDITIONAL_COMP : [IMP34DT05](https://www.st.com/en/mems-and-sensors/imp34dt05.html)
+user_conn_t0 = HAL_GetTick()
 
-### <b>Dependencies</b>
+In MX_BLESensorsPnPL_Process() we wait ~2 seconds, then set:
 
-STM32Cube packages:
+user_gatt_ready = 1
 
-  - STM32U5xx drivers from STM32CubeU5 V1.7.0
+The state machine only sends user data (USER_DATA_Notify) when user_gatt_ready == 1, to avoid hammering GATT right after connect.
 
-X-CUBE packages:
+Python side
 
-  - X-CUBE-BLEMGR V4.1.0
-  - X-CUBE-BLE2 V3.3.0
-  - X-CUBE-MEMS1 V11.2.0
-  - X-CUBE-NFC4 V3.0.0
-  - X-CUBE-NFC7 V1.0.1
-  
-STEVAL-MKSBOX1V1:
+Bleak script:
 
-  - STEVAL-STWINBX1 V1.1.0
-	
-### <b>How to use it?</b>
+Scans for your device (BLEPnP),
 
-This package contains projects for 3 IDEs viz- IAR, Keil µVision 5 and Integrated Development Environment for STM32.
-In order to make the  program work, you must do the following:
+Connects,
 
- - WARNING: before opening the project with any toolchain be sure your folder
-   installation path is not too in-depth since the toolchain may report errors
-   after building.
+Subscribes to:
 
-For IAR:
+user data characteristic → prints your 10-line chunks,
 
- - Open IAR toolchain (this firmware has been successfully tested with Embedded Workbench V9.60.3).
- - Open the IAR project file EWARM\BLELowPower.eww
- - Rebuild all files and Flash the binary on STEVAL-STWINBX1
+battery characteristic → prints battery info.
 
-For Keil µVision 5:
+It runs in a loop so it can reconnect if the board disappears and comes back.
 
- - Open Keil µVision 5 toolchain (this firmware has been successfully tested with MDK-ARM Professional Version: 5.38.0).
- - Open the µVision project file MDK-ARM\Project.uvprojx
- - Rebuild all files and Flash the binary on STEVAL-STWINBX1
-		
-For Integrated Development Environment for STM32:
+Advertising duty-cycle (battery-ish behavior)
 
- - Open STM32CubeIDE (this firmware has been successfully tested with Version 1.18.1)
- - Set the default workspace proposed by the IDE (please be sure that there are not spaces in the workspace path).
- - Press "File" -> "Import" -> "Existing Projects into Workspace"; press "Browse" in the "Select root directory" and choose the path where the STM32CubeIDE project is located (it should be STM32CubeIDE\).
- - Rebuild all files and and Flash the binary on STEVAL-STWINBX1
-   
-### <b>Author</b>
+We added a radio state machine in MX_BLESensorsPnPL_Process():
 
-SRA Application Team
+USER_RADIO_ADV   (advertising ON)
+USER_RADIO_SLEEP (advertising OFF)
 
-### <b>License</b>
 
-Copyright (c) 2025 STMicroelectronics.
-All rights reserved.
+Boot:
 
-This software is licensed under terms that can be found in the LICENSE file
-in the root directory of this software component.
-If no LICENSE file comes with this software, it is provided AS-IS.
+ST’s original set_connectable_ble() runs → ADV starts.
+
+We set user_radio_state = USER_RADIO_ADV.
+
+When not connected:
+
+ADV for 5 seconds → call user_stop_advertising() → go to USER_RADIO_SLEEP.
+
+Sleep (no advertising) for 60 seconds → call set_connectable_ble() → back to USER_RADIO_ADV.
+
+LED:
+
+Blink green only in USER_RADIO_ADV (when advertising),
+
+Off in USER_RADIO_SLEEP or when connected.
+
+Result:
+
+Board is only discoverable during short ADV windows.
+
+Your Python script continuously scans and will “catch” the board whenever one of these windows opens.
+
+This is your “leave the device and still be able to check it later” pattern.
+
+What’s next / things we’ve parked for later
+
+Stuff we explicitly said “we’ll do this later”:
+
+Replace mock logging with real DHCX at 1 kHz
+
+Use DMA + binary ring buffer or at least raw BSP_MOTION_SENSOR_GetAxes sampling.
+
+Decide final on-device format (likely binary frames) and JSONL conversion on the Pi.
+
+Real SD logging
+
+Instead of 10 fake lines in RAM, write real windows (e.g., 100 samples) to SD as binary.
+
+After logging phase, re-read from SD and stream to Pi via BLE.
+
+Wake-on-vibration and machine stop detection
+
+Replace constant state cycling with:
+
+Trigger interrupt from DHCX,
+
+Detect machine stopped (low RMS level or no interrupts),
+
+Only then enter RS_XFER.
+
+More robust reconnect & edge cases
+
+What happens if connection drops mid-XFER?
+
+Do we resume where we left off or discard that window?
+
+Add watchdog-style timeouts per phase.
+
+For right now, blocking issues are:
+
+Get user_stop_advertising() properly implemented in ble_manager.c.
+
+Remove user_radio_state usage from ble_manager.c (or wire it correctly with extern).
+
+Confirm that:
+
+Board boots, advertises 5 s (LED blinking),
+
+Then stops advertising 60 s (LED off),
+
+Python auto-scan script can eventually connect whenever an ADV window opens,
+
+After connect you see:
+
+USER[RS]: LOG (mock 10 lines)
+
+USER[RS]: XFER (notify 10 lines)
+
+Data printing on Python side.
+
+Once that loop is stable, we can safely start swapping the “mock 10 lines” with “real sensor + SD pipeline” without breaking BLE behavior every time.
