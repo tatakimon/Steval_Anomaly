@@ -1,0 +1,6 @@
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/ble_implementation.c:47:6:bluetooth_init	2
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/ble_implementation.c:111:13:set_board_name	1
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/ble_implementation.c:124:13:enable_extended_configuration_command	1
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/ble_implementation.c:158:6:ble_init_custom_service	1
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/ble_implementation.c:183:13:ble_set_custom_advertise_data	1
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/ble_implementation.c:207:13:reset_ble_manager	1

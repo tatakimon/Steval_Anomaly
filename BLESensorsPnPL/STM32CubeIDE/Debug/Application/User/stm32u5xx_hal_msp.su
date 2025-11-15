@@ -1,0 +1,5 @@
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:63:6:HAL_MspInit	16	static
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:87:6:HAL_CRC_MspInit	24	static
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:110:6:HAL_CRC_MspDeInit	16	static
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:132:6:HAL_TIM_OC_MspInit	24	static
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:158:6:HAL_TIM_OC_MspDeInit	16	static

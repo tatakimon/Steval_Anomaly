@@ -1,0 +1,8 @@
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/device_information_pn_p_l.c:69:19:Deviceinformation_PnPLAlloc	2
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/device_information_pn_p_l.c:79:9:Deviceinformation_PnPLInit	1
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/device_information_pn_p_l.c:88:7:Deviceinformation_PnPL_vtblGetKey	1
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/device_information_pn_p_l.c:93:9:Deviceinformation_PnPL_vtblGetNCommands	1
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/device_information_pn_p_l.c:98:7:Deviceinformation_PnPL_vtblGetCommandKey	1
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/device_information_pn_p_l.c:103:9:Deviceinformation_PnPL_vtblGetStatus	2
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/device_information_pn_p_l.c:148:9:Deviceinformation_PnPL_vtblSetProperty	1
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/device_information_pn_p_l.c:153:9:Deviceinformation_PnPL_vtblExecuteFunction	1

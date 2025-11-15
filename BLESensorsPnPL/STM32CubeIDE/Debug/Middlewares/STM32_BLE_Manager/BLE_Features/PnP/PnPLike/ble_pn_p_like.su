@@ -1,0 +1,9 @@
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:62:20:ble_init_pn_p_like_service	16	static
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:92:14:ble_pn_p_like_update	24	static
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:106:6:ble_pn_p_like_set_max_char_length	16	static
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:116:10:ble_pn_p_like_get_max_char_length	4	static
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:126:6:ble_pn_p_like_reset	8	static
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:150:13:attr_mod_request_pn_p_like	24	static
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:191:13:write_request_pn_p_like	32	static
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:219:13:notify_event_pn_p_like	16	static
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:243:13:write_request_pn_p_like_function	16	static

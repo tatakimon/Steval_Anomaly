@@ -1,0 +1,8 @@
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/inertial_pn_p_l.c:69:19:Inertial_PnPLAlloc	2
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/inertial_pn_p_l.c:79:9:Inertial_PnPLInit	1
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/inertial_pn_p_l.c:88:7:Inertial_PnPL_vtblGetKey	1
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/inertial_pn_p_l.c:93:9:Inertial_PnPL_vtblGetNCommands	1
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/inertial_pn_p_l.c:98:7:Inertial_PnPL_vtblGetCommandKey	1
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/inertial_pn_p_l.c:103:9:Inertial_PnPL_vtblGetStatus	7
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/inertial_pn_p_l.c:157:9:Inertial_PnPL_vtblSetProperty	9
+C:/Users/kerem/OneDrive/Documents/stm32-prototype/BLESensorsPnPL/Src/inertial_pn_p_l.c:196:9:Inertial_PnPL_vtblExecuteFunction	1
