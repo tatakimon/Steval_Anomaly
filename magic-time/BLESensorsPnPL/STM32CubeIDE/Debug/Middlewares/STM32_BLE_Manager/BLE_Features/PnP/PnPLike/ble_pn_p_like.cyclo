@@ -1,0 +1,9 @@
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:62:20:ble_init_pn_p_like_service	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:92:14:ble_pn_p_like_update	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:106:6:ble_pn_p_like_set_max_char_length	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:116:10:ble_pn_p_like_get_max_char_length	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:126:6:ble_pn_p_like_reset	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:150:13:attr_mod_request_pn_p_like	3
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:191:13:write_request_pn_p_like	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:219:13:notify_event_pn_p_like	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_pn_p_like.c:243:13:write_request_pn_p_like_function	1

@@ -1,0 +1,7 @@
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:66:6:HAL_MspInit	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:90:6:HAL_CRC_MspInit	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:113:6:HAL_CRC_MspDeInit	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:135:6:HAL_TIM_OC_MspInit	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:161:6:HAL_TIM_OC_MspDeInit	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:188:6:HAL_SPI_MspInit	4
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:249:6:HAL_SPI_MspDeInit	2

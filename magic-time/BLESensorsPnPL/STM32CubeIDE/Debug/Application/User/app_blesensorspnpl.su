@@ -1,0 +1,17 @@
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:131:13:DHCX_Test_ReadID_via_BSP	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:153:6:MX_BLESensorsPnPL_Init	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:225:6:MX_BLESensorsPnPL_Process	24	static,ignoring_inline_asm
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:364:6:STBOX1_Error_Handler	32	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:391:13:BSP_Enable_LDO	32	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:413:6:BSP_Disable_LDO	8	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:423:13:User_Init	64	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:478:13:PrintInfo	40	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:508:13:InitTimers	40	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:592:13:InitMemsSensors	8	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:745:13:SendBatteryInfoData	56	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:781:13:set_int_pins	8	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:793:13:callback_power_button	4	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:805:6:BSP_PB_Callback	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:819:6:HAL_TIM_OC_DelayElapsedCallback	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:879:19:MX_SPI2_Init	32	static
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:946:6:HAL_Delay	24	static,ignoring_inline_asm

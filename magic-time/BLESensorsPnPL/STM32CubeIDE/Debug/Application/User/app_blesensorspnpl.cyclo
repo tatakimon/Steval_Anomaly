@@ -1,0 +1,17 @@
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:131:13:DHCX_Test_ReadID_via_BSP	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:153:6:MX_BLESensorsPnPL_Init	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:225:6:MX_BLESensorsPnPL_Process	11
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:364:6:STBOX1_Error_Handler	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:391:13:BSP_Enable_LDO	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:413:6:BSP_Disable_LDO	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:423:13:User_Init	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:478:13:PrintInfo	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:508:13:InitTimers	14
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:592:13:InitMemsSensors	22
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:745:13:SendBatteryInfoData	6
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:781:13:set_int_pins	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:793:13:callback_power_button	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:805:6:BSP_PB_Callback	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:819:6:HAL_TIM_OC_DelayElapsedCallback	13
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:879:19:MX_SPI2_Init	3
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/app_blesensorspnpl.c:946:6:HAL_Delay	2

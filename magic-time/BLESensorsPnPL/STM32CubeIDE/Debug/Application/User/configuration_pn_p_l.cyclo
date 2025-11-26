@@ -1,0 +1,8 @@
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/configuration_pn_p_l.c:69:19:Configuration_PnPLAlloc	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/configuration_pn_p_l.c:79:9:Configuration_PnPLInit	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/configuration_pn_p_l.c:88:7:Configuration_PnPL_vtblGetKey	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/configuration_pn_p_l.c:93:9:Configuration_PnPL_vtblGetNCommands	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/configuration_pn_p_l.c:98:7:Configuration_PnPL_vtblGetCommandKey	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/configuration_pn_p_l.c:103:9:Configuration_PnPL_vtblGetStatus	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/configuration_pn_p_l.c:135:9:Configuration_PnPL_vtblSetProperty	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/configuration_pn_p_l.c:150:9:Configuration_PnPL_vtblExecuteFunction	1

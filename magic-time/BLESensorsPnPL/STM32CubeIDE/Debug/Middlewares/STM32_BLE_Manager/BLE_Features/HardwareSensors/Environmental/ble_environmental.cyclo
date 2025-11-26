@@ -1,0 +1,6 @@
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_environmental.c:83:20:ble_init_env_service	8
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_environmental.c:204:14:ble_environmental_update	7
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_environmental.c:271:13:attr_mod_request_env	3
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_environmental.c:303:13:read_request_env	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_environmental.c:410:13:notify_event_env	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_environmental.c:436:13:read_request_env_function	1

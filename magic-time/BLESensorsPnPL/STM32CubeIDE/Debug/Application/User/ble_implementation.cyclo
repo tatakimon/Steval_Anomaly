@@ -1,0 +1,6 @@
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/ble_implementation.c:47:6:bluetooth_init	2
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/ble_implementation.c:115:13:set_board_name	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/ble_implementation.c:128:13:enable_extended_configuration_command	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/ble_implementation.c:162:6:ble_init_custom_service	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/ble_implementation.c:187:13:ble_set_custom_advertise_data	1
+C:/Users/kerem/OneDrive/Documents/magic-time/BLESensorsPnPL/Src/ble_implementation.c:211:13:reset_ble_manager	1
