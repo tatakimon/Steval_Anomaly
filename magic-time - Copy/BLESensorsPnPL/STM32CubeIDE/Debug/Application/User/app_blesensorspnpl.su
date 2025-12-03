@@ -1,0 +1,17 @@
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:134:13:DHCX_Test_ReadID_via_BSP	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:156:6:MX_BLESensorsPnPL_Init	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:228:6:MX_BLESensorsPnPL_Process	24	static,ignoring_inline_asm
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:367:6:STBOX1_Error_Handler	32	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:394:13:BSP_Enable_LDO	32	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:416:6:BSP_Disable_LDO	8	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:426:13:User_Init	64	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:481:13:PrintInfo	40	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:511:13:InitTimers	40	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:595:13:InitMemsSensors	8	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:748:13:SendBatteryInfoData	56	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:784:13:set_int_pins	8	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:796:13:callback_power_button	4	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:808:6:BSP_PB_Callback	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:822:6:HAL_TIM_OC_DelayElapsedCallback	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:882:19:MX_SPI2_Init	32	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/app_blesensorspnpl.c:949:6:HAL_Delay	24	static,ignoring_inline_asm

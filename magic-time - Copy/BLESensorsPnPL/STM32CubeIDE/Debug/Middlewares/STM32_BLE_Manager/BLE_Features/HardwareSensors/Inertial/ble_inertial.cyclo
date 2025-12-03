@@ -1,0 +1,4 @@
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_inertial.c:66:20:ble_init_inertial_service	7
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_inertial.c:170:14:ble_acc_gyro_mag_update	7
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_inertial.c:257:13:attr_mod_request_inertial	3
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/STM32_BLE_Manager/Src/ble_inertial.c:293:13:notify_event_inertial	2

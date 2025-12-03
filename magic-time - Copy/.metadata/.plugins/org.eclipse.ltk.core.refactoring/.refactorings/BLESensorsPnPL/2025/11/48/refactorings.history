@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BLESensorsPnPL/STM32CubeIDE/Middlewares/fliex&apos; to &apos;filex&apos;" description="Rename resource &apos;fliex&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="STM32CubeIDE/Middlewares/fliex" name="filex" stamp="1764319695119" updateReferences="true"/>
+</session>

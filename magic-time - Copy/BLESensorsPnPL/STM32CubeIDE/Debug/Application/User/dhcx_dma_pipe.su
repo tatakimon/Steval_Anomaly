@@ -1,0 +1,13 @@
+../Application/User/dhcx_dma_pipe.c:219:20:dhcx_cs_low	8	static
+../Application/User/dhcx_dma_pipe.c:226:20:dhcx_cs_high	8	static
+../Application/User/dhcx_dma_pipe.c:237:6:HAL_SPI_TxRxCpltCallback	16	static
+../Application/User/dhcx_dma_pipe.c:246:6:HAL_SPI_ErrorCallback	16	static
+../Application/User/dhcx_dma_pipe.c:266:13:DHCX_SPI2_DMA_Init	16	static
+../Application/User/dhcx_dma_pipe.c:338:26:dhcx_write	24	static
+../Application/User/dhcx_dma_pipe.c:357:27:dhcx_read_blocking	88	static
+../Application/User/dhcx_dma_pipe.c:392:27:dhcx_read_dma	24	static
+../Application/User/dhcx_dma_pipe.c:488:16:dhcx_both_ready	16	static
+../Application/User/dhcx_dma_pipe.c:499:26:dhcx_read_gyro_accel_dma	32	static
+../Application/User/dhcx_dma_pipe.c:532:13:DHCX_SD_AppendWindow	56	static
+../Application/User/dhcx_dma_pipe.c:623:6:DHCX_Pipeline_Init	16	static
+../Application/User/dhcx_dma_pipe.c:670:6:DHCX_Pipeline_Step	120	static

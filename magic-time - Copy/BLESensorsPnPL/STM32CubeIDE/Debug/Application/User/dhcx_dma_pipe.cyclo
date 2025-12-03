@@ -1,0 +1,13 @@
+../Application/User/dhcx_dma_pipe.c:219:20:dhcx_cs_low	1
+../Application/User/dhcx_dma_pipe.c:226:20:dhcx_cs_high	1
+../Application/User/dhcx_dma_pipe.c:237:6:HAL_SPI_TxRxCpltCallback	2
+../Application/User/dhcx_dma_pipe.c:246:6:HAL_SPI_ErrorCallback	2
+../Application/User/dhcx_dma_pipe.c:266:13:DHCX_SPI2_DMA_Init	3
+../Application/User/dhcx_dma_pipe.c:338:26:dhcx_write	1
+../Application/User/dhcx_dma_pipe.c:357:27:dhcx_read_blocking	3
+../Application/User/dhcx_dma_pipe.c:392:27:dhcx_read_dma	5
+../Application/User/dhcx_dma_pipe.c:488:16:dhcx_both_ready	2
+../Application/User/dhcx_dma_pipe.c:499:26:dhcx_read_gyro_accel_dma	2
+../Application/User/dhcx_dma_pipe.c:532:13:DHCX_SD_AppendWindow	7
+../Application/User/dhcx_dma_pipe.c:623:6:DHCX_Pipeline_Init	4
+../Application/User/dhcx_dma_pipe.c:670:6:DHCX_Pipeline_Step	21

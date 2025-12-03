@@ -1,0 +1,7 @@
+../FileX/Target/fx_sd_glue.c:37:5:fx_stm32_sd_init	24	static
+../FileX/Target/fx_sd_glue.c:61:5:fx_stm32_sd_deinit	24	static
+../FileX/Target/fx_sd_glue.c:88:5:fx_stm32_sd_get_status	24	static
+../FileX/Target/fx_sd_glue.c:116:5:fx_stm32_sd_read_blocks	32	static
+../FileX/Target/fx_sd_glue.c:145:5:fx_stm32_sd_write_blocks	32	static
+../FileX/Target/fx_sd_glue.c:171:6:HAL_SD_TxCpltCallback	16	static
+../FileX/Target/fx_sd_glue.c:190:6:HAL_SD_RxCpltCallback	16	static
