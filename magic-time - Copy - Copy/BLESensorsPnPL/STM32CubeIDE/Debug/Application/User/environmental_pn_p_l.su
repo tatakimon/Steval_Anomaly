@@ -1,0 +1,8 @@
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/environmental_pn_p_l.c:69:19:Environmental_PnPLAlloc	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/environmental_pn_p_l.c:79:9:Environmental_PnPLInit	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/environmental_pn_p_l.c:88:7:Environmental_PnPL_vtblGetKey	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/environmental_pn_p_l.c:93:9:Environmental_PnPL_vtblGetNCommands	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/environmental_pn_p_l.c:98:7:Environmental_PnPL_vtblGetCommandKey	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/environmental_pn_p_l.c:103:9:Environmental_PnPL_vtblGetStatus	40	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/environmental_pn_p_l.c:146:9:Environmental_PnPL_vtblSetProperty	32	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/environmental_pn_p_l.c:172:9:Environmental_PnPL_vtblExecuteFunction	16	static

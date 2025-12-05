@@ -1,0 +1,14 @@
+../Application/User/dhcx_dma_pipe.c:270:20:dhcx_cs_low	1
+../Application/User/dhcx_dma_pipe.c:277:20:dhcx_cs_high	1
+../Application/User/dhcx_dma_pipe.c:288:6:HAL_SPI_TxRxCpltCallback	2
+../Application/User/dhcx_dma_pipe.c:297:6:HAL_SPI_ErrorCallback	2
+../Application/User/dhcx_dma_pipe.c:317:13:DHCX_SPI2_DMA_Init	3
+../Application/User/dhcx_dma_pipe.c:389:26:dhcx_write	1
+../Application/User/dhcx_dma_pipe.c:408:27:dhcx_read_blocking	3
+../Application/User/dhcx_dma_pipe.c:443:27:dhcx_read_dma	5
+../Application/User/dhcx_dma_pipe.c:539:16:dhcx_both_ready	2
+../Application/User/dhcx_dma_pipe.c:550:26:dhcx_read_gyro_accel_dma	2
+../Application/User/dhcx_dma_pipe.c:583:13:DHCX_SD_AppendWindow	8
+../Application/User/dhcx_dma_pipe.c:701:13:DHCX_SD_LoadNextWindowForReplay	13
+../Application/User/dhcx_dma_pipe.c:842:6:DHCX_Pipeline_Init	4
+../Application/User/dhcx_dma_pipe.c:895:6:DHCX_Pipeline_Step	28

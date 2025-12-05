@@ -1,0 +1,17 @@
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:55:9:BSP_ENV_SENSOR_Init	48	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:135:9:BSP_ENV_SENSOR_DeInit	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:161:9:BSP_ENV_SENSOR_GetCapabilities	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:187:9:BSP_ENV_SENSOR_ReadID	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:215:9:BSP_ENV_SENSOR_Enable	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:253:9:BSP_ENV_SENSOR_Disable	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:292:9:BSP_ENV_SENSOR_GetOutputDataRate	32	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:331:9:BSP_ENV_SENSOR_SetOutputDataRate	32	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:370:9:BSP_ENV_SENSOR_GetValue	32	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:408:16:ILPS22QS_0_Probe	80	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:479:16:BSP_ILPS22QS_Init	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:491:16:BSP_ILPS22QS_DeInit	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:512:16:STTS22H_0_Probe	80	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:584:16:BSP_STTS22H_Init	40	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:621:13:STTS22H_GPIO_EXTI_Callback	8	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:631:13:BSP_STTS22H_GPIO_Callback	4	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Drivers/BSP/STWIN.box/STWIN.box_env_sensors.c:637:16:BSP_STTS22H_DeInit	16	static

@@ -1,0 +1,8 @@
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/inertial_pn_p_l.c:69:19:Inertial_PnPLAlloc	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/inertial_pn_p_l.c:79:9:Inertial_PnPLInit	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/inertial_pn_p_l.c:88:7:Inertial_PnPL_vtblGetKey	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/inertial_pn_p_l.c:93:9:Inertial_PnPL_vtblGetNCommands	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/inertial_pn_p_l.c:98:7:Inertial_PnPL_vtblGetCommandKey	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/inertial_pn_p_l.c:103:9:Inertial_PnPL_vtblGetStatus	40	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/inertial_pn_p_l.c:157:9:Inertial_PnPL_vtblSetProperty	40	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/inertial_pn_p_l.c:196:9:Inertial_PnPL_vtblExecuteFunction	16	static

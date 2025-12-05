@@ -1,0 +1,9 @@
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:66:6:HAL_MspInit	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:90:6:HAL_CRC_MspInit	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:113:6:HAL_CRC_MspDeInit	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:135:6:HAL_TIM_OC_MspInit	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:161:6:HAL_TIM_OC_MspDeInit	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:188:6:HAL_SPI_MspInit	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:249:6:HAL_SPI_MspDeInit	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:268:6:HAL_SD_MspInit	256	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/stm32u5xx_hal_msp.c:322:6:HAL_SD_MspDeInit	16	static

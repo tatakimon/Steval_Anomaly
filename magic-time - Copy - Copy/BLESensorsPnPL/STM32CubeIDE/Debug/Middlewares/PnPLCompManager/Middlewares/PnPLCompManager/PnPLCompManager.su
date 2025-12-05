@@ -1,0 +1,36 @@
+../../Middlewares/ST/PnPLCompManager/Inc/IPnPLComponent_vtbl.h:55:21:IPnPLComponentGetKey	16	static
+../../Middlewares/ST/PnPLCompManager/Inc/IPnPLComponent_vtbl.h:60:23:IPnPLComponentGetNCommands	16	static
+../../Middlewares/ST/PnPLCompManager/Inc/IPnPLComponent_vtbl.h:65:21:IPnPLComponentGetCommandKey	16	static
+../../Middlewares/ST/PnPLCompManager/Inc/IPnPLComponent_vtbl.h:70:23:IPnPLComponentGetStatus	32	static
+../../Middlewares/ST/PnPLCompManager/Inc/IPnPLComponent_vtbl.h:87:25:IPnPLComponentSetProperty	16	static
+../../Middlewares/ST/PnPLCompManager/Inc/IPnPLComponent_vtbl.h:92:25:IPnPLCommandExecuteFunction	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:43:9:PnPLGetFWID	4	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:53:9:PnPLGetBOARDID	4	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:64:6:PnPLSetFWID	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:72:6:PnPLSetBOARDID	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:109:7:pnpl_malloc	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:113:6:pnpl_free	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:128:6:PnPLSetAllocationFunctions	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:142:9:PnPLCreateLogMessage	40	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:190:9:PnPL_SetLockUnlockCallbacks	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:210:6:PnPLGenerateAcquisitionUUID	40	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:252:9:PnPLAddComponent	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:286:10:PnPLGetNComponents	4	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:291:10:PnPLGetComponentsNames	32	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:316:9:PnPLGetComponentValue	56	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:375:9:PnPLGetPresentationJSON	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:415:9:PnPLGetDeviceStatusJSON	104	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:542:9:PnPLGetFilteredDeviceStatusJSON	104	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:689:9:PnPLUpdateDeviceStatusFromJSON	176	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:764:9:PnPLParseCommand	112	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:920:9:PnPLSerializeResponse	144	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:1012:6:PnPLFreeSerializedString	16	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:1045:9:PnPLSerializeTelemetry	64	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:1104:9:PnPLSerializeCommandResponse	32	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:1153:16:extract_PnPL_cmd_data	64	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:1248:13:PnPLGetUniqueID	40	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:1272:16:setTelemetryValue	104	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:1316:16:_PnPLGetPresentationJSON	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:1355:16:_PnPLGetDeviceStatusJSON	104	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:1480:16:_PnPLUpdateDeviceStatusFromJSON	176	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Middlewares/ST/PnPLCompManager/Src/PnPLCompManager.c:1541:16:_PnPLParseCommand	112	static

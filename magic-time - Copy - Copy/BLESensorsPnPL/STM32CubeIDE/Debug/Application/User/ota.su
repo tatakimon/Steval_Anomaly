@@ -1,0 +1,6 @@
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/ota.c:94:8:UpdateFWBlueMS	48	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/ota.c:293:6:StartUpdateFWBlueMS	40	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/ota.c:362:6:ReadFlashBanksFwId	24	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/ota.c:392:13:DeleteOtherFlashBankFwId	48	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/ota.c:479:6:UpdateCurrFlashBankFwIdBoardName	80	static
+C:/Users/kerem/OneDrive/Documents/magic-time - Copy/BLESensorsPnPL/Src/ota.c:706:10:ReadFlashBoardName	24	static
