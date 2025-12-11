@@ -202,6 +202,144 @@ static inline uint32_t cycles_to_us(uint32_t cyc){
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+#include <stdint.h>
+
+
+
+		// TODO: replace these with the correct pins from your main.h
+#define LED_HEALTHY_Pin      GPIO_PIN_12   // e.g. GPIO_PIN_13
+#define LED_HEALTHY_GPIO_Port GPIOH       // e.g. GPIOB
+
+#define LED_ANOM_Pin         GPIO_PIN_10   // e.g. GPIO_PIN_1
+#define LED_ANOM_GPIO_Port   GPIOH       // e.g. GPIOE
+
+
+
+#define WIN_SIZE 250  /* 250 samples per window */
+#define DECIM_FACTOR       5        // downsample from ~7 kHz -> ~1 kHz
+#define BASELINE_WINDOWS   300      // ~30 s of training
+#define Z2_THRESHOLD       2        // |z| > sqrt(1) ~ 1.0  (tune later)
+
+
+// window accumulators (per 100 samples)
+static uint16_t win_count = 0;
+static int64_t sum_ax = 0, sum_ay = 0, sum_az = 0;
+static int64_t sum_ax2 = 0, sum_ay2 = 0, sum_az2 = 0;
+static uint32_t win_id = 0;
+static uint8_t decim_counter = 0;
+
+
+// baseline stats over E2
+static uint32_t base_count = 0;
+static int64_t base_sum_E2 = 0;
+static int64_t base_sum_E2_sq = 0;
+static int64_t mean_E2 = 0;   // mg^2
+static int64_t var_E2  = 1;   // mg^4, keep >= 1 to avoid /0 issues
+
+// detector state
+typedef enum {
+    DET_CALIB = 0,
+    DET_RUNNING
+} det_state_t;
+
+
+
+static det_state_t det_state = DET_CALIB;
+static int last_is_anom = 0;  // 0 = normal, 1 = anomaly
+
+
+static void win_reset(void)
+{
+    win_count = 0;
+    sum_ax = sum_ay = sum_az = 0;
+    sum_ax2 = sum_ay2 = sum_az2 = 0;
+}
+
+static void LED_AllOff(void)
+{
+    HAL_GPIO_WritePin(LED_HEALTHY_GPIO_Port, LED_HEALTHY_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED_ANOM_GPIO_Port,    LED_ANOM_Pin,    GPIO_PIN_RESET);
+}
+
+static void LED_ShowTraining(void)
+{
+    /* e.g. blink healthy LED in your main loop while training,
+       or just keep it ON */
+    HAL_GPIO_WritePin(LED_HEALTHY_GPIO_Port, LED_HEALTHY_Pin, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(LED_ANOM_GPIO_Port,    LED_ANOM_Pin,    GPIO_PIN_RESET);
+}
+
+static void LED_ShowHealthy(void)
+{
+    HAL_GPIO_WritePin(LED_HEALTHY_GPIO_Port, LED_HEALTHY_Pin, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(LED_ANOM_GPIO_Port,    LED_ANOM_Pin,    GPIO_PIN_RESET);
+}
+
+static void LED_ShowAnomaly(void)
+{
+    HAL_GPIO_WritePin(LED_HEALTHY_GPIO_Port, LED_HEALTHY_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED_ANOM_GPIO_Port,    LED_ANOM_Pin,    GPIO_PIN_SET);
+}
+
+static void process_window(int64_t E2, int32_t mx, int32_t my, int32_t mz)
+{
+    char state_char = 'C';
+
+    if (det_state == DET_CALIB) {
+        // accumulate baseline
+        base_sum_E2    += E2;
+        base_sum_E2_sq += E2 * E2;
+        base_count++;
+
+        if (base_count >= BASELINE_WINDOWS) {
+            // finalize baseline stats
+            int64_t mean_E2_local    = base_sum_E2 / (int64_t)base_count;
+            int64_t mean_E2_sq_local = base_sum_E2_sq / (int64_t)base_count;
+            int64_t var_E2_local     = mean_E2_sq_local - mean_E2_local * mean_E2_local;
+
+            if (var_E2_local <= 0) {
+                var_E2_local = 1;   // avoid zero variance
+            }
+
+            mean_E2 = mean_E2_local;
+            var_E2  = var_E2_local;
+            det_state = DET_RUNNING;
+        }
+
+        LED_ShowTraining();
+    }
+
+    if (det_state == DET_RUNNING) {
+        int64_t diff  = E2 - mean_E2;
+        int64_t diff2 = diff * diff;   // mg^4
+
+        // |z|^2 > Z2_THRESHOLD  <=>  diff^2 > Z2_THRESHOLD * var
+        if (diff2 > (int64_t)Z2_THRESHOLD * var_E2) {
+            last_is_anom = 1;
+            state_char = 'A';
+            LED_ShowAnomaly();
+        } else {
+            last_is_anom = 0;
+            state_char = 'N';
+            LED_ShowHealthy();
+        }
+    }
+
+    // UART debug line for plotting on PC
+    // Format: WIN <id> E2=<E2> state=<C/N/A> mx= my= mz=
+    char line[128];
+    int n = snprintf(line, sizeof(line),
+                     "WIN %lu E2=%ld state=%c mx=%ld my=%ld mz=%ld\r\n",
+                     (unsigned long)win_count,
+                     (long)E2,
+                     state_char,
+                     (long)mx, (long)my, (long)mz);
+    if (n > 0 && n < (int)sizeof(line)) {
+        HAL_UART_Transmit(&huart2, (uint8_t *)line, n, HAL_MAX_DELAY);
+    }
+}
+
+
 
 /* USER CODE END 0 */
 
@@ -301,19 +439,72 @@ int main(void)
 	          int32_t ax_mg = ((int32_t)r.ax * 61 + (r.ax >= 0 ? 500 : -500)) / 1000;
 	          int32_t ay_mg = ((int32_t)r.ay * 61 + (r.ay >= 0 ? 500 : -500)) / 1000;
 	          int32_t az_mg = ((int32_t)r.az * 61 + (r.az >= 0 ? 500 : -500)) / 1000;
+	          /* -------- window accumulation on accel only (int math) -------- */
 
-	          char line[128];  // 96 would also work
-	          int n = snprintf(line, sizeof(line),
-	                           "G[mdps]=%ld %ld %ld | A[mg]=%ld %ld %ld\r\n",
-	                           (long)gx_mdps, (long)gy_mdps, (long)gz_mdps,
-	                           (long)ax_mg,   (long)ay_mg,   (long)az_mg);
 
-	          if (n > 0 && n < (int)sizeof(line)) {
-	              HAL_UART_Transmit(&huart2, (uint8_t*)line, n, HAL_MAX_DELAY);
 
+
+
+	          // --------- decimate to ~1 kHz ---------
+	          decim_counter++;
+	          if (decim_counter < DECIM_FACTOR) {
+	              continue;  // skip this sample
 	          }
-	      }
-	  }
+	          decim_counter = 0;
+
+
+
+
+
+
+	          // --------- accumulate into window ---------
+
+	                  sum_ax  += ax_mg;
+	                  sum_ay  += ay_mg;
+	                  sum_az  += az_mg;
+
+	                  sum_ax2 += (int64_t)ax_mg * (int64_t)ax_mg;
+	                  sum_ay2 += (int64_t)ay_mg * (int64_t)ay_mg;
+	                  sum_az2 += (int64_t)az_mg * (int64_t)az_mg;
+
+	                  win_count++;
+
+	                  if (win_count >= WIN_SIZE) {
+	                      int64_t N = (int64_t)win_count;
+
+	                      /* integer means per axis (DC) */
+	                      int32_t mx = (int32_t)(sum_ax  / N);
+	                      int32_t my = (int32_t)(sum_ay  / N);
+	                      int32_t mz = (int32_t)(sum_az  / N);
+
+	                      /* mean of squares per axis */
+	                      int64_t mx2 = sum_ax2 / N;
+	                      int64_t my2 = sum_ay2 / N;
+	                      int64_t mz2 = sum_az2 / N;
+
+	                      /* variance (AC power) per axis: E[x^2] - m^2 */
+	                      int64_t vx = mx2 - (int64_t)mx * (int64_t)mx;
+	                      int64_t vy = my2 - (int64_t)my * (int64_t)my;
+	                      int64_t vz = mz2 - (int64_t)mz * (int64_t)mz;
+
+	                      if (vx < 0) vx = 0;
+	                      if (vy < 0) vy = 0;
+	                      if (vz < 0) vz = 0;
+
+	                      /* total AC power across all 3 axes (mg^2) */
+	                      int64_t E2 = vx + vy + vz;   /* our feature */
+
+	                      // run detector + UART + LEDs
+	                      process_window(E2, mx, my, mz);
+
+	                      /* start next window */
+	                      win_reset();
+	                  }
+
+	                  /* you can still use gx_mdps, gy_mdps, gz_mdps elsewhere if needed */
+	      	  	  	}
+	      	  	  }
+
 
 
 
