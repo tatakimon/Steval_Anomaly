@@ -1,0 +1,1310 @@
+08:47:18 **** Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gtzc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pcd_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sai_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sd_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_sdio.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_spi_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_uart_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_sdmmc.o"
+arm-none-eabi-gcc "../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.d" -MT"Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_usb.o"
+arm-none-eabi-gcc -mcpu=cortex-m33 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32u585aiixq.d" -MT"Core/Startup/startup_stm32u585aiixq.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32u585aiixq.o" "../Core/Startup/startup_stm32u585aiixq.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32u5xx_hal_msp.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32u5xx_hal_msp.d" -MT"Core/Src/stm32u5xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32u5xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32u5xx_it.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32u5xx_it.d" -MT"Core/Src/stm32u5xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32u5xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32u5xx.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32u5xx.d" -MT"Core/Src/system_stm32u5xx.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32u5xx.o"
+arm-none-eabi-gcc -o "Demo_musti.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\demo_musti\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo_musti.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo_musti.elf
+ 
+arm-none-eabi-size  Demo_musti.elf 
+arm-none-eabi-objdump -h -S Demo_musti.elf  > "Demo_musti.list"
+   text	   data	    bss	    dec	    hex	filename
+  60228	      9	   5780	  66017	  101e1	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo_musti.list
+ 
+08:47:34 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:1362:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1362 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1314:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1314 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1218:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1218 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1169:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1169 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1112:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1112 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:998:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+  998 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:967:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+  967 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:883:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+  883 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:835:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+  835 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:803:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+  803 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:755:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  755 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:707:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  707 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:659:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  659 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:566:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  566 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:512:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  512 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:449:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  449 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:405:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  405 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:388:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  388 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Demo_musti.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\demo_musti\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo_musti.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo_musti.elf
+ 
+arm-none-eabi-size  Demo_musti.elf 
+arm-none-eabi-objdump -h -S Demo_musti.elf  > "Demo_musti.list"
+   text	   data	    bss	    dec	    hex	filename
+  41471	     92	   3044	  44607	   ae3f	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo_musti.list
+ 
+08:48:53 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:437:27: warning: unused variable 'gz_mdps' [-Wunused-variable]
+  437 |                   int32_t gz_mdps = (int32_t)r.gz * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:436:27: warning: unused variable 'gy_mdps' [-Wunused-variable]
+  436 |                   int32_t gy_mdps = (int32_t)r.gy * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:435:27: warning: unused variable 'gx_mdps' [-Wunused-variable]
+  435 |                   int32_t gx_mdps = (int32_t)r.gx * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1597:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1597 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1549:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1549 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1453:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1453 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1404:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1404 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1347:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1347 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1233:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1233 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1202:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+ 1202 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1118:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1118 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1070:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+ 1070 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:1038:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+ 1038 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:990:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  990 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:942:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  942 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:894:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  894 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:801:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  801 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:747:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  747 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:684:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  684 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:640:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  640 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:623:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  623 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:258:13: warning: 'LED_AllOff' defined but not used [-Wunused-function]
+  258 | static void LED_AllOff(void)
+      |             ^~~~~~~~~~
+../Core/Src/main.c:228:17: warning: 'win_id' defined but not used [-Wunused-variable]
+  228 | static uint32_t win_id = 0;
+      |                 ^~~~~~
+../Core/Src/main.c:131:17: warning: 'spi_rx' defined but not used [-Wunused-variable]
+  131 | static uint8_t  spi_rx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:130:17: warning: 'spi_tx' defined but not used [-Wunused-variable]
+  130 | static uint8_t  spi_tx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:126:44: warning: 'last_az_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                                            ^~~~~~~~~~
+../Core/Src/main.c:126:30: warning: 'last_ay_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                              ^~~~~~~~~~
+../Core/Src/main.c:126:16: warning: 'last_ax_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:125:44: warning: 'last_gz_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                                            ^~~~~~~~~~~~
+../Core/Src/main.c:125:30: warning: 'last_gy_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                              ^~~~~~~~~~~~
+../Core/Src/main.c:125:16: warning: 'last_gx_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                ^~~~~~~~~~~~
+../Core/Src/main.c:122:43: warning: 'max_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                                           ^~~~~~~~~
+../Core/Src/main.c:122:18: warning: 'min_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:121:60: warning: 'sum_total' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                                            ^~~~~~~~~
+../Core/Src/main.c:121:46: warning: 'sum_post' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                              ^~~~~~~~
+../Core/Src/main.c:121:33: warning: 'sum_dma' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                 ^~~~~~~
+../Core/Src/main.c:121:18: warning: 'sum_setup' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:120:18: warning: 'cnt' defined but not used [-Wunused-variable]
+  120 | static uint32_t  cnt = 0;
+      |                  ^~~
+arm-none-eabi-gcc -o "Demo_musti.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\demo_musti\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo_musti.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo_musti.elf
+ 
+arm-none-eabi-size  Demo_musti.elf 
+arm-none-eabi-objdump -h -S Demo_musti.elf  > "Demo_musti.list"
+   text	   data	    bss	    dec	    hex	filename
+  42283	    100	   3096	  45479	   b1a7	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo_musti.list
+ 
+08:57:18 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:438:27: warning: unused variable 'gz_mdps' [-Wunused-variable]
+  438 |                   int32_t gz_mdps = (int32_t)r.gz * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:437:27: warning: unused variable 'gy_mdps' [-Wunused-variable]
+  437 |                   int32_t gy_mdps = (int32_t)r.gy * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:436:27: warning: unused variable 'gx_mdps' [-Wunused-variable]
+  436 |                   int32_t gx_mdps = (int32_t)r.gx * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1598:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1598 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1550:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1550 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1454:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1454 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1405:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1405 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1348:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1348 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1234:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1234 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1203:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+ 1203 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1119:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1119 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1071:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+ 1071 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:1039:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+ 1039 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:991:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  991 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:943:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  943 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:895:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  895 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:802:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  802 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:748:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  748 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:685:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  685 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:641:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  641 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:624:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  624 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:258:13: warning: 'LED_AllOff' defined but not used [-Wunused-function]
+  258 | static void LED_AllOff(void)
+      |             ^~~~~~~~~~
+../Core/Src/main.c:131:17: warning: 'spi_rx' defined but not used [-Wunused-variable]
+  131 | static uint8_t  spi_rx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:130:17: warning: 'spi_tx' defined but not used [-Wunused-variable]
+  130 | static uint8_t  spi_tx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:126:44: warning: 'last_az_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                                            ^~~~~~~~~~
+../Core/Src/main.c:126:30: warning: 'last_ay_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                              ^~~~~~~~~~
+../Core/Src/main.c:126:16: warning: 'last_ax_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:125:44: warning: 'last_gz_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                                            ^~~~~~~~~~~~
+../Core/Src/main.c:125:30: warning: 'last_gy_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                              ^~~~~~~~~~~~
+../Core/Src/main.c:125:16: warning: 'last_gx_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                ^~~~~~~~~~~~
+../Core/Src/main.c:122:43: warning: 'max_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                                           ^~~~~~~~~
+../Core/Src/main.c:122:18: warning: 'min_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:121:60: warning: 'sum_total' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                                            ^~~~~~~~~
+../Core/Src/main.c:121:46: warning: 'sum_post' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                              ^~~~~~~~
+../Core/Src/main.c:121:33: warning: 'sum_dma' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                 ^~~~~~~
+../Core/Src/main.c:121:18: warning: 'sum_setup' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:120:18: warning: 'cnt' defined but not used [-Wunused-variable]
+  120 | static uint32_t  cnt = 0;
+      |                  ^~~
+arm-none-eabi-gcc -o "Demo_musti.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\demo_musti\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo_musti.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo_musti.elf
+ 
+arm-none-eabi-size  Demo_musti.elf 
+arm-none-eabi-objdump -h -S Demo_musti.elf  > "Demo_musti.list"
+   text	   data	    bss	    dec	    hex	filename
+  42291	    100	   3104	  45495	   b1b7	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo_musti.list
+ 
+08:59:05 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:438:27: warning: unused variable 'gz_mdps' [-Wunused-variable]
+  438 |                   int32_t gz_mdps = (int32_t)r.gz * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:437:27: warning: unused variable 'gy_mdps' [-Wunused-variable]
+  437 |                   int32_t gy_mdps = (int32_t)r.gy * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:436:27: warning: unused variable 'gx_mdps' [-Wunused-variable]
+  436 |                   int32_t gx_mdps = (int32_t)r.gx * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1598:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1598 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1550:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1550 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1454:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1454 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1405:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1405 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1348:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1348 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1234:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1234 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1203:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+ 1203 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1119:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1119 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1071:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+ 1071 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:1039:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+ 1039 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:991:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  991 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:943:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  943 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:895:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  895 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:802:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  802 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:748:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  748 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:685:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  685 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:641:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  641 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:624:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  624 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:258:13: warning: 'LED_AllOff' defined but not used [-Wunused-function]
+  258 | static void LED_AllOff(void)
+      |             ^~~~~~~~~~
+../Core/Src/main.c:131:17: warning: 'spi_rx' defined but not used [-Wunused-variable]
+  131 | static uint8_t  spi_rx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:130:17: warning: 'spi_tx' defined but not used [-Wunused-variable]
+  130 | static uint8_t  spi_tx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:126:44: warning: 'last_az_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                                            ^~~~~~~~~~
+../Core/Src/main.c:126:30: warning: 'last_ay_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                              ^~~~~~~~~~
+../Core/Src/main.c:126:16: warning: 'last_ax_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:125:44: warning: 'last_gz_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                                            ^~~~~~~~~~~~
+../Core/Src/main.c:125:30: warning: 'last_gy_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                              ^~~~~~~~~~~~
+../Core/Src/main.c:125:16: warning: 'last_gx_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                ^~~~~~~~~~~~
+../Core/Src/main.c:122:43: warning: 'max_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                                           ^~~~~~~~~
+../Core/Src/main.c:122:18: warning: 'min_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:121:60: warning: 'sum_total' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                                            ^~~~~~~~~
+../Core/Src/main.c:121:46: warning: 'sum_post' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                              ^~~~~~~~
+../Core/Src/main.c:121:33: warning: 'sum_dma' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                 ^~~~~~~
+../Core/Src/main.c:121:18: warning: 'sum_setup' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:120:18: warning: 'cnt' defined but not used [-Wunused-variable]
+  120 | static uint32_t  cnt = 0;
+      |                  ^~~
+arm-none-eabi-gcc -o "Demo_musti.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\demo_musti\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo_musti.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo_musti.elf
+ 
+arm-none-eabi-size  Demo_musti.elf 
+arm-none-eabi-objdump -h -S Demo_musti.elf  > "Demo_musti.list"
+   text	   data	    bss	    dec	    hex	filename
+  42291	    100	   3104	  45495	   b1b7	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo_musti.list
+ 
+09:15:36 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:438:27: warning: unused variable 'gz_mdps' [-Wunused-variable]
+  438 |                   int32_t gz_mdps = (int32_t)r.gz * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:437:27: warning: unused variable 'gy_mdps' [-Wunused-variable]
+  437 |                   int32_t gy_mdps = (int32_t)r.gy * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:436:27: warning: unused variable 'gx_mdps' [-Wunused-variable]
+  436 |                   int32_t gx_mdps = (int32_t)r.gx * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1598:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1598 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1550:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1550 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1454:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1454 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1405:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1405 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1348:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1348 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1234:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1234 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1203:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+ 1203 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1119:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1119 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1071:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+ 1071 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:1039:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+ 1039 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:991:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  991 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:943:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  943 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:895:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  895 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:802:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  802 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:748:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  748 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:685:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  685 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:641:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  641 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:624:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  624 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:258:13: warning: 'LED_AllOff' defined but not used [-Wunused-function]
+  258 | static void LED_AllOff(void)
+      |             ^~~~~~~~~~
+../Core/Src/main.c:131:17: warning: 'spi_rx' defined but not used [-Wunused-variable]
+  131 | static uint8_t  spi_rx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:130:17: warning: 'spi_tx' defined but not used [-Wunused-variable]
+  130 | static uint8_t  spi_tx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:126:44: warning: 'last_az_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                                            ^~~~~~~~~~
+../Core/Src/main.c:126:30: warning: 'last_ay_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                              ^~~~~~~~~~
+../Core/Src/main.c:126:16: warning: 'last_ax_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:125:44: warning: 'last_gz_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                                            ^~~~~~~~~~~~
+../Core/Src/main.c:125:30: warning: 'last_gy_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                              ^~~~~~~~~~~~
+../Core/Src/main.c:125:16: warning: 'last_gx_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                ^~~~~~~~~~~~
+../Core/Src/main.c:122:43: warning: 'max_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                                           ^~~~~~~~~
+../Core/Src/main.c:122:18: warning: 'min_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:121:60: warning: 'sum_total' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                                            ^~~~~~~~~
+../Core/Src/main.c:121:46: warning: 'sum_post' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                              ^~~~~~~~
+../Core/Src/main.c:121:33: warning: 'sum_dma' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                 ^~~~~~~
+../Core/Src/main.c:121:18: warning: 'sum_setup' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:120:18: warning: 'cnt' defined but not used [-Wunused-variable]
+  120 | static uint32_t  cnt = 0;
+      |                  ^~~
+arm-none-eabi-gcc -o "Demo_musti.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\demo_musti\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo_musti.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo_musti.elf
+ 
+arm-none-eabi-size  Demo_musti.elf 
+arm-none-eabi-objdump -h -S Demo_musti.elf  > "Demo_musti.list"
+   text	   data	    bss	    dec	    hex	filename
+  42275	    100	   3104	  45479	   b1a7	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo_musti.list
+ 
+09:34:48 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:438:27: warning: unused variable 'gz_mdps' [-Wunused-variable]
+  438 |                   int32_t gz_mdps = (int32_t)r.gz * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:437:27: warning: unused variable 'gy_mdps' [-Wunused-variable]
+  437 |                   int32_t gy_mdps = (int32_t)r.gy * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:436:27: warning: unused variable 'gx_mdps' [-Wunused-variable]
+  436 |                   int32_t gx_mdps = (int32_t)r.gx * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1598:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1598 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1550:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1550 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1454:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1454 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1405:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1405 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1348:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1348 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1234:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1234 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1203:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+ 1203 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1119:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1119 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1071:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+ 1071 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:1039:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+ 1039 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:991:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  991 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:943:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  943 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:895:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  895 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:802:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  802 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:748:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  748 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:685:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  685 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:641:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  641 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:624:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  624 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:258:13: warning: 'LED_AllOff' defined but not used [-Wunused-function]
+  258 | static void LED_AllOff(void)
+      |             ^~~~~~~~~~
+../Core/Src/main.c:131:17: warning: 'spi_rx' defined but not used [-Wunused-variable]
+  131 | static uint8_t  spi_rx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:130:17: warning: 'spi_tx' defined but not used [-Wunused-variable]
+  130 | static uint8_t  spi_tx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:126:44: warning: 'last_az_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                                            ^~~~~~~~~~
+../Core/Src/main.c:126:30: warning: 'last_ay_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                              ^~~~~~~~~~
+../Core/Src/main.c:126:16: warning: 'last_ax_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:125:44: warning: 'last_gz_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                                            ^~~~~~~~~~~~
+../Core/Src/main.c:125:30: warning: 'last_gy_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                              ^~~~~~~~~~~~
+../Core/Src/main.c:125:16: warning: 'last_gx_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                ^~~~~~~~~~~~
+../Core/Src/main.c:122:43: warning: 'max_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                                           ^~~~~~~~~
+../Core/Src/main.c:122:18: warning: 'min_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:121:60: warning: 'sum_total' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                                            ^~~~~~~~~
+../Core/Src/main.c:121:46: warning: 'sum_post' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                              ^~~~~~~~
+../Core/Src/main.c:121:33: warning: 'sum_dma' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                 ^~~~~~~
+../Core/Src/main.c:121:18: warning: 'sum_setup' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:120:18: warning: 'cnt' defined but not used [-Wunused-variable]
+  120 | static uint32_t  cnt = 0;
+      |                  ^~~
+arm-none-eabi-gcc -o "Demo_musti.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\demo_musti\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo_musti.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo_musti.elf
+ 
+arm-none-eabi-size  Demo_musti.elf 
+arm-none-eabi-objdump -h -S Demo_musti.elf  > "Demo_musti.list"
+   text	   data	    bss	    dec	    hex	filename
+  42275	    100	   3104	  45479	   b1a7	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo_musti.list
+ 
+09:46:00 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-size  Demo_musti.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42275	    100	   3104	  45479	   b1a7	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+10:03:00 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:438:27: warning: unused variable 'gz_mdps' [-Wunused-variable]
+  438 |                   int32_t gz_mdps = (int32_t)r.gz * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:437:27: warning: unused variable 'gy_mdps' [-Wunused-variable]
+  437 |                   int32_t gy_mdps = (int32_t)r.gy * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:436:27: warning: unused variable 'gx_mdps' [-Wunused-variable]
+  436 |                   int32_t gx_mdps = (int32_t)r.gx * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1598:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1598 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1550:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1550 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1454:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1454 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1405:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1405 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1348:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1348 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1234:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1234 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1203:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+ 1203 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1119:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1119 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1071:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+ 1071 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:1039:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+ 1039 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:991:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  991 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:943:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  943 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:895:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  895 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:802:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  802 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:748:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  748 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:685:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  685 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:641:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  641 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:624:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  624 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:258:13: warning: 'LED_AllOff' defined but not used [-Wunused-function]
+  258 | static void LED_AllOff(void)
+      |             ^~~~~~~~~~
+../Core/Src/main.c:131:17: warning: 'spi_rx' defined but not used [-Wunused-variable]
+  131 | static uint8_t  spi_rx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:130:17: warning: 'spi_tx' defined but not used [-Wunused-variable]
+  130 | static uint8_t  spi_tx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:126:44: warning: 'last_az_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                                            ^~~~~~~~~~
+../Core/Src/main.c:126:30: warning: 'last_ay_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                              ^~~~~~~~~~
+../Core/Src/main.c:126:16: warning: 'last_ax_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:125:44: warning: 'last_gz_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                                            ^~~~~~~~~~~~
+../Core/Src/main.c:125:30: warning: 'last_gy_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                              ^~~~~~~~~~~~
+../Core/Src/main.c:125:16: warning: 'last_gx_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                ^~~~~~~~~~~~
+../Core/Src/main.c:122:43: warning: 'max_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                                           ^~~~~~~~~
+../Core/Src/main.c:122:18: warning: 'min_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:121:60: warning: 'sum_total' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                                            ^~~~~~~~~
+../Core/Src/main.c:121:46: warning: 'sum_post' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                              ^~~~~~~~
+../Core/Src/main.c:121:33: warning: 'sum_dma' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                 ^~~~~~~
+../Core/Src/main.c:121:18: warning: 'sum_setup' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:120:18: warning: 'cnt' defined but not used [-Wunused-variable]
+  120 | static uint32_t  cnt = 0;
+      |                  ^~~
+arm-none-eabi-gcc -o "Demo_musti.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\demo_musti\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo_musti.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo_musti.elf
+ 
+arm-none-eabi-size  Demo_musti.elf 
+arm-none-eabi-objdump -h -S Demo_musti.elf  > "Demo_musti.list"
+   text	   data	    bss	    dec	    hex	filename
+  42271	    100	   3104	  45475	   b1a3	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo_musti.list
+ 
+10:06:00 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-size  Demo_musti.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42271	    100	   3104	  45475	   b1a3	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+10:06:14 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:438:27: warning: unused variable 'gz_mdps' [-Wunused-variable]
+  438 |                   int32_t gz_mdps = (int32_t)r.gz * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:437:27: warning: unused variable 'gy_mdps' [-Wunused-variable]
+  437 |                   int32_t gy_mdps = (int32_t)r.gy * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:436:27: warning: unused variable 'gx_mdps' [-Wunused-variable]
+  436 |                   int32_t gx_mdps = (int32_t)r.gx * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1598:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1598 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1550:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1550 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1454:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1454 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1405:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1405 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1348:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1348 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1234:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1234 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1203:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+ 1203 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1119:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1119 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1071:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+ 1071 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:1039:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+ 1039 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:991:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+  991 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:943:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  943 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:895:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  895 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:802:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  802 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:748:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  748 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:685:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  685 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:641:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  641 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:624:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  624 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:258:13: warning: 'LED_AllOff' defined but not used [-Wunused-function]
+  258 | static void LED_AllOff(void)
+      |             ^~~~~~~~~~
+../Core/Src/main.c:131:17: warning: 'spi_rx' defined but not used [-Wunused-variable]
+  131 | static uint8_t  spi_rx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:130:17: warning: 'spi_tx' defined but not used [-Wunused-variable]
+  130 | static uint8_t  spi_tx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:126:44: warning: 'last_az_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                                            ^~~~~~~~~~
+../Core/Src/main.c:126:30: warning: 'last_ay_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                              ^~~~~~~~~~
+../Core/Src/main.c:126:16: warning: 'last_ax_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:125:44: warning: 'last_gz_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                                            ^~~~~~~~~~~~
+../Core/Src/main.c:125:30: warning: 'last_gy_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                              ^~~~~~~~~~~~
+../Core/Src/main.c:125:16: warning: 'last_gx_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                ^~~~~~~~~~~~
+../Core/Src/main.c:122:43: warning: 'max_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                                           ^~~~~~~~~
+../Core/Src/main.c:122:18: warning: 'min_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:121:60: warning: 'sum_total' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                                            ^~~~~~~~~
+../Core/Src/main.c:121:46: warning: 'sum_post' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                              ^~~~~~~~
+../Core/Src/main.c:121:33: warning: 'sum_dma' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                 ^~~~~~~
+../Core/Src/main.c:121:18: warning: 'sum_setup' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:120:18: warning: 'cnt' defined but not used [-Wunused-variable]
+  120 | static uint32_t  cnt = 0;
+      |                  ^~~
+arm-none-eabi-gcc -o "Demo_musti.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\demo_musti\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo_musti.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo_musti.elf
+ 
+arm-none-eabi-size  Demo_musti.elf 
+arm-none-eabi-objdump -h -S Demo_musti.elf  > "Demo_musti.list"
+   text	   data	    bss	    dec	    hex	filename
+  42291	    100	   3104	  45495	   b1b7	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo_musti.list
+ 
+10:49:41 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:493:27: warning: unused variable 'gz_mdps' [-Wunused-variable]
+  493 |                   int32_t gz_mdps = (int32_t)r.gz * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:492:27: warning: unused variable 'gy_mdps' [-Wunused-variable]
+  492 |                   int32_t gy_mdps = (int32_t)r.gy * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:491:27: warning: unused variable 'gx_mdps' [-Wunused-variable]
+  491 |                   int32_t gx_mdps = (int32_t)r.gx * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1653:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1653 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1605:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1605 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1509:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1509 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1460:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1460 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1403:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1403 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1289:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1289 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1258:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+ 1258 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1174:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1174 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1126:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+ 1126 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:1094:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+ 1094 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:1046:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+ 1046 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:998:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  998 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:950:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  950 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:857:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  857 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:803:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  803 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:740:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  740 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:696:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  696 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:679:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  679 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:267:13: warning: 'LED_AllOff' defined but not used [-Wunused-function]
+  267 | static void LED_AllOff(void)
+      |             ^~~~~~~~~~
+../Core/Src/main.c:131:17: warning: 'spi_rx' defined but not used [-Wunused-variable]
+  131 | static uint8_t  spi_rx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:130:17: warning: 'spi_tx' defined but not used [-Wunused-variable]
+  130 | static uint8_t  spi_tx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:126:44: warning: 'last_az_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                                            ^~~~~~~~~~
+../Core/Src/main.c:126:30: warning: 'last_ay_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                              ^~~~~~~~~~
+../Core/Src/main.c:126:16: warning: 'last_ax_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:125:44: warning: 'last_gz_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                                            ^~~~~~~~~~~~
+../Core/Src/main.c:125:30: warning: 'last_gy_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                              ^~~~~~~~~~~~
+../Core/Src/main.c:125:16: warning: 'last_gx_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                ^~~~~~~~~~~~
+../Core/Src/main.c:122:43: warning: 'max_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                                           ^~~~~~~~~
+../Core/Src/main.c:122:18: warning: 'min_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:121:60: warning: 'sum_total' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                                            ^~~~~~~~~
+../Core/Src/main.c:121:46: warning: 'sum_post' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                              ^~~~~~~~
+../Core/Src/main.c:121:33: warning: 'sum_dma' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                 ^~~~~~~
+../Core/Src/main.c:121:18: warning: 'sum_setup' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:120:18: warning: 'cnt' defined but not used [-Wunused-variable]
+  120 | static uint32_t  cnt = 0;
+      |                  ^~~
+arm-none-eabi-gcc -o "Demo_musti.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\demo_musti\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo_musti.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo_musti.elf
+ 
+arm-none-eabi-size  Demo_musti.elf 
+arm-none-eabi-objdump -h -S Demo_musti.elf  > "Demo_musti.list"
+   text	   data	    bss	    dec	    hex	filename
+  42627	    100	   3120	  45847	   b317	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo_musti.list
+ 
+10:49:47 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-size  Demo_musti.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42627	    100	   3120	  45847	   b317	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+10:53:53 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-size  Demo_musti.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42627	    100	   3120	  45847	   b317	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+11:10:28 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:493:27: warning: unused variable 'gz_mdps' [-Wunused-variable]
+  493 |                   int32_t gz_mdps = (int32_t)r.gz * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:492:27: warning: unused variable 'gy_mdps' [-Wunused-variable]
+  492 |                   int32_t gy_mdps = (int32_t)r.gy * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c:491:27: warning: unused variable 'gx_mdps' [-Wunused-variable]
+  491 |                   int32_t gx_mdps = (int32_t)r.gx * 70;
+      |                           ^~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1653:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 1653 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1605:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 1605 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1509:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 1509 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1460:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 1460 | static void MX_TAMP_RTC_Init(void)
+      |             ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1403:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 1403 | static void MX_SPI3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1289:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 1289 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1258:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+ 1258 | static void MX_SDMMC1_SD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1174:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 1174 | static void MX_SAI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1126:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+ 1126 | static void MX_RTC_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:1094:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+ 1094 | static void MX_ICACHE_Init(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:1046:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+ 1046 | static void MX_I2C3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:998:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+  998 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:950:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  950 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:857:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+  857 | static void MX_DAC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:803:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+  803 | static void MX_MDF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:740:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+  740 | static void MX_ADF1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:696:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  696 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:679:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+  679 | static void SystemPower_Config(void)
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:267:13: warning: 'LED_AllOff' defined but not used [-Wunused-function]
+  267 | static void LED_AllOff(void)
+      |             ^~~~~~~~~~
+../Core/Src/main.c:131:17: warning: 'spi_rx' defined but not used [-Wunused-variable]
+  131 | static uint8_t  spi_rx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:130:17: warning: 'spi_tx' defined but not used [-Wunused-variable]
+  130 | static uint8_t  spi_tx[32];
+      |                 ^~~~~~
+../Core/Src/main.c:126:44: warning: 'last_az_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                                            ^~~~~~~~~~
+../Core/Src/main.c:126:30: warning: 'last_ay_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                              ^~~~~~~~~~
+../Core/Src/main.c:126:16: warning: 'last_ax_mg' defined but not used [-Wunused-variable]
+  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:125:44: warning: 'last_gz_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                                            ^~~~~~~~~~~~
+../Core/Src/main.c:125:30: warning: 'last_gy_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                              ^~~~~~~~~~~~
+../Core/Src/main.c:125:16: warning: 'last_gx_mdps' defined but not used [-Wunused-variable]
+  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+      |                ^~~~~~~~~~~~
+../Core/Src/main.c:122:43: warning: 'max_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                                           ^~~~~~~~~
+../Core/Src/main.c:122:18: warning: 'min_total' defined but not used [-Wunused-variable]
+  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:121:60: warning: 'sum_total' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                                            ^~~~~~~~~
+../Core/Src/main.c:121:46: warning: 'sum_post' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                              ^~~~~~~~
+../Core/Src/main.c:121:33: warning: 'sum_dma' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                                 ^~~~~~~
+../Core/Src/main.c:121:18: warning: 'sum_setup' defined but not used [-Wunused-variable]
+  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+      |                  ^~~~~~~~~
+../Core/Src/main.c:120:18: warning: 'cnt' defined but not used [-Wunused-variable]
+  120 | static uint32_t  cnt = 0;
+      |                  ^~~
+arm-none-eabi-gcc -o "Demo_musti.elf" @"objects.list"   -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\demo_musti\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo_musti.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo_musti.elf
+ 
+arm-none-eabi-size  Demo_musti.elf 
+arm-none-eabi-objdump -h -S Demo_musti.elf  > "Demo_musti.list"
+   text	   data	    bss	    dec	    hex	filename
+  42631	    100	   3120	  45851	   b31b	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo_musti.list
+ 
+11:10:34 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-size  Demo_musti.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42631	    100	   3120	  45851	   b31b	Demo_musti.elf
+Finished building: default.size.stdout
+ 
