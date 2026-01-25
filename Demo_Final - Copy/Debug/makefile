@@ -64,7 +64,7 @@ main-build: DMA_DHCX.elf secondary-outputs
 
 # Tool invocations
 DMA_DHCX.elf DMA_DHCX.map: $(OBJS) $(USER_OBJS) C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\Demo_Final\ -\ Copy\STM32U585AIIXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "DMA_DHCX.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\Demo_Final - Copy\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_DHCX.map" -Wl,--gc-sections -static -L"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\Demo_Final - Copy\libneai_anomaly-17-december-1537_1" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "DMA_DHCX.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\Demo_Final - Copy\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_DHCX.map" -Wl,--gc-sections -static -L"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\Demo_Final - Copy" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -1,116 +1,151 @@
-08:33:38 **** Incremental Build of configuration Debug for project DMA_DHCX ****
+15:38:34 **** Incremental Build of configuration Debug for project DMA_DHCX ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I"C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/Demo_Final - Copy/libneai_anomaly-17-december-1537_1" -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:1525:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
- 1525 | static void MX_USB_OTG_FS_PCD_Init(void)
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U585xx -c -I../Core/Inc -I"C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/Demo_Final - Copy/libneai_anomaly-17-december-1537_1" -I../Drivers/STM32U5xx_HAL_Driver/Inc -I../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/kerem/Documents/stm32-projectDemo/codex-trigger-25.01/libneai_anomaly-17-december-1537_3" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:1495:1: warning: "/*" within comment [-Wcomment]
+ 1495 | /*
+      |  
+../Core/Src/main.c:1497:11: warning: "/*" within comment [-Wcomment]
+ 1497 |           /*
+      |            
+../Core/Src/main.c:1530:5: warning: "/*" within comment [-Wcomment]
+ 1530 |     /* USER CODE END WHILE */
+      |      
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:2946:16: warning: 'dhcx_xl_ready' defined but not used [-Wunused-function]
+ 2946 | static uint8_t dhcx_xl_ready(void)
+      |                ^~~~~~~~~~~~~
+../Core/Src/main.c:2934:13: warning: 'dhcx_init' defined but not used [-Wunused-function]
+ 2934 | static void dhcx_init(void){
+      |             ^~~~~~~~~
+../Core/Src/main.c:2615:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+ 2615 | static void MX_USB_OTG_FS_PCD_Init(void)
       |             ^~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1477:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
- 1477 | static void MX_USART3_UART_Init(void)
+../Core/Src/main.c:2567:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+ 2567 | static void MX_USART3_UART_Init(void)
       |             ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1381:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
- 1381 | static void MX_TIM3_Init(void)
+../Core/Src/main.c:2471:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+ 2471 | static void MX_TIM3_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:1332:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
- 1332 | static void MX_TAMP_RTC_Init(void)
+../Core/Src/main.c:2422:13: warning: 'MX_TAMP_RTC_Init' defined but not used [-Wunused-function]
+ 2422 | static void MX_TAMP_RTC_Init(void)
       |             ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:1275:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
- 1275 | static void MX_SPI3_Init(void)
+../Core/Src/main.c:2365:13: warning: 'MX_SPI3_Init' defined but not used [-Wunused-function]
+ 2365 | static void MX_SPI3_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:1161:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
- 1161 | static void MX_SPI1_Init(void)
+../Core/Src/main.c:2251:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+ 2251 | static void MX_SPI1_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:1130:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
- 1130 | static void MX_SDMMC1_SD_Init(void)
+../Core/Src/main.c:2220:13: warning: 'MX_SDMMC1_SD_Init' defined but not used [-Wunused-function]
+ 2220 | static void MX_SDMMC1_SD_Init(void)
       |             ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1046:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
- 1046 | static void MX_SAI1_Init(void)
+../Core/Src/main.c:2136:13: warning: 'MX_SAI1_Init' defined but not used [-Wunused-function]
+ 2136 | static void MX_SAI1_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:998:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
-  998 | static void MX_RTC_Init(void)
+../Core/Src/main.c:2088:13: warning: 'MX_RTC_Init' defined but not used [-Wunused-function]
+ 2088 | static void MX_RTC_Init(void)
       |             ^~~~~~~~~~~
-../Core/Src/main.c:966:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
-  966 | static void MX_ICACHE_Init(void)
+../Core/Src/main.c:2056:13: warning: 'MX_ICACHE_Init' defined but not used [-Wunused-function]
+ 2056 | static void MX_ICACHE_Init(void)
       |             ^~~~~~~~~~~~~~
-../Core/Src/main.c:918:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
-  918 | static void MX_I2C3_Init(void)
+../Core/Src/main.c:2008:13: warning: 'MX_I2C3_Init' defined but not used [-Wunused-function]
+ 2008 | static void MX_I2C3_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:870:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
-  870 | static void MX_I2C2_Init(void)
+../Core/Src/main.c:1960:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+ 1960 | static void MX_I2C2_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:822:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
-  822 | static void MX_I2C1_Init(void)
+../Core/Src/main.c:1912:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+ 1912 | static void MX_I2C1_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:729:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
-  729 | static void MX_DAC1_Init(void)
+../Core/Src/main.c:1819:13: warning: 'MX_DAC1_Init' defined but not used [-Wunused-function]
+ 1819 | static void MX_DAC1_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:675:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
-  675 | static void MX_MDF1_Init(void)
+../Core/Src/main.c:1765:13: warning: 'MX_MDF1_Init' defined but not used [-Wunused-function]
+ 1765 | static void MX_MDF1_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:612:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
-  612 | static void MX_ADF1_Init(void)
+../Core/Src/main.c:1702:13: warning: 'MX_ADF1_Init' defined but not used [-Wunused-function]
+ 1702 | static void MX_ADF1_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:568:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
-  568 | static void MX_ADC1_Init(void)
+../Core/Src/main.c:1658:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+ 1658 | static void MX_ADC1_Init(void)
       |             ^~~~~~~~~~~~
-../Core/Src/main.c:551:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
-  551 | static void SystemPower_Config(void)
+../Core/Src/main.c:1641:13: warning: 'SystemPower_Config' defined but not used [-Wunused-function]
+ 1641 | static void SystemPower_Config(void)
       |             ^~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:238:13: warning: 'LED_AllOff' defined but not used [-Wunused-function]
-  238 | static void LED_AllOff(void)
+../Core/Src/main.c:1083:13: warning: 'uart2_print' defined but not used [-Wunused-function]
+ 1083 | static void uart2_print(const char *s)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:1061:13: warning: 'dhcx_force_int_pushpull_activehigh' defined but not used [-Wunused-function]
+ 1061 | static void dhcx_force_int_pushpull_activehigh(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1015:13: warning: 'wake_debug_poll_10s' defined but not used [-Wunused-function]
+ 1015 | static void wake_debug_poll_10s(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:979:13: warning: 'run_processing' defined but not used [-Wunused-function]
+  979 | static void run_processing(void)
+      |             ^~~~~~~~~~~~~~
+../Core/Src/main.c:720:13: warning: 'enter_active_mode' defined but not used [-Wunused-function]
+  720 | static void enter_active_mode(void)
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:661:16: warning: 'off_score' defined but not used [-Wunused-variable]
+  661 | static uint8_t off_score = 0;
+      |                ^~~~~~~~~
+../Core/Src/main.c:660:16: warning: 'on_score' defined but not used [-Wunused-variable]
+  660 | static uint8_t on_score  = 0;
+      |                ^~~~~~~~
+../Core/Src/main.c:589:13: warning: 'debug_print_vibration_window_counts' defined but not used [-Wunused-function]
+  589 | static void debug_print_vibration_window_counts(uint16_t N)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:405:13: warning: 'LED_AllOff' defined but not used [-Wunused-function]
+  405 | static void LED_AllOff(void)
       |             ^~~~~~~~~~
-../Core/Src/main.c:131:17: warning: 'spi_rx' defined but not used [-Wunused-variable]
-  131 | static uint8_t  spi_rx[32];
-      |                 ^~~~~~
-../Core/Src/main.c:130:17: warning: 'spi_tx' defined but not used [-Wunused-variable]
-  130 | static uint8_t  spi_tx[32];
-      |                 ^~~~~~
-../Core/Src/main.c:126:44: warning: 'last_az_mg' defined but not used [-Wunused-variable]
-  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+../Core/Src/main.c:241:44: warning: 'last_az_mg' defined but not used [-Wunused-variable]
+  241 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
       |                                            ^~~~~~~~~~
-../Core/Src/main.c:126:30: warning: 'last_ay_mg' defined but not used [-Wunused-variable]
-  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+../Core/Src/main.c:241:30: warning: 'last_ay_mg' defined but not used [-Wunused-variable]
+  241 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
       |                              ^~~~~~~~~~
-../Core/Src/main.c:126:16: warning: 'last_ax_mg' defined but not used [-Wunused-variable]
-  126 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
+../Core/Src/main.c:241:16: warning: 'last_ax_mg' defined but not used [-Wunused-variable]
+  241 | static int32_t last_ax_mg,   last_ay_mg,   last_az_mg;
       |                ^~~~~~~~~~
-../Core/Src/main.c:125:44: warning: 'last_gz_mdps' defined but not used [-Wunused-variable]
-  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+../Core/Src/main.c:240:44: warning: 'last_gz_mdps' defined but not used [-Wunused-variable]
+  240 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
       |                                            ^~~~~~~~~~~~
-../Core/Src/main.c:125:30: warning: 'last_gy_mdps' defined but not used [-Wunused-variable]
-  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+../Core/Src/main.c:240:30: warning: 'last_gy_mdps' defined but not used [-Wunused-variable]
+  240 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
       |                              ^~~~~~~~~~~~
-../Core/Src/main.c:125:16: warning: 'last_gx_mdps' defined but not used [-Wunused-variable]
-  125 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
+../Core/Src/main.c:240:16: warning: 'last_gx_mdps' defined but not used [-Wunused-variable]
+  240 | static int32_t last_gx_mdps, last_gy_mdps, last_gz_mdps;
       |                ^~~~~~~~~~~~
-../Core/Src/main.c:122:43: warning: 'max_total' defined but not used [-Wunused-variable]
-  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+../Core/Src/main.c:237:43: warning: 'max_total' defined but not used [-Wunused-variable]
+  237 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
       |                                           ^~~~~~~~~
-../Core/Src/main.c:122:18: warning: 'min_total' defined but not used [-Wunused-variable]
-  122 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
+../Core/Src/main.c:237:18: warning: 'min_total' defined but not used [-Wunused-variable]
+  237 | static uint32_t  min_total = 0xFFFFFFFFu, max_total = 0;
       |                  ^~~~~~~~~
-../Core/Src/main.c:121:60: warning: 'sum_total' defined but not used [-Wunused-variable]
-  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+../Core/Src/main.c:236:60: warning: 'sum_total' defined but not used [-Wunused-variable]
+  236 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
       |                                                            ^~~~~~~~~
-../Core/Src/main.c:121:46: warning: 'sum_post' defined but not used [-Wunused-variable]
-  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+../Core/Src/main.c:236:46: warning: 'sum_post' defined but not used [-Wunused-variable]
+  236 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
       |                                              ^~~~~~~~
-../Core/Src/main.c:121:33: warning: 'sum_dma' defined but not used [-Wunused-variable]
-  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+../Core/Src/main.c:236:33: warning: 'sum_dma' defined but not used [-Wunused-variable]
+  236 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
       |                                 ^~~~~~~
-../Core/Src/main.c:121:18: warning: 'sum_setup' defined but not used [-Wunused-variable]
-  121 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
+../Core/Src/main.c:236:18: warning: 'sum_setup' defined but not used [-Wunused-variable]
+  236 | static uint64_t  sum_setup = 0, sum_dma = 0, sum_post = 0, sum_total = 0;
       |                  ^~~~~~~~~
-../Core/Src/main.c:120:18: warning: 'cnt' defined but not used [-Wunused-variable]
-  120 | static uint32_t  cnt = 0;
+../Core/Src/main.c:235:18: warning: 'cnt' defined but not used [-Wunused-variable]
+  235 | static uint32_t  cnt = 0;
       |                  ^~~
-arm-none-eabi-gcc -o "DMA_DHCX.elf" @"objects.list"  -lneai -mcpu=cortex-m33 -T"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\Demo_Final - Copy\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_DHCX.map" -Wl,--gc-sections -static -L"C:\Users\kerem\STM32CubeIDE\workspace_1.19.0\WorkSpaceSteval\Steval_Anomaly\Demo_Final - Copy\libneai_anomaly-17-december-1537_1" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -o "DMA_DHCX.elf" @"objects.list"  -lneai -mcpu=cortex-m33 -T"C:\Users\kerem\Documents\stm32-projectDemo\codex-trigger-25.01\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_DHCX.map" -Wl,--gc-sections -static -L"C:\Users\kerem\Documents\stm32-projectDemo\codex-trigger-25.01\libneai_anomaly-17-december-1537_3" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: DMA_DHCX.elf
  
 arm-none-eabi-size  DMA_DHCX.elf 
 arm-none-eabi-objdump -h -S DMA_DHCX.elf  > "DMA_DHCX.list"
 arm-none-eabi-objcopy  -O binary DMA_DHCX.elf  "DMA_DHCX.bin"
    text	   data	    bss	    dec	    hex	filename
-  47948	   6268	   9148	  63364	   f784	DMA_DHCX.elf
+  47567	    760	  14608	  62935	   f5d7	DMA_DHCX.elf
 Finished building: default.size.stdout
  
 Finished building: DMA_DHCX.bin
@@ -118,5 +153,5 @@ Finished building: DMA_DHCX.bin
 Finished building: DMA_DHCX.list
  
 
-08:33:46 Build Finished. 0 errors, 34 warnings. (took 7s.300ms)
+15:38:35 Build Finished. 0 errors, 45 warnings. (took 1s.424ms)
 

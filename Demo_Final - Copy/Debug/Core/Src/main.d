@@ -49,7 +49,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_pcd_ex.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_exti.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_mdf.h \
- C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/Demo_Final\ -\ Copy/libneai_anomaly-17-december-1537_1/NanoEdgeAI.h
+ C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/Demo_Final\ -\ Copy/NanoEdgeAI.h
 ../Core/Inc/main.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal.h:
 ../Core/Inc/stm32u5xx_hal_conf.h:
@@ -101,4 +101,4 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_pcd_ex.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_exti.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_mdf.h:
-C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/Demo_Final\ -\ Copy/libneai_anomaly-17-december-1537_1/NanoEdgeAI.h:
+C:/Users/kerem/STM32CubeIDE/workspace_1.19.0/WorkSpaceSteval/Steval_Anomaly/Demo_Final\ -\ Copy/NanoEdgeAI.h:

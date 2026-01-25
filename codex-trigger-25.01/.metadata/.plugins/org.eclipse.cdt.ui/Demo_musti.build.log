@@ -1,0 +1,10 @@
+11:10:34 **** Incremental Build of configuration Debug for project Demo_musti ****
+make -j8 all 
+arm-none-eabi-size  Demo_musti.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42631	    100	   3120	  45851	   b31b	Demo_musti.elf
+Finished building: default.size.stdout
+ 
+
+11:10:34 Build Finished. 0 errors, 0 warnings. (took 246ms)
+

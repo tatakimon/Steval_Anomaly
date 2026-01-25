@@ -1,0 +1,106 @@
+{
+    "algorithm_type": "on_board_training",
+    "commit": "bb711f54",
+    "compilation_date": "2026-01-13T15:17:49.070647",
+    "compilation_flags": {
+        "float_abi": "hard",
+        "fshort_enums": true,
+        "short_wchar": false
+    },
+    "compilation_str": "{'compilation_dict':{'request_type':'library','api':{'env':'PROD','version':'v3'},'version':{'web_api':{'env':'PROD','version':'v3'},'local_api':{'version':'2025.04.04.1','platform':'win64'},'studio':'5.0.2'},'compilation_flags':{'float_abi':'hard','short_wchar':false,'fshort_enums':true,'use_knowledge':false},'mcu':'cortex-m33_st_stm32u5_steval-stwinbx1','sensor':'acc','request_origin':'manual','algorithm_type':'on_board_training','lib_version':'v2_bb711f5','info':{'progression':{'evals_done':200000,'optimization_progress':1.0,'elapsed_time':1903,'cpu_info':{'cpu_nb_cores':8,'cpu_nb_cores_for_optimization':6},'state':'finished'},'max_ram':786000,'max_flash':2048000,'optimization_global_id':'1435aff68d4ef66cd6cf9202871e993d','version':{'local_api':'2025.04.04.1','studio':'5.0.2'},'creation_date':'2026-01-13T09:58:32+00:00'},'class_names':'nominal,anomaly','results':[{'result_id':96,'combination':[0,0,[26,18,8,16,7,3,9,14,13,22,5,1,0,11,19,17,12,10,2,6,24,25,20,15,23,21,4],27,0,30,512,5,0,2,2,3,0.82,0.0,0.0,1000000.0,1.19,1,1,0,1,0.68,0.5],'model':5,'performance':{'performance':{'score':0.9221,'precision':0.9406,'precision_confidence_interval':[0.9062,0.9749]},'memory_usage':{'estimated_ram':6080,'estimated_flash':3033,'estimated_flash_knowledge':700}},'learning_min_lines':70,'knowledge_dat':'eNo1kn0sFHAch38VuSjOSyuM6EVDIVFevh93LNRIXmq6xRK7RWe5mhjRdC15WV6LiMjWKe85k0K70qlreWmpaCpr6khFqURppeXZPttnz98PY6keXjkhPPMaQz5jKTzG-Pxf1wJ46e6Md7bQhtf6ZBTRTaVo8xtC4NtLODTSi77NxVggaIfbvgLY9lVCW5SHto3ncEozF_IvqehQpUNVEQ7LkCjkqBwgqPBChrc5cvVckL7BGP6jDlC2LYcs3xpR-1-Q46lsEob1UJxdIsVWPaABCxFJBPcpUiecvIs7KFR6gH6X3Ka6TaGUmdRCSQMHKKC7iXYqD1JnTT3d7Iom3ysyCopJoCz1CWqQB9MzDScU-yWQY_BeNAQXUtxVAc7rllHr-yDMnJHSjWFfmFVWUdYbT1zvqKGpYT5qF18jZ5krXlVI6WedJVris2g0ZzXMGk8SUzOFuDOFymuNoGV7nO5FrkDcFjHN-mhjbzTo6dASDAY6kMBdA5wqW5qOW4RjX21oe_U0qQldaeSzOoRlO0gwpYPtvETa08JFb3c2zTRrQxhSQhnPNTHIkZLnHS1ckFST5TcNyO7K6Za9CYq0FfSx1A4Xwz7Qo_XOeLl0IUZ0ePB7txQF9d5wTDGA81EfZDUaomckAvLjRthtKcYYfxX08yQYF5mC-z0Vl0vN4TmZBsVtC3w5nInoGCvYz2ZjY581uibzMZNsDYWkCKfl6xDKkcInVQ9X19RAx4WLI73NuKFmANGuOxhQGoHToIDFEmOc2PoQyU0mUMY-Rn_ESpRx-6G00gOZvIasXR9j8SqIl-ujz2kcgf7LoK81Dd4PDjo-Mbe0QV0wJvFgrJw_1x1jbBv7x1yH85tw_yv4bJ61sTv-P_4fydgRhQ=='}],'data':{'nb_cols':1536,'nb_lines':[[{'file_type':'nominal','nb_lines':120},{'file_type':'anomaly','nb_lines':30},{'file_type':'anomaly','nb_lines':30},{'file_type':'nominal','nb_lines':15}]]},'only_emulators':false,'lock_type':100},'sign':87192,'license_key':'***'}",
+    "compile_emulators": true,
+    "compile_library": true,
+    "data": {
+        "nb_cols": 1536,
+        "nb_lines": [
+            [
+                {
+                    "file_type": "nominal",
+                    "nb_lines": 120
+                },
+                {
+                    "file_type": "anomaly",
+                    "nb_lines": 30
+                },
+                {
+                    "file_type": "anomaly",
+                    "nb_lines": 30
+                },
+                {
+                    "file_type": "nominal",
+                    "nb_lines": 15
+                }
+            ]
+        ]
+    },
+    "gcc_version": "arm-none-eabi-gcc (Arm GNU Toolchain 13.2.rel1 (Build arm-13.7)) 13.2.1 20231009",
+    "learning_min_lines": 70,
+    "lib_limited": false,
+    "library_id": "6966621df3085b61e279aa8e",
+    "library_md5sum": "552a3c8088f68b1bd81a762eed9836b6",
+    "mcu": "cortex-m33_st_stm32u5_steval-stwinbx1",
+    "mcu_cpn": "STEVAL-STWINBX1",
+    "mcu_display_name": "STEVAL-STWINBX1 - STMicroelectronics",
+    "mcu_family": "STM32U5 Series",
+    "mcu_group": "demo",
+    "mcu_type": "cortex-m33",
+    "mcu_vendor": "STMicroelectronics",
+    "memory_usage": {
+        "flash": 3704,
+        "ram": 6092
+    },
+    "optimization_info": {
+        "creation_date": "2026-01-13T09:58:32+00:00",
+        "max_flash": 2048000,
+        "max_ram": 786000,
+        "optimization_global_id": "1435aff68d4ef66cd6cf9202871e993d",
+        "progression": {
+            "cpu_info": {
+                "cpu_nb_cores": 8,
+                "cpu_nb_cores_for_optimization": 6
+            },
+            "elapsed_time": 1903,
+            "evals_done": 200000,
+            "optimization_progress": 1.0,
+            "state": "finished"
+        },
+        "version": {
+            "local_api": "2025.04.04.1",
+            "studio": "5.0.2"
+        }
+    },
+    "performance": {
+        "memory_usage": {
+            "estimated_flash": 3033,
+            "estimated_flash_knowledge": 700,
+            "estimated_ram": 6080
+        },
+        "performance": {
+            "precision": 0.9406,
+            "precision_confidence_interval": [
+                0.9062,
+                0.9749
+            ],
+            "score": 0.9221
+        }
+    },
+    "request_type": "library",
+    "sensor": "acc",
+    "studio_info": {
+        "local_api": {
+            "platform": "win64",
+            "version": "2025.04.04.1"
+        },
+        "studio": "5.0.2",
+        "web_api": {
+            "env": "PROD",
+            "version": "v3"
+        }
+    },
+    "user_info": {
+        "company": "Kerimi",
+        "email": "tatakimon@gmail.com",
+        "first_name": "Sinan",
+        "last_name": "Satar"
+    }
+}
