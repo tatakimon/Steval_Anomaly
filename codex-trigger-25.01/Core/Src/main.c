@@ -95,6 +95,14 @@ extern UART_HandleTypeDef huart2;          // optional, for printf over UART
 #define UART2_BAUD     115200u         // set to your USART2 baud
 #define SPI2_SCK_HZ    10000000u       // set to your SPI2 SCK (e.g., 10 MHz)
 
+#ifndef UNUSED_ATTR
+#if defined(__GNUC__)
+#define UNUSED_ATTR __attribute__((unused))
+#else
+#define UNUSED_ATTR
+#endif
+#endif
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -349,7 +357,9 @@ static HAL_StatusTypeDef dhcx_read_dma(uint8_t reg, uint8_t* dst, uint16_t len);
 
 static void dhcx_init(void);
 static uint8_t dhcx_both_ready(void);
+static uint8_t dhcx_xl_ready(void);
 static HAL_StatusTypeDef dhcx_read_gyro_accel_dma(dhcx_raw_t* out);
+static HAL_StatusTypeDef dhcx_read_accel_dma(int16_t* ax, int16_t* ay, int16_t* az);
 
 
 
@@ -384,11 +394,17 @@ static inline uint32_t cycles_to_us(uint32_t cyc){
 
 #define DECIM_FACTOR          1     // downsample from ~7 kHz -> ~1 kHz
 #define SIMILARITY_THRESHOLD  30    // below this = anomaly (tune: 70-90)
+#define NEAI_LEARN_WINDOWS    20u
 
 // NanoEdge AI buffer: 256 samples × 3 axes = 768 floats
 static float neai_buffer[DATA_INPUT_USER * AXIS_NUMBER];
 static uint16_t neai_sample_idx = 0;
 static uint8_t decim_counter = 0;
+
+static int16_t mad_ax[WIN_SAMPLES];
+static int16_t mad_ay[WIN_SAMPLES];
+static int16_t mad_az[WIN_SAMPLES];
+static uint16_t mad_idx = 0;
 
 // Detector state
 typedef enum {
@@ -440,24 +456,21 @@ static void process_window(void)
     char state_char = 'L';
     uint8_t similarity = 0;
 
-    if (det_state == DET_LEARNING) {
-        // Learning phase
+    if (learn_count < NEAI_LEARN_WINDOWS) {
+        // Learning phase (fixed window count)
         result = neai_anomalydetection_learn(neai_buffer);
+        (void)result;
         learn_count++;
-
-        // Require BOTH: minimum 30 iterations AND library says it's ready
-        if (learn_count >= MINIMUM_ITERATION_CALLS_FOR_EFFICIENT_LEARNING &&
-            result == NEAI_MINIMAL_RECOMMENDED_LEARNING_DONE) {
-            det_state = DET_DETECTING;
-            state_char = 'R';  // Ready to detect
-        } else {
-            state_char = 'L';  // Still learning
-        }
+        det_state = DET_LEARNING;
+        state_char = 'L';
         LED_ShowTraining();
         similarity = 0;  // No similarity during learning
-    }
-    else {
+        if (learn_count >= NEAI_LEARN_WINDOWS) {
+            det_state = DET_DETECTING;
+        }
+    } else {
         // Detection phase
+        det_state = DET_DETECTING;
         result = neai_anomalydetection_detect(neai_buffer, &similarity);
         last_similarity = similarity;
 
@@ -583,6 +596,36 @@ static uint32_t calc_mad_total_counts(uint16_t N)
   madz /= N;
 
   // total metric (counts)
+  return (madx + mady + madz);
+}
+
+static uint32_t calc_mad_total_counts_from_arrays(const int16_t* ax,
+                                                  const int16_t* ay,
+                                                  const int16_t* az,
+                                                  uint16_t N)
+{
+  int32_t sumx = 0, sumy = 0, sumz = 0;
+  for (uint16_t i = 0; i < N; i++) {
+    sumx += ax[i];
+    sumy += ay[i];
+    sumz += az[i];
+  }
+
+  int32_t meanx = sumx / (int32_t)N;
+  int32_t meany = sumy / (int32_t)N;
+  int32_t meanz = sumz / (int32_t)N;
+
+  uint32_t madx = 0, mady = 0, madz = 0;
+  for (uint16_t i = 0; i < N; i++) {
+    madx += (uint32_t)iabs32((int32_t)ax[i] - meanx);
+    mady += (uint32_t)iabs32((int32_t)ay[i] - meany);
+    madz += (uint32_t)iabs32((int32_t)az[i] - meanz);
+  }
+
+  madx /= N;
+  mady /= N;
+  madz /= N;
+
   return (madx + mady + madz);
 }
 
@@ -1322,15 +1365,26 @@ int main(void)
 	        uint8_t hits = 0;
 
 	        dhcx_set_xl_odr_run_1k66();
+	        uart2_printf("STAGE: WAKE -> CONFIRM\r\n");
 
 	        for (uint8_t i = 0; i < FAN_CONFIRM_WINDOWS; i++) {
 	          uint32_t mad = calc_mad_total_counts(WIN_SAMPLES);
 	          hits += (mad >= FAN_ON_THR) ? 1u : 0u;
+	          uart2_printf("CONFIRM win=%u mad=%lu hits=%u/%u\r\n",
+	                       (unsigned)(i + 1u),
+	                       (unsigned long)mad,
+	                       (unsigned)hits,
+	                       (unsigned)FAN_CONFIRM_WINDOWS);
 	        }
 
 	        if (hits >= FAN_CONFIRM_MIN_HITS) {
 	          fan_confirmed = 1;
 	          system_on = 1;
+	          off_cnt = 0;
+	          last_mad = 0;
+	          mad_idx = 0;
+	          neai_sample_idx = 0;
+	          decim_counter = 0;
 	          dhcx_fifo_enable_watermark(256);
 	          LED_ShowHealthy();
 	          HAL_UART_Transmit(&huart2, (uint8_t*)"FAN CONFIRMED -> ACTIVE\r\n", 25, HAL_MAX_DELAY);
@@ -1348,32 +1402,10 @@ int main(void)
 	    else
 	    {
 	      // RUN mode: keep confirming fan is running; NEAI only if confirmed
-	      uint32_t mad = calc_mad_total_counts(WIN_SAMPLES);
-
-	      if (last_mad < FAN_OFF_THR && mad > 1500u) {
-	        // ignore single spike while counting down
-	      } else if (mad < FAN_OFF_THR) {
-	        off_cnt++;
-	      } else {
-	        off_cnt = 0;
-	      }
-
-	      if (off_cnt >= 4u) {
-	        fan_confirmed = 0;
-	        system_on = 0;
-	        off_cnt = 0;
-	        HAL_UART_Transmit(&huart2, (uint8_t*)"FAN OFF -> STOP2\r\n", 19, HAL_MAX_DELAY);
-	        enter_monitor_mode();
-	        last_mad = mad;
-	        continue;
-	      }
-
-	      last_mad = mad;
-
 	      if (fan_confirmed) {
-	        if (dhcx_both_ready()) {
-	          dhcx_raw_t r;
-	          if (HAL_OK == dhcx_read_gyro_accel_dma(&r)) {
+	        if (dhcx_xl_ready()) {
+	          int16_t ax, ay, az;
+	          if (HAL_OK == dhcx_read_accel_dma(&ax, &ay, &az)) {
 	            // Decimate to ~1 kHz
 	            decim_counter++;
 	            if (decim_counter < DECIM_FACTOR) {
@@ -1382,9 +1414,9 @@ int main(void)
 	            decim_counter = 0;
 
 	            // Convert raw data to mg (float) - 2g range: 0.061 mg/LSB
-	            float ax_mg = (float)r.ax * 0.061f;
-	            float ay_mg = (float)r.ay * 0.061f;
-	            float az_mg = (float)r.az * 0.061f;
+	            float ax_mg = (float)ax * 0.061f;
+	            float ay_mg = (float)ay * 0.061f;
+	            float az_mg = (float)az * 0.061f;
 
 	            // Fill buffer: interleaved format [ax0,ay0,az0, ax1,ay1,az1, ...]
 	            neai_buffer[neai_sample_idx * AXIS_NUMBER + 0] = ax_mg;
@@ -1392,6 +1424,42 @@ int main(void)
 	            neai_buffer[neai_sample_idx * AXIS_NUMBER + 2] = az_mg;
 
 	            neai_sample_idx++;
+
+	            // Build MAD window from the same raw samples (no extra reads)
+	            mad_ax[mad_idx] = ax;
+	            mad_ay[mad_idx] = ay;
+	            mad_az[mad_idx] = az;
+	            mad_idx++;
+
+	            if (mad_idx >= WIN_SAMPLES) {
+	              uint32_t mad = calc_mad_total_counts_from_arrays(mad_ax, mad_ay, mad_az, WIN_SAMPLES);
+	              uart2_printf("ACTIVE MAD=%lu off_cnt=%u\r\n",
+	                           (unsigned long)mad,
+	                           (unsigned)off_cnt);
+
+	              if (last_mad < FAN_OFF_THR && mad > 1500u) {
+	                // ignore single spike while counting down
+	              } else if (mad < FAN_OFF_THR) {
+	                off_cnt++;
+	              } else {
+	                off_cnt = 0;
+	              }
+
+	              if (off_cnt >= 4u) {
+	                fan_confirmed = 0;
+	                system_on = 0;
+	                off_cnt = 0;
+	                mad_idx = 0;
+	                HAL_UART_Transmit(&huart2, (uint8_t*)"FAN OFF -> STOP2\r\n", 19, HAL_MAX_DELAY);
+	                LED_ShowSleep();
+	                enter_monitor_mode();
+	                last_mad = mad;
+	                continue;
+	              }
+
+	              last_mad = mad;
+	              mad_idx = 0;
+	            }
 
 	            // When buffer full (256 samples), process
 	            if (neai_sample_idx >= DATA_INPUT_USER) {
@@ -2950,7 +3018,7 @@ static uint8_t dhcx_xl_ready(void)
   return (s & 0x01u) != 0u;  // XLDA
 }
 
-static HAL_StatusTypeDef dhcx_read_gyro_accel_dma(dhcx_raw_t* out){
+static HAL_StatusTypeDef UNUSED_ATTR dhcx_read_gyro_accel_dma(dhcx_raw_t* out){
   uint8_t b[12];
   HAL_StatusTypeDef st = dhcx_read_dma(DHCX_REG_OUTX_L_G, b, sizeof(b));
   if (st != HAL_OK) return st;
